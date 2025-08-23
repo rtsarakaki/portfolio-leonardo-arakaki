@@ -19,7 +19,7 @@
         "title": "Configuração do Layout Base",
         "description": "Criar layout base com Navbar e Footer responsivos",
         "details": "Implementar layout base com Navbar fixa contendo links para seções (Perfil, Experiências, Projetos, Formação), Footer com informações de contato, e estrutura responsiva mobile-first.",
-        "status": "pending",
+        "status": "done",
         "priority": "high",
         "dependencies": [
           "1"
@@ -236,7 +236,7 @@
       "lastUpdated": "2024-12-19T10:00:00Z",
       "created": "2025-08-23T17:51:42.052Z",
       "description": "Tasks for master context",
-      "updated": "2025-08-23T17:56:48.607Z"
+      "updated": "2025-08-23T18:07:29.134Z"
     }
   }
 }
