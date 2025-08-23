@@ -2,13 +2,13 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-neutral-900 text-white">
+    <footer className="bg-dark-900 border-t border-dark-700">
       <div className="container-custom py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
           {/* Brand Section */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold">Leonardo Arakaki</h3>
-            <p className="text-neutral-400 text-sm leading-relaxed">
+            <h3 className="text-xl font-bold text-white">Leonardo Arakaki</h3>
+            <p className="text-dark-400 text-sm leading-relaxed">
               Estudante de Arquitetura e Urbanismo na FAUUSP, 
               apaixonado por design, urbanismo e comunicação visual.
             </p>
@@ -16,8 +16,8 @@ const Footer = () => {
 
           {/* Contact Section */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Contato</h4>
-            <div className="space-y-2 text-sm text-neutral-400">
+            <h4 className="text-lg font-semibold text-white">Contato</h4>
+            <div className="space-y-2 text-sm text-dark-400">
               <div className="flex items-center space-x-2">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -42,11 +42,11 @@ const Footer = () => {
 
           {/* Social & Links Section */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Redes Sociais</h4>
+            <h4 className="text-lg font-semibold text-white">Redes Sociais</h4>
             <div className="flex space-x-4">
               <a
                 href="#"
-                className="text-neutral-400 hover:text-white transition-colors duration-200"
+                className="text-dark-400 hover:text-electric-blue transition-colors duration-200"
                 aria-label="LinkedIn"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -55,7 +55,7 @@ const Footer = () => {
               </a>
               <a
                 href="#"
-                className="text-neutral-400 hover:text-white transition-colors duration-200"
+                className="text-dark-400 hover:text-electric-blue transition-colors duration-200"
                 aria-label="GitHub"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -64,7 +64,7 @@ const Footer = () => {
               </a>
               <a
                 href="#"
-                className="text-neutral-400 hover:text-white transition-colors duration-200"
+                className="text-dark-400 hover:text-electric-blue transition-colors duration-200"
                 aria-label="Behance"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -76,16 +76,16 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-neutral-800 mt-8 lg:mt-12 pt-8">
+        <div className="border-t border-dark-700 mt-8 lg:mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm text-neutral-400">
+            <p className="text-sm text-dark-400">
               © {currentYear} Leonardo Franco Arakaki. Todos os direitos reservados.
             </p>
-            <div className="flex space-x-6 text-sm text-neutral-400">
-              <a href="#" className="hover:text-white transition-colors duration-200">
+            <div className="flex space-x-6 text-sm text-dark-400">
+              <a href="#" className="hover:text-electric-blue transition-colors duration-200">
                 Privacidade
               </a>
-              <a href="#" className="hover:text-white transition-colors duration-200">
+              <a href="#" className="hover:text-electric-blue transition-colors duration-200">
                 Termos
               </a>
             </div>

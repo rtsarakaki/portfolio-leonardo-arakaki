@@ -12,11 +12,11 @@ const Section = ({ id, title, subtitle, children, className = '' }: SectionProps
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center mb-12 lg:mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-4">
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
             {title}
           </h2>
           {subtitle && (
-            <p className="text-lg text-neutral-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg text-dark-300 max-w-2xl mx-auto leading-relaxed">
               {subtitle}
             </p>
           )}
