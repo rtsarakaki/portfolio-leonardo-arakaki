@@ -23,3 +23,19 @@ node_modules/
 
 # OS specific
 .DS_Store
+Thumbs.db
+
+# Next.js
+/.next/
+/out/
+/build
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Vercel
+.vercel
+
+# Local env files
+.env*.local

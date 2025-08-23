@@ -6,7 +6,7 @@
         "title": "Setup Inicial do Projeto",
         "description": "Inicializar projeto Next.js com TypeScript e TailwindCSS na pasta existente",
         "details": "Criar estrutura de pastas, inicializar Next.js (sem gerar subpasta), configurar TypeScript, TailwindCSS e ESLint. Criar repositório no GitHub e fazer commit inicial.",
-        "status": "pending",
+        "status": "in-progress",
         "priority": "high",
         "dependencies": [],
         "testStrategy": "Verificar se o projeto inicializa corretamente, se todas as dependências estão instaladas e se o servidor de desenvolvimento funciona",
@@ -233,7 +233,10 @@
       "totalTasks": 15,
       "totalEstimatedHours": 35,
       "createdAt": "2024-12-19T10:00:00Z",
-      "lastUpdated": "2024-12-19T10:00:00Z"
+      "lastUpdated": "2024-12-19T10:00:00Z",
+      "created": "2025-08-23T17:51:42.052Z",
+      "description": "Tasks for master context",
+      "updated": "2025-08-23T17:51:42.053Z"
     }
   }
 }
