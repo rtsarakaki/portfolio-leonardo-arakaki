@@ -1,0 +1,11 @@
+# Task ID: 6
+# Title: Implementação da Seção Formação
+# Status: pending
+# Dependencies: 2
+# Priority: high
+# Description: Criar seção de formação acadêmica e certificações
+# Details:
+Desenvolver componente Education com timeline/listagem clara da formação: ETEC Getúlio Vargas, FAUUSP, cursos complementares e certificações de idiomas (Cambridge CPE, espanhol, italiano, japonês).
+
+# Test Strategy:
+Verificar se toda a formação está listada corretamente, se as certificações estão destacadas

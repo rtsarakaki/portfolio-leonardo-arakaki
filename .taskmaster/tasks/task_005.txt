@@ -1,0 +1,11 @@
+# Task ID: 5
+# Title: Implementação da Seção Projetos
+# Status: pending
+# Dependencies: 2
+# Priority: high
+# Description: Criar portfólio de projetos com cards visuais
+# Details:
+Desenvolver componente Projects com cards para cada projeto: Reforma da escadaria EP-USP, Lixeiras do complexo de lanchonetes, Identidade visual (Poli, Colméias, Jardim Japonês), e Manual de identidade pictográfica.
+
+# Test Strategy:
+Verificar se todos os projetos estão apresentados, se os cards estão bem organizados e responsivos

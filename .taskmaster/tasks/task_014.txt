@@ -1,0 +1,11 @@
+# Task ID: 14
+# Title: Documentação do Projeto
+# Status: pending
+# Dependencies: 12
+# Priority: low
+# Description: Criar documentação técnica e README
+# Details:
+Criar README.md detalhado com instruções de instalação, desenvolvimento e deploy. Documentar estrutura do projeto, tecnologias utilizadas e como contribuir.
+
+# Test Strategy:
+Verificar se a documentação está clara e completa

@@ -1,0 +1,11 @@
+# Task ID: 12
+# Title: Revisão Final de Conteúdo
+# Status: pending
+# Dependencies: 11
+# Priority: high
+# Description: Revisar e validar todo o conteúdo do site
+# Details:
+Revisar se todos os textos estão corretos e fiéis ao currículo de Leonardo, verificar ortografia, gramática e consistência das informações apresentadas.
+
+# Test Strategy:
+Revisar todo o conteúdo com o cliente, verificar se as informações estão corretas

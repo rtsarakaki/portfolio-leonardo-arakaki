@@ -1,0 +1,11 @@
+# Task ID: 10
+# Title: Configuração de Deploy
+# Status: pending
+# Dependencies: 9
+# Priority: high
+# Description: Configurar deploy automático na Vercel
+# Details:
+Conectar repositório à Vercel, configurar deploy automático na branch main, configurar domínio personalizado (opcional), e implementar analytics básico.
+
+# Test Strategy:
+Verificar se o deploy funciona corretamente, se o site está acessível online

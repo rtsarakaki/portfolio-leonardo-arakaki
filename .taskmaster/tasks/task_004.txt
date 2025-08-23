@@ -1,0 +1,11 @@
+# Task ID: 4
+# Title: Implementação da Seção Experiências
+# Status: pending
+# Dependencies: 2
+# Priority: high
+# Description: Criar seção de experiências profissionais com timeline ou grid
+# Details:
+Desenvolver componente Experience com timeline/grid destacando estágio na Prefeitura do Campus da USP, projetos realizados e participados, e iniciação científica. Usar design visual atrativo.
+
+# Test Strategy:
+Verificar se todas as experiências estão listadas corretamente, se o layout está organizado e responsivo

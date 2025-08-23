@@ -1,0 +1,11 @@
+# Task ID: 1
+# Title: Setup Inicial do Projeto
+# Status: pending
+# Dependencies: None
+# Priority: high
+# Description: Inicializar projeto Next.js com TypeScript e TailwindCSS na pasta existente
+# Details:
+Criar estrutura de pastas, inicializar Next.js (sem gerar subpasta), configurar TypeScript, TailwindCSS e ESLint. Criar repositório no GitHub e fazer commit inicial.
+
+# Test Strategy:
+Verificar se o projeto inicializa corretamente, se todas as dependências estão instaladas e se o servidor de desenvolvimento funciona

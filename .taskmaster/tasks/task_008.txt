@@ -1,0 +1,11 @@
+# Task ID: 8
+# Title: Otimização de Performance
+# Status: pending
+# Dependencies: 7
+# Priority: medium
+# Description: Implementar otimizações de performance e SEO básico
+# Details:
+Configurar lazy loading de imagens, otimização de fontes, meta tags para SEO, Open Graph tags, e structured data básico. Implementar loading states e animações suaves.
+
+# Test Strategy:
+Executar testes de Lighthouse, verificar Core Web Vitals, testar SEO básico

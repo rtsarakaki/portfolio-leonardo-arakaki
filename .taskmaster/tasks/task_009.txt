@@ -1,0 +1,11 @@
+# Task ID: 9
+# Title: Testes de Responsividade
+# Status: pending
+# Dependencies: 8
+# Priority: medium
+# Description: Testar e ajustar responsividade em todos os dispositivos
+# Details:
+Testar em diferentes breakpoints (mobile, tablet, desktop), ajustar padding, espaçamentos, tipografia e layout para garantir experiência consistente em todos os dispositivos.
+
+# Test Strategy:
+Testar em diferentes dispositivos e navegadores, verificar se o design está consistente

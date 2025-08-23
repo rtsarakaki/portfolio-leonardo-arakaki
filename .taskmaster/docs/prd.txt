@@ -1,0 +1,208 @@
+# Product Requirement Document (PRD) – Site Portfólio Leonardo Franco Arakaki
+
+## 1. Visão Geral do Projeto
+
+### Objetivo
+Criar um site portfólio profissional em Next.js com TailwindCSS para apresentar o perfil, experiências, projetos e formação de Leonardo Franco Arakaki, estudante de Arquitetura e Urbanismo na FAUUSP.
+
+### Propósito
+- Servir como portfólio profissional para atrair recrutadores
+- Apresentar projetos de arquitetura e design
+- Demonstrar competências em idiomas para oportunidades de ensino
+- Estabelecer presença digital profissional
+
+## 2. User Personas
+
+### Persona 1: Recrutadores de Empresas
+- **Perfil**: Recrutadores de empresas de arquitetura/design
+- **Objetivo**: Encontrar candidatos com boa formação acadêmica e experiência prática
+- **Necessidades**: Visualizar projetos, experiência e formação acadêmica
+
+### Persona 2: Escritórios Independentes
+- **Perfil**: Escritórios de arquitetura e design independentes
+- **Objetivo**: Identificar talentos para projetos específicos
+- **Necessidades**: Portfólio de projetos e habilidades técnicas
+
+### Persona 3: Alunos de Inglês
+- **Perfil**: Escolas e alunos interessados em aulas de inglês
+- **Objetivo**: Encontrar professor qualificado
+- **Necessidades**: Informações sobre certificações e experiência em ensino
+
+## 3. Especificações Técnicas
+
+### Stack Tecnológica
+- **Framework**: Next.js 14+ (App Router)
+- **Styling**: TailwindCSS
+- **Linguagem**: TypeScript
+- **Deploy**: Vercel
+- **Versionamento**: Git/GitHub
+
+### Requisitos Técnicos
+- Design responsivo (mobile-first)
+- Performance otimizada (Core Web Vitals)
+- SEO básico implementado
+- Acessibilidade (WCAG 2.1 AA)
+- Loading states e animações suaves
+
+## 4. Estrutura de Conteúdo
+
+### Seção 1: Perfil (Sobre Mim)
+**Título**: Sobre mim
+
+**Conteúdo**:
+Sou Leonardo Franco Arakaki, estudante de Arquitetura e Urbanismo na FAUUSP, apaixonado por design, urbanismo e comunicação visual.
+
+Tenho experiência acadêmica e prática em projetos de identidade visual, mobiliário urbano e espaços arquitetônicos, além de formação sólida em design de interiores.
+
+Domino o inglês em nível avançado (Cambridge Proficiency) e possuo conhecimentos em espanhol, italiano e japonês. Estou aberto a oportunidades em arquitetura, design e também como professor de inglês.
+
+### Seção 2: Experiências Profissionais
+**Título**: Experiência Profissional
+
+**Conteúdo**:
+- **Estágio na Prefeitura do Campus da USP (2019)**
+  - Responsável por projetos de comunicação visual
+  - Impacto direto na vivência dos estudantes e visitantes
+
+- **Projetos Realizados**:
+  - Reforma da escadaria da Av. Prof. Almeida Prado (EP-USP)
+  - Readequação das lixeiras do complexo de lanchonetes
+
+- **Projetos Participados**:
+  - Comunicação visual da Poli Engenharia Civil
+  - Colméias e Jardim Japonês
+
+- **Iniciação Científica (2019–2020)**:
+  - FAUUSP sobre representação pictográfica em design
+  - Criação de manual de identidade para pesquisas acadêmicas
+
+### Seção 3: Portfólio de Projetos
+**Título**: Portfólio de Projetos
+
+**Projetos**:
+1. **Reforma da escadaria – EP-USP**
+   - Projeto de revitalização para melhorar circulação e estética
+
+2. **Lixeiras do complexo de lanchonetes**
+   - Readequação para melhor integração urbana
+
+3. **Identidade visual**
+   - Poli Engenharia Civil
+   - Colméias e Jardim Japonês
+
+4. **Manual de identidade pictográfica**
+   - Para pesquisa acadêmica
+
+### Seção 4: Formação e Certificações
+**Título**: Formação Acadêmica e Certificações
+
+**Formação**:
+- **ETEC Getúlio Vargas (2010–2012)**: Ensino Médio + Técnico em Design de Interiores
+- **FAUUSP (2016–presente)**: Graduação em Arquitetura e Urbanismo
+
+**Cursos Complementares**:
+- Edição de imagens e pintura digital (Escola SAGA)
+
+**Idiomas**:
+- Inglês avançado (Cambridge CPE 2019)
+- Espanhol básico
+- Italiano básico
+- Japonês básico (FFLCH-USP)
+
+## 5. Design e UX
+
+### Princípios de Design
+- **Minimalista**: Foco no conteúdo, sem elementos desnecessários
+- **Limpo**: Tipografia clara e espaçamento adequado
+- **Profissional**: Paleta de cores neutra e elegante
+
+### Paleta de Cores
+- **Primária**: Tons neutros (branco, cinza, preto)
+- **Destaque**: Azul ou verde (inspirado em arquitetura)
+- **Acessibilidade**: Contraste adequado para leitura
+
+### Layout
+- **Responsivo**: Desktop, tablet e mobile
+- **Cards**: Cada seção em card com título em destaque
+- **Navegação**: Navbar fixa com links para seções
+- **Footer**: Informações de contato
+
+## 6. Funcionalidades
+
+### Navegação
+- Menu de navegação responsivo
+- Links internos para seções
+- Scroll suave entre seções
+
+### Responsividade
+- Mobile-first design
+- Breakpoints: sm (640px), md (768px), lg (1024px), xl (1280px)
+- Imagens otimizadas para diferentes dispositivos
+
+### Performance
+- Lazy loading de imagens
+- Otimização de fontes
+- Bundle size otimizado
+
+## 7. Critérios de Sucesso
+
+### Funcionais
+- [ ] Site online e acessível
+- [ ] Todas as seções implementadas com conteúdo completo
+- [ ] Navegação funcional entre seções
+- [ ] Design responsivo em todos os dispositivos
+
+### Técnicos
+- [ ] Repositório no GitHub com histórico de commits
+- [ ] Deploy automático na Vercel
+- [ ] Performance otimizada (Lighthouse score > 90)
+- [ ] SEO básico implementado
+
+### Qualidade
+- [ ] Layout minimalista e profissional
+- [ ] Tipografia clara e legível
+- [ ] Conteúdo fiel ao currículo de Leonardo
+- [ ] Acessibilidade básica implementada
+
+## 8. Estrutura de Arquivos
+
+```
+portfolio-leonardo/
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   └── globals.css
+│   ├── components/
+│   │   ├── Navbar.tsx
+│   │   ├── Footer.tsx
+│   │   ├── Profile.tsx
+│   │   ├── Experience.tsx
+│   │   ├── Projects.tsx
+│   │   └── Education.tsx
+│   └── types/
+│       └── index.ts
+├── public/
+│   └── images/
+├── tailwind.config.js
+├── next.config.js
+├── package.json
+└── README.md
+```
+
+## 9. Considerações de Deploy
+
+### Vercel
+- Deploy automático na branch main
+- Domínio personalizado (opcional)
+- Analytics básico
+
+### SEO
+- Meta tags para redes sociais
+- Open Graph tags
+- Structured data básico
+
+### Monitoramento
+- Google Analytics (opcional)
+- Vercel Analytics
+- Performance monitoring

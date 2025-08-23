@@ -1,0 +1,239 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Setup Inicial do Projeto",
+        "description": "Inicializar projeto Next.js com TypeScript e TailwindCSS na pasta existente",
+        "details": "Criar estrutura de pastas, inicializar Next.js (sem gerar subpasta), configurar TypeScript, TailwindCSS e ESLint. Criar repositório no GitHub e fazer commit inicial.",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [],
+        "testStrategy": "Verificar se o projeto inicializa corretamente, se todas as dependências estão instaladas e se o servidor de desenvolvimento funciona",
+        "complexity": 3,
+        "estimatedHours": 2,
+        "subtasks": []
+      },
+      {
+        "id": 2,
+        "title": "Configuração do Layout Base",
+        "description": "Criar layout base com Navbar e Footer responsivos",
+        "details": "Implementar layout base com Navbar fixa contendo links para seções (Perfil, Experiências, Projetos, Formação), Footer com informações de contato, e estrutura responsiva mobile-first.",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [
+          "1"
+        ],
+        "testStrategy": "Testar navegação em diferentes dispositivos, verificar responsividade e acessibilidade básica",
+        "complexity": 4,
+        "estimatedHours": 3,
+        "subtasks": []
+      },
+      {
+        "id": 3,
+        "title": "Implementação da Seção Perfil",
+        "description": "Criar seção 'Sobre Mim' com informações pessoais e profissionais",
+        "details": "Desenvolver componente Profile com card centralizado contendo texto sobre Leonardo, sua formação, experiência e competências em idiomas. Aplicar design minimalista com tipografia clara.",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [
+          "2"
+        ],
+        "testStrategy": "Verificar se o conteúdo está correto, se o design está responsivo e se a tipografia está legível",
+        "complexity": 3,
+        "estimatedHours": 2,
+        "subtasks": []
+      },
+      {
+        "id": 4,
+        "title": "Implementação da Seção Experiências",
+        "description": "Criar seção de experiências profissionais com timeline ou grid",
+        "details": "Desenvolver componente Experience com timeline/grid destacando estágio na Prefeitura do Campus da USP, projetos realizados e participados, e iniciação científica. Usar design visual atrativo.",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [
+          "2"
+        ],
+        "testStrategy": "Verificar se todas as experiências estão listadas corretamente, se o layout está organizado e responsivo",
+        "complexity": 4,
+        "estimatedHours": 3,
+        "subtasks": []
+      },
+      {
+        "id": 5,
+        "title": "Implementação da Seção Projetos",
+        "description": "Criar portfólio de projetos com cards visuais",
+        "details": "Desenvolver componente Projects com cards para cada projeto: Reforma da escadaria EP-USP, Lixeiras do complexo de lanchonetes, Identidade visual (Poli, Colméias, Jardim Japonês), e Manual de identidade pictográfica.",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [
+          "2"
+        ],
+        "testStrategy": "Verificar se todos os projetos estão apresentados, se os cards estão bem organizados e responsivos",
+        "complexity": 4,
+        "estimatedHours": 3,
+        "subtasks": []
+      },
+      {
+        "id": 6,
+        "title": "Implementação da Seção Formação",
+        "description": "Criar seção de formação acadêmica e certificações",
+        "details": "Desenvolver componente Education com timeline/listagem clara da formação: ETEC Getúlio Vargas, FAUUSP, cursos complementares e certificações de idiomas (Cambridge CPE, espanhol, italiano, japonês).",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [
+          "2"
+        ],
+        "testStrategy": "Verificar se toda a formação está listada corretamente, se as certificações estão destacadas",
+        "complexity": 3,
+        "estimatedHours": 2,
+        "subtasks": []
+      },
+      {
+        "id": 7,
+        "title": "Configuração de Navegação Interna",
+        "description": "Implementar navegação suave entre seções",
+        "details": "Configurar scroll suave entre seções, links internos funcionais, e navegação responsiva. Garantir que a navegação funcione bem em todos os dispositivos.",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "testStrategy": "Testar navegação em diferentes dispositivos, verificar se o scroll suave funciona corretamente",
+        "complexity": 3,
+        "estimatedHours": 2,
+        "subtasks": []
+      },
+      {
+        "id": 8,
+        "title": "Otimização de Performance",
+        "description": "Implementar otimizações de performance e SEO básico",
+        "details": "Configurar lazy loading de imagens, otimização de fontes, meta tags para SEO, Open Graph tags, e structured data básico. Implementar loading states e animações suaves.",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [
+          "7"
+        ],
+        "testStrategy": "Executar testes de Lighthouse, verificar Core Web Vitals, testar SEO básico",
+        "complexity": 5,
+        "estimatedHours": 4,
+        "subtasks": []
+      },
+      {
+        "id": 9,
+        "title": "Testes de Responsividade",
+        "description": "Testar e ajustar responsividade em todos os dispositivos",
+        "details": "Testar em diferentes breakpoints (mobile, tablet, desktop), ajustar padding, espaçamentos, tipografia e layout para garantir experiência consistente em todos os dispositivos.",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [
+          "8"
+        ],
+        "testStrategy": "Testar em diferentes dispositivos e navegadores, verificar se o design está consistente",
+        "complexity": 4,
+        "estimatedHours": 3,
+        "subtasks": []
+      },
+      {
+        "id": 10,
+        "title": "Configuração de Deploy",
+        "description": "Configurar deploy automático na Vercel",
+        "details": "Conectar repositório à Vercel, configurar deploy automático na branch main, configurar domínio personalizado (opcional), e implementar analytics básico.",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [
+          "9"
+        ],
+        "testStrategy": "Verificar se o deploy funciona corretamente, se o site está acessível online",
+        "complexity": 3,
+        "estimatedHours": 2,
+        "subtasks": []
+      },
+      {
+        "id": 11,
+        "title": "Testes de Acessibilidade",
+        "description": "Implementar e testar acessibilidade básica",
+        "details": "Implementar acessibilidade WCAG 2.1 AA básica: contraste adequado, navegação por teclado, alt text para imagens, e estrutura semântica correta.",
+        "status": "pending",
+        "priority": "medium",
+        "dependencies": [
+          "9"
+        ],
+        "testStrategy": "Usar ferramentas de acessibilidade, testar navegação por teclado, verificar contraste",
+        "complexity": 4,
+        "estimatedHours": 3,
+        "subtasks": []
+      },
+      {
+        "id": 12,
+        "title": "Revisão Final de Conteúdo",
+        "description": "Revisar e validar todo o conteúdo do site",
+        "details": "Revisar se todos os textos estão corretos e fiéis ao currículo de Leonardo, verificar ortografia, gramática e consistência das informações apresentadas.",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [
+          "11"
+        ],
+        "testStrategy": "Revisar todo o conteúdo com o cliente, verificar se as informações estão corretas",
+        "complexity": 2,
+        "estimatedHours": 1,
+        "subtasks": []
+      },
+      {
+        "id": 13,
+        "title": "Configuração de Monitoramento",
+        "description": "Configurar monitoramento e analytics",
+        "details": "Implementar Vercel Analytics, configurar monitoramento de performance, e opcionalmente Google Analytics para acompanhar visitantes do site.",
+        "status": "pending",
+        "priority": "low",
+        "dependencies": [
+          "10"
+        ],
+        "testStrategy": "Verificar se os analytics estão funcionando, testar monitoramento de performance",
+        "complexity": 3,
+        "estimatedHours": 2,
+        "subtasks": []
+      },
+      {
+        "id": 14,
+        "title": "Documentação do Projeto",
+        "description": "Criar documentação técnica e README",
+        "details": "Criar README.md detalhado com instruções de instalação, desenvolvimento e deploy. Documentar estrutura do projeto, tecnologias utilizadas e como contribuir.",
+        "status": "pending",
+        "priority": "low",
+        "dependencies": [
+          "12"
+        ],
+        "testStrategy": "Verificar se a documentação está clara e completa",
+        "complexity": 2,
+        "estimatedHours": 1,
+        "subtasks": []
+      },
+      {
+        "id": 15,
+        "title": "Entrega e Deploy Final",
+        "description": "Finalizar projeto e fazer deploy de produção",
+        "details": "Fazer deploy final na Vercel, configurar domínio personalizado se necessário, testar site em produção, e entregar projeto ao cliente com documentação completa.",
+        "status": "pending",
+        "priority": "high",
+        "dependencies": [
+          "13",
+          "14"
+        ],
+        "testStrategy": "Testar site em produção, verificar se tudo está funcionando corretamente",
+        "complexity": 2,
+        "estimatedHours": 1,
+        "subtasks": []
+      }
+    ],
+    "metadata": {
+      "totalTasks": 15,
+      "totalEstimatedHours": 35,
+      "createdAt": "2024-12-19T10:00:00Z",
+      "lastUpdated": "2024-12-19T10:00:00Z"
+    }
+  }
+}
