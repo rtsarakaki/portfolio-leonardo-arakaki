@@ -34,7 +34,7 @@
         "title": "Implementação da Seção Perfil",
         "description": "Criar seção 'Sobre Mim' com informações pessoais e profissionais",
         "details": "Desenvolver componente Profile com card centralizado contendo texto sobre Leonardo, sua formação, experiência e competências em idiomas. Aplicar design minimalista com tipografia clara.",
-        "status": "pending",
+        "status": "done",
         "priority": "high",
         "dependencies": [
           "2"
@@ -236,7 +236,7 @@
       "lastUpdated": "2024-12-19T10:00:00Z",
       "created": "2025-08-23T17:51:42.052Z",
       "description": "Tasks for master context",
-      "updated": "2025-08-23T18:07:29.134Z"
+      "updated": "2025-08-23T18:20:39.363Z"
     }
   }
 }

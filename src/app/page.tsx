@@ -1,4 +1,5 @@
 import Section from '@/components/Section'
+import Profile from '@/components/Profile'
 
 export default function Home() {
   return (
@@ -46,25 +47,7 @@ export default function Home() {
         subtitle="Conheça um pouco mais sobre minha trajetória e paixões"
         className="bg-dark-900"
       >
-        <div className="max-w-4xl mx-auto">
-          <div className="card-hover">
-            <div className="text-center space-y-6">
-              <p className="text-lg text-dark-200 leading-relaxed">
-                Sou Leonardo Franco Arakaki, estudante de Arquitetura e Urbanismo na FAUUSP, 
-                apaixonado por design, urbanismo e comunicação visual.
-              </p>
-              <p className="text-lg text-dark-200 leading-relaxed">
-                Tenho experiência acadêmica e prática em projetos de identidade visual, 
-                mobiliário urbano e espaços arquitetônicos, além de formação sólida em design de interiores.
-              </p>
-              <p className="text-lg text-dark-200 leading-relaxed">
-                Domino o inglês em nível avançado (Cambridge Proficiency) e possuo conhecimentos 
-                em espanhol, italiano e japonês. Estou aberto a oportunidades em arquitetura, 
-                design e também como professor de inglês.
-              </p>
-            </div>
-          </div>
-        </div>
+        <Profile />
       </Section>
 
       {/* Experiências Section */}
