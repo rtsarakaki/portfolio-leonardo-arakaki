@@ -123,7 +123,7 @@
               "2.4"
             ],
             "details": "1.  **Integrar Navbar:** Abrir `src/app/layout.tsx` e adicionar o componente `<Navbar />` dentro do `<body>` ou de um wrapper apropriado para que ele seja renderizado globalmente.\n2.  **Implementar IntersectionObserver:**\n    *   Modificar `src/hooks/useNavigation.ts`.\n    *   Utilizar `useEffect` e `useRef` para gerenciar a criação e limpeza do `IntersectionObserver`.\n    *   O observador deve monitorar todos os elementos de seção relevantes (com os IDs definidos na subtask 2.4).\n    *   Quando uma seção entra na viewport com uma proporção de interseção significativa (ex: `threshold: 0.6` ou `0.7`), atualizar o `activeSectionId`.\n    *   **Condição Crítica:** O `IntersectionObserver` *não* deve atualizar `activeSectionId` quando `isNavigating` for `true` (ou seja, durante uma rolagem suave iniciada por `navigateToSection`).\n    *   Garantir a limpeza do observador no `useEffect` para evitar vazamentos de memória.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "1.  Navegar para a página principal e verificar se o `Navbar` é renderizado.\n2.  Rolar a página manualmente e observar se o `activeSectionId` (e consequentemente o estilo `isActive` das cotas) é atualizado dinamicamente conforme as seções entram na viewport.\n3.  Clicar nas cotas para navegar para as seções e verificar se a rolagem suave ocorre e se o `activeSectionId` é atualizado corretamente *após* a rolagem, sem interferência do `IntersectionObserver` durante a animação."
           },
           {
@@ -419,7 +419,7 @@
       "lastUpdated": "2024-12-19T10:00:00Z",
       "created": "2025-08-23T17:51:42.052Z",
       "description": "Tasks for master context",
-      "updated": "2025-09-14T12:48:49.939Z"
+      "updated": "2025-09-14T12:50:11.339Z"
     }
   }
 }

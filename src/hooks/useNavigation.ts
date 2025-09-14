@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export const useNavigation = () => {
   // Estado interno para controlar a seção ativa
@@ -8,6 +8,9 @@ export const useNavigation = () => {
   
   // Estado para controlar se está navegando (evita conflitos com IntersectionObserver)
   const [isNavigating, setIsNavigating] = useState<boolean>(false);
+  
+  // Ref para o IntersectionObserver
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
   /**
    * Função para navegar suavemente para uma seção específica
@@ -35,6 +38,55 @@ export const useNavigation = () => {
       setIsNavigating(false);
     }, 800);
   };
+
+  // Configurar IntersectionObserver para detectar seções visíveis
+  useEffect(() => {
+    // IDs das seções a serem observadas
+    const sectionIds = ['perfil', 'experiencias', 'formacao', 'projetos'];
+    
+    // Criar o IntersectionObserver
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        // Só atualizar se não estiver navegando manualmente
+        if (!isNavigating) {
+          // Encontrar a entrada com maior interseção
+          let maxIntersection = 0;
+          let mostVisibleSection = '';
+          
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && entry.intersectionRatio > maxIntersection) {
+              maxIntersection = entry.intersectionRatio;
+              mostVisibleSection = entry.target.id;
+            }
+          });
+          
+          // Atualizar a seção ativa se encontrou uma seção visível
+          if (mostVisibleSection && maxIntersection > 0.6) {
+            setActiveSectionId(mostVisibleSection);
+          }
+        }
+      },
+      {
+        threshold: [0.1, 0.3, 0.5, 0.7, 0.9], // Múltiplos thresholds para melhor detecção
+        rootMargin: '-10% 0px -10% 0px' // Margem para evitar mudanças muito frequentes
+      }
+    );
+
+    // Observar todas as seções
+    sectionIds.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element && observerRef.current) {
+        observerRef.current.observe(element);
+      }
+    });
+
+    // Cleanup: desconectar o observer quando o componente for desmontado
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
+  }, [isNavigating]); // Dependência do isNavigating para recriar o observer quando necessário
 
   return {
     activeSectionId,
