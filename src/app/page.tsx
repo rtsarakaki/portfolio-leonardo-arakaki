@@ -23,15 +23,17 @@ export default function Home() {
             </div>
           </div>
           
-          {/* Conteúdo principal centralizado */}
+          {/* Conteúdo principal na primeira metade (esquerda) */}
           <div className="flex-1 flex items-center justify-center">
-            <div className="text-center">
-              <h1 className="text-4xl font-bold text-white mb-4">
-                Leonardo Franco Arakaki
-              </h1>
-              <p className="text-xl text-gray-300">
-                Portfólio - Nova Página Principal
-              </p>
+            <div className="w-1/2 flex justify-center">
+              <div className="text-center">
+                <h1 className="text-4xl font-bold text-white mb-4">
+                  Leonardo Franco Arakaki
+                </h1>
+                <p className="text-xl text-gray-300">
+                  Portfólio - Nova Página Principal
+                </p>
+              </div>
             </div>
           </div>
         </div>
