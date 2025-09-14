@@ -12,7 +12,7 @@
   }
 
   .font-handwriting {
-    font-family: var(--font-handwriting), 'Noto Sans JP', sans-serif;
+    font-family: var(--font-handwriting), 'Kosugi Maru', sans-serif;
   }
 }
 
@@ -52,18 +52,42 @@
   .rustic-button {
     position: relative;
     background: 
-      radial-gradient(circle at 20% 30%, rgba(139, 69, 19, 0.3) 0%, transparent 50%),
-      radial-gradient(circle at 80% 70%, rgba(101, 67, 33, 0.4) 0%, transparent 50%),
-      radial-gradient(circle at 40% 80%, rgba(160, 82, 45, 0.2) 0%, transparent 50%),
-      linear-gradient(135deg, #d97706 0%, #b45309 30%, #92400e 70%, #78350f 100%);
-    border: 3px solid #92400e;
+      repeating-linear-gradient(
+        45deg,
+        #FFB366 0px,
+        #FFB366 2px,
+        #FFA366 2px,
+        #FFA366 4px
+      );
+    border: 3px solid #e67e22;
     box-shadow: 
-      0 0 0 1px rgba(146, 64, 14, 0.3),
+      0 0 0 1px rgba(230, 126, 34, 0.2),
+      0 2px 4px rgba(0, 0, 0, 0.2),
+      0 1px 2px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    filter: blur(0.3px) contrast(1.0) saturate(0.7);
+    clip-path: polygon(0% 0%, 92% 3%, 100% 18%, 97% 82%, 93% 97%, 7% 100%, 3% 82%, 0% 18%);
+  }
+
+  .rustic-button.active {
+    background: 
+      repeating-linear-gradient(
+        45deg,
+        #e67e22 0px,
+        #e67e22 2px,
+        #d97706 2px,
+        #d97706 4px
+      );
+    color: white;
+    border: 3px solid #c2410c;
+    box-shadow: 
+      0 0 0 1px rgba(194, 64, 12, 0.3),
+      0 4px 8px rgba(0, 0, 0, 0.3),
       0 2px 4px rgba(0, 0, 0, 0.2),
       inset 0 1px 0 rgba(255, 255, 255, 0.1),
       inset 0 -1px 0 rgba(0, 0, 0, 0.2);
     filter: blur(0.5px) contrast(1.1) saturate(0.8);
-    clip-path: polygon(0% 0%, 92% 3%, 100% 18%, 97% 82%, 93% 97%, 7% 100%, 3% 82%, 0% 18%);
   }
 
   .rustic-button::before {
@@ -73,15 +97,15 @@
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: 
-      radial-gradient(circle at 15% 25%, rgba(220, 38, 38, 0.3) 0%, transparent 30%),
-      radial-gradient(circle at 85% 75%, rgba(185, 28, 28, 0.4) 0%, transparent 30%),
-      radial-gradient(circle at 30% 20%, rgba(101, 67, 33, 0.6) 0%, transparent 40%),
-      radial-gradient(circle at 70% 80%, rgba(139, 69, 19, 0.5) 0%, transparent 40%),
-      linear-gradient(45deg, #92400e, #78350f, #451a03);
+    background: #e67e22;
     border-radius: inherit;
     z-index: -1;
     filter: blur(1px) contrast(1.2);
+    opacity: 0.5;
+  }
+
+  .rustic-button.active::before {
+    background: #c2410c;
     opacity: 0.7;
   }
 
@@ -93,25 +117,154 @@
     right: 1px;
     bottom: 1px;
     background: 
-      radial-gradient(circle at 60% 40%, rgba(160, 82, 45, 0.3) 0%, transparent 50%),
-      radial-gradient(circle at 10% 90%, rgba(139, 69, 19, 0.4) 0%, transparent 50%),
-      linear-gradient(135deg, #d97706 0%, #b45309 30%, #92400e 70%, #78350f 100%);
+      repeating-linear-gradient(
+        45deg,
+        #FFB366 0px,
+        #FFB366 2px,
+        #FFA366 2px,
+        #FFA366 4px
+      );
     border-radius: inherit;
     z-index: -1;
     filter: blur(0.3px) contrast(1.1);
     clip-path: polygon(0% 0%, 92% 3%, 100% 18%, 97% 82%, 93% 97%, 7% 100%, 3% 82%, 0% 18%);
   }
 
-  .rustic-button:hover {
-    filter: blur(0.3px);
-    transform: translateY(-1px) rotate(0.5deg);
-    clip-path: polygon(2% 2%, 90% 5%, 98% 20%, 95% 80%, 91% 95%, 9% 98%, 5% 80%, 2% 20%);
+  .rustic-button.active::after {
+    background: 
+      repeating-linear-gradient(
+        45deg,
+        #e67e22 0px,
+        #e67e22 2px,
+        #d97706 2px,
+        #d97706 4px
+      );
   }
 
-  .rustic-button:active {
+  .rustic-button:hover:not(.active) {
+    background: 
+      repeating-linear-gradient(
+        45deg,
+        #FF8C42 0px,
+        #FF8C42 2px,
+        #FF7A2E 2px,
+        #FF7A2E 4px
+      );
+    color: #0f1419;
+    filter: blur(0.4px);
+    transform: translateY(-1px) rotate(0.5deg);
+    clip-path: polygon(2% 2%, 90% 5%, 98% 20%, 95% 80%, 91% 95%, 9% 98%, 5% 80%, 2% 20%);
+    box-shadow: 
+      0 0 0 1px rgba(230, 126, 34, 0.3),
+      0 4px 8px rgba(0, 0, 0, 0.3),
+      0 2px 4px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .rustic-button.active:hover {
+    background: 
+      repeating-linear-gradient(
+        45deg,
+        #d97706 0px,
+        #d97706 2px,
+        #c2410c 2px,
+        #c2410c 4px
+      );
+    transform: translateY(-1px) rotate(0.5deg);
+    box-shadow: 
+      0 0 0 1px rgba(194, 64, 12, 0.4),
+      0 6px 12px rgba(0, 0, 0, 0.4),
+      0 3px 6px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .rustic-button:active:not(.active) {
+    background: 
+      repeating-linear-gradient(
+        45deg,
+        #ea580c 0px,
+        #ea580c 2px,
+        #dc2626 2px,
+        #dc2626 4px
+      );
+    color: white;
     filter: blur(0.8px);
     transform: translateY(1px) rotate(-0.5deg);
     clip-path: polygon(1% 1%, 94% 1%, 99% 16%, 96% 84%, 92% 99%, 6% 99%, 1% 84%, 1% 16%);
+  }
+
+  .rustic-button.active:active {
+    background: 
+      repeating-linear-gradient(
+        45deg,
+        #b45309 0px,
+        #b45309 2px,
+        #92400e 2px,
+        #92400e 4px
+      );
+    filter: blur(0.8px);
+    transform: translateY(1px) rotate(-0.5deg);
+    clip-path: polygon(1% 1%, 94% 1%, 99% 16%, 96% 84%, 92% 99%, 6% 99%, 1% 84%, 1% 16%);
+  }
+
+  /* Seção Perfil */
+  .profile-section {
+    position: relative;
+    background: 
+      repeating-linear-gradient(
+        45deg,
+        #FFB366 0px,
+        #FFB366 2px,
+        #FFA366 2px,
+        #FFA366 4px
+      );
+    border: 3px solid #e67e22;
+    box-shadow: 
+      0 0 0 1px rgba(230, 126, 34, 0.2),
+      0 2px 4px rgba(0, 0, 0, 0.2),
+      0 1px 2px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    filter: blur(0.3px) contrast(1.0) saturate(0.7);
+    clip-path: polygon(0% 0%, 98% 1%, 100% 8%, 99% 92%, 98% 99%, 2% 100%, 1% 92%, 0% 8%);
+    margin-top: 8px;
+  }
+
+  .profile-section::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: #e67e22;
+    border-radius: inherit;
+    z-index: -1;
+    filter: blur(1px) contrast(1.2);
+    opacity: 0.5;
+  }
+
+  .profile-section::after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    right: 1px;
+    bottom: 1px;
+    background: 
+      repeating-linear-gradient(
+        45deg,
+        #FFB366 0px,
+        #FFB366 2px,
+        #FFA366 2px,
+        #FFA366 4px
+      );
+    border-radius: inherit;
+    z-index: -1;
+    filter: blur(0.3px) contrast(1.1);
+    clip-path: polygon(0% 0%, 98% 1%, 100% 8%, 99% 92%, 98% 99%, 2% 100%, 1% 92%, 0% 8%);
   }
 
 }

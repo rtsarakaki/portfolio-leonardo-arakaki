@@ -42,7 +42,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        handwriting: ['var(--font-handwriting)', 'Noto Sans JP', 'sans-serif'],
+        handwriting: ['var(--font-handwriting)', 'Kosugi Maru', 'sans-serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

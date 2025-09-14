@@ -21,14 +21,15 @@ const RusticButton: React.FC<RusticButtonProps> = ({
     rustic-button
     px-6 py-3
     font-handwriting
-    text-white
+    text-[#0f1419]
     text-sm
-    font-medium
+    font-bold
+    drop-shadow-sm
     cursor-pointer
     transition-all duration-200 ease-in-out
     focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-75
     disabled:opacity-50 disabled:cursor-not-allowed
-    ${isActive ? 'opacity-90' : ''}
+    ${isActive ? 'active' : ''}
     ${className}
   `;
 

@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
-import { Inter, Noto_Sans_JP } from 'next/font/google'
+import { Inter, Kosugi_Maru } from 'next/font/google'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
-const notoSansJP = Noto_Sans_JP({ 
+const kosugiMaru = Kosugi_Maru({ 
   subsets: ['latin'],
-  weight: ['300', '400', '700'],
+  weight: ['400'],
   variable: '--font-handwriting'
 })
 
@@ -23,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={`${inter.className} ${notoSansJP.variable}`}>
+      <body className={`${inter.className} ${kosugiMaru.variable}`}>
         {/* Fundo arquitetônico fixo */}
         <div className="fixed inset-0 -z-10 architectural-background"></div>
         {children}
