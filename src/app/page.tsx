@@ -4,6 +4,7 @@ import Section from '@/components/Section'
 import Profile from '@/components/Profile'
 import { useNavigation } from '@/hooks/useNavigation'
 import Navbar from '@/components/Navbar'
+import MainFrame from '@/components/MainFrame'
 
 // Componente de teste temporário para o hook useNavigation
 function NavigationTest() {
@@ -53,8 +54,10 @@ export default function Home() {
       {/* Navbar com cotas arquitetônicas */}
       <Navbar />
       
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Main Frame com fundo azul escuro */}
+      <MainFrame>
+        {/* Hero Section */}
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Gradient */}
         <div className="absolute inset-0 bg-gradient-electric opacity-20"></div>
         
@@ -222,6 +225,7 @@ export default function Home() {
           </div>
         </div>
       </Section>
+      </MainFrame>
     </>
   )
 }
