@@ -11,3 +11,37 @@
     @apply bg-white text-gray-900;
   }
 }
+
+@layer components {
+  .architectural-background {
+    background-color: white; /* Fundo branco base */
+    background-image:
+      /* Textura de papel sutil (camada superior) */
+      radial-gradient(circle at center, rgba(0,0,0,0.02) 0%, transparent 100%),
+      /* Linhas horizontais tracejadas */
+      repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 24px, /* Espaçamento entre as linhas */
+        #D3D3D3 24px,
+        #D3D3D3 25px, /* Espessura da linha */
+        transparent 25px,
+        transparent 49px /* Ciclo completo (espaçamento + linha) */
+      ),
+      /* Linhas verticais tracejadas */
+      repeating-linear-gradient(
+        to right,
+        transparent,
+        transparent 24px,
+        #D3D3D3 24px,
+        #D3D3D3 25px,
+        transparent 25px,
+        transparent 49px
+      );
+    background-size: 50px 50px; /* Tamanho de uma célula da grade */
+    background-position: 0 0;
+    /* Garantir que o fundo cubra toda a área */
+    width: 100%;
+    height: 100%;
+  }
+}
