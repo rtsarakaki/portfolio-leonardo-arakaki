@@ -13,7 +13,7 @@ const LeonardoArakakiSVG: React.FC<LeonardoArakakiSVGProps> = ({ className = "" 
         className="w-full h-auto -skew-x-8"
       >
         {/* LEONARDO - Estilo caligrafia japonesa (COM ITÁLICO + NEGRITO) */}
-        <g stroke="#8B4513" strokeWidth="8" fill="none" strokeLinecap="round" strokeLinejoin="round">
+        <g stroke="#FF8C42" strokeWidth="8" fill="none" strokeLinecap="round" strokeLinejoin="round">
           {/* L - traço vertical com pincel */}
           <path d="M 25 25 Q 23 23 25 25 L 25 70 Q 23 68 25 70 L 45 70 Q 47 68 45 70"/>
           
@@ -40,7 +40,7 @@ const LeonardoArakakiSVG: React.FC<LeonardoArakakiSVGProps> = ({ className = "" 
         </g>
         
         {/* ARAKAKI - Estilo caligrafia japonesa (COM ITÁLICO + NEGRITO) */}
-        <g stroke="#8B4513" strokeWidth="8" fill="none" strokeLinecap="round" strokeLinejoin="round">
+        <g stroke="#FF8C42" strokeWidth="8" fill="none" strokeLinecap="round" strokeLinejoin="round">
           {/* A - triângulo com pincel */}
           <path d="M 25 150 Q 23 148 25 150 L 45 100 Q 47 98 45 100 L 65 150 Q 67 148 65 150 M 30 125 Q 28 123 30 125 L 60 125 Q 62 123 60 125"/>
           
