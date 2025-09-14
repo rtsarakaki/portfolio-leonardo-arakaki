@@ -1,9 +1,58 @@
+'use client';
+
 import Section from '@/components/Section'
 import Profile from '@/components/Profile'
+import { useNavigation } from '@/hooks/useNavigation'
+import Navbar from '@/components/Navbar'
+
+// Componente de teste temporário para o hook useNavigation
+function NavigationTest() {
+  const { activeSectionId, navigateToSection } = useNavigation();
+  
+  return (
+    <div className="fixed top-4 left-4 z-50 bg-black/80 text-white p-4 rounded-lg">
+      <p className="text-sm mb-2">Teste useNavigation:</p>
+      <p className="text-xs mb-2">Ativo: {activeSectionId}</p>
+      <div className="flex gap-2">
+        <button 
+          onClick={() => navigateToSection('perfil')}
+          className="px-2 py-1 bg-blue-600 text-xs rounded hover:bg-blue-700"
+        >
+          Perfil
+        </button>
+        <button 
+          onClick={() => navigateToSection('experiencias')}
+          className="px-2 py-1 bg-green-600 text-xs rounded hover:bg-green-700"
+        >
+          Exp
+        </button>
+        <button 
+          onClick={() => navigateToSection('formacao')}
+          className="px-2 py-1 bg-purple-600 text-xs rounded hover:bg-purple-700"
+        >
+          Form
+        </button>
+        <button 
+          onClick={() => navigateToSection('projetos')}
+          className="px-2 py-1 bg-orange-600 text-xs rounded hover:bg-orange-700"
+        >
+          Proj
+        </button>
+      </div>
+    </div>
+  );
+}
+
 
 export default function Home() {
   return (
     <>
+      {/* Componente de teste temporário */}
+      <NavigationTest />
+      
+      {/* Navbar com cotas arquitetônicas */}
+      <Navbar />
+      
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Gradient */}
