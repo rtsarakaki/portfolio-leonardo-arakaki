@@ -26,6 +26,8 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={inter.className}>
+        {/* Fundo arquitetônico fixo */}
+        <div className="fixed inset-0 -z-10 architectural-background"></div>
         <Navbar />
         <main className="pt-16 lg:pt-20">
           {children}

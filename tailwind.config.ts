@@ -34,7 +34,9 @@ const config: Config = {
         gradient: {
           start: '#00d4ff',
           end: '#7c3aed',
-        }
+        },
+        // Architectural colors
+        'architectural-gray': '#D3D3D3',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
