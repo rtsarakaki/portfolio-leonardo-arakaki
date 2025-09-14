@@ -8,7 +8,7 @@ const LeonardoArakakiSVG: React.FC<LeonardoArakakiSVGProps> = ({ className = "" 
   return (
     <div className={`w-[70%] md:w-[85%] lg:w-[100%] ${className}`}>
       <svg 
-        viewBox="0 0 500 180" 
+        viewBox="0 0 500 200" 
         xmlns="http://www.w3.org/2000/svg"
         className="w-full h-auto -skew-x-8"
       >
@@ -42,25 +42,25 @@ const LeonardoArakakiSVG: React.FC<LeonardoArakakiSVGProps> = ({ className = "" 
         {/* ARAKAKI - Estilo caligrafia japonesa (COM ITÁLICO + NEGRITO) */}
         <g stroke="#8B4513" strokeWidth="6" fill="none" strokeLinecap="round" strokeLinejoin="round">
           {/* A - triângulo com pincel */}
-          <path d="M 25 110 Q 23 108 25 110 L 45 60 Q 47 58 45 60 L 65 110 Q 67 108 65 110 M 30 85 Q 28 83 30 85 L 60 85 Q 62 83 60 85"/>
+          <path d="M 25 130 Q 23 128 25 130 L 45 80 Q 47 78 45 80 L 65 130 Q 67 128 65 130 M 30 105 Q 28 103 30 105 L 60 105 Q 62 103 60 105"/>
           
           {/* R - traços com pincel */}
-          <path d="M 80 60 Q 78 58 80 60 L 80 110 Q 78 108 80 110 M 80 60 Q 82 58 80 60 L 100 60 Q 102 58 100 60 L 100 80 Q 102 78 100 80 L 80 80 Q 78 78 80 80 L 100 110 Q 102 108 100 110"/>
+          <path d="M 80 80 Q 78 78 80 80 L 80 130 Q 78 128 80 130 M 80 80 Q 82 78 80 80 L 100 80 Q 102 78 100 80 L 100 100 Q 102 98 100 100 L 80 100 Q 78 98 80 100 L 100 130 Q 102 128 100 130"/>
           
           {/* A - triângulo com pincel */}
-          <path d="M 120 110 Q 118 108 120 110 L 140 60 Q 142 58 140 60 L 160 110 Q 162 108 160 110 M 125 85 Q 123 83 125 85 L 155 85 Q 157 83 155 85"/>
+          <path d="M 120 130 Q 118 128 120 130 L 140 80 Q 142 78 140 80 L 160 130 Q 162 128 160 130 M 125 105 Q 123 103 125 105 L 155 105 Q 157 103 155 105"/>
           
           {/* K - traços com pincel */}
-          <path d="M 180 60 Q 178 58 180 60 L 180 110 Q 178 108 180 110 M 180 85 Q 178 83 180 85 L 200 60 Q 202 58 200 60 M 180 85 Q 178 83 180 85 L 200 110 Q 202 108 200 110"/>
+          <path d="M 180 80 Q 178 78 180 80 L 180 130 Q 178 128 180 130 M 180 105 Q 178 103 180 105 L 200 80 Q 202 78 200 80 M 180 105 Q 178 103 180 105 L 200 130 Q 202 128 200 130"/>
           
           {/* A - triângulo com pincel */}
-          <path d="M 220 110 Q 218 108 220 110 L 240 60 Q 242 58 240 60 L 260 110 Q 262 108 260 110 M 225 85 Q 223 83 225 85 L 255 85 Q 257 83 255 85"/>
+          <path d="M 220 130 Q 218 128 220 130 L 240 80 Q 242 78 240 80 L 260 130 Q 262 128 260 130 M 225 105 Q 223 103 225 105 L 255 105 Q 257 103 255 105"/>
           
           {/* K - traços com pincel */}
-          <path d="M 280 60 Q 278 58 280 60 L 280 110 Q 278 108 280 110 M 280 85 Q 278 83 280 85 L 300 60 Q 302 58 300 60 M 280 85 Q 278 83 280 85 L 300 110 Q 302 108 300 110"/>
+          <path d="M 280 80 Q 278 78 280 80 L 280 130 Q 278 128 280 130 M 280 105 Q 278 103 280 105 L 300 80 Q 302 78 300 80 M 280 105 Q 278 103 280 105 L 300 130 Q 302 128 300 130"/>
           
           {/* I - traço vertical com pincel */}
-          <path d="M 320 60 Q 318 58 320 60 L 320 110 Q 318 108 320 110"/>
+          <path d="M 320 80 Q 318 78 320 80 L 320 130 Q 318 128 320 130"/>
         </g>
       </svg>
     </div>
