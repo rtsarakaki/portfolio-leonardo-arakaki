@@ -36,7 +36,7 @@ const LeonardoArakakiSVG: React.FC<LeonardoArakakiSVGProps> = ({ className = "" 
           <path d="M 280 25 Q 278 23 280 25 L 280 70 Q 278 68 280 70 M 280 25 Q 282 23 280 25 L 305 25 Q 307 23 305 25 L 305 70 Q 307 68 305 70 L 280 70 Q 278 68 280 70"/>
           
           {/* O - círculo com pincel */}
-          <path d="M 320 25 Q 318 23 320 25 L 320 70 Q 318 68 320 70 M 320 25 Q 322 23 320 25 L 345 25 Q 347 23 345 25 L 345 70 Q 347 68 345 70 L 320 70 Q 318 68 320 70"/>
+          <path d="M 330 25 Q 328 23 330 25 L 330 70 Q 328 68 330 70 M 330 25 Q 332 23 330 25 L 355 25 Q 357 23 355 25 L 355 70 Q 357 68 355 70 L 330 70 Q 328 68 330 70"/>
         </g>
         
         {/* ARAKAKI - Estilo caligrafia japonesa (COM ITÁLICO + NEGRITO) */}
