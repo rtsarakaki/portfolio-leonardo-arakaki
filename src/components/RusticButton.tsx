@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import RusticTextSVG from './RusticTextSVG';
 
 interface RusticButtonProps {
   children: React.ReactNode;
@@ -39,7 +40,7 @@ const RusticButton: React.FC<RusticButtonProps> = ({
       aria-label={`Botão ${children}`}
     >
       <span className="relative z-10">
-        {children}
+        <RusticTextSVG text={children as string} className="h-6" />
       </span>
     </button>
   );
