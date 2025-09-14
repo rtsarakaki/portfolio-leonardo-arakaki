@@ -138,7 +138,7 @@
               "2.5"
             ],
             "details": "1.  **Refinamento de Estilização:** Ajustar classes TailwindCSS em `CotaArquitetonica.tsx` e `Navbar.tsx` para otimizar a aparência visual, espessura da linha, cor e posicionamento do rótulo. Assegurar que a 'linha que se estende da borda da tela em direção ao centro' esteja visualmente correta.\n2.  **Responsividade:**\n    *   Implementar ajustes responsivos para o `Navbar` e `CotaArquitetonica` usando prefixos responsivos do Tailwind (ex: `md:`, `lg:`).\n    *   Considerar como as cotas se comportarão em telas menores (ex: ocultar, transformar em um menu mais tradicional, ou adaptar seu layout para não serem intrusivas).\n3.  **Acessibilidade:**\n    *   Garantir que os elementos `CotaArquitetonica` sejam focáveis e tenham `aria-label`s descritivos para leitores de tela.\n    *   Verificar se a navegação por teclado (tecla `Tab`) funciona corretamente para as cotas.\n    *   Checar o contraste de cores para texto e bordas, especialmente nos estados ativo e hover.\n4.  **Performance de Animação:** Testar as animações em diferentes dispositivos e navegadores para garantir fluidez e ausência de 'jank'. Ajustar a duração das transições se necessário.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "1.  Testar a aplicação em diferentes tamanhos de tela (usando ferramentas de desenvolvedor do navegador) para verificar a responsividade do `Navbar` e das cotas.\n2.  Navegar pela aplicação usando apenas o teclado (`Tab`, `Shift+Tab`, `Enter`) para verificar a acessibilidade e o foco visível.\n3.  Utilizar um leitor de tela (ex: NVDA, VoiceOver) para verificar se as cotas são anunciadas corretamente com seus `aria-label`s.\n4.  Observar as animações de hover e de estado ativo em diferentes dispositivos para garantir que são suaves e performáticas."
           }
         ]
@@ -419,7 +419,7 @@
       "lastUpdated": "2024-12-19T10:00:00Z",
       "created": "2025-08-23T17:51:42.052Z",
       "description": "Tasks for master context",
-      "updated": "2025-09-14T12:50:11.339Z"
+      "updated": "2025-09-14T12:52:11.159Z"
     }
   }
 }
