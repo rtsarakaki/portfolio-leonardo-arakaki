@@ -1,8 +1,13 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Kalam } from 'next/font/google'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
+const kalam = Kalam({ 
+  subsets: ['latin'],
+  weight: ['300', '400', '700'],
+  variable: '--font-handwriting'
+})
 
 export const metadata: Metadata = {
   title: 'Leonardo Franco Arakaki - Portfólio',
@@ -18,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={inter.className}>
+      <body className={`${inter.className} ${kalam.variable}`}>
         {/* Fundo arquitetônico fixo */}
         <div className="fixed inset-0 -z-10 architectural-background"></div>
         {children}

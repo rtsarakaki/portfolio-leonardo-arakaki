@@ -10,6 +10,10 @@
   body {
     @apply bg-white text-gray-900;
   }
+
+  .font-handwriting {
+    font-family: var(--font-handwriting), 'Kalam', cursive;
+  }
 }
 
 @layer components {
