@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protótipo - Texto Desenhado Leonardo Arakaki</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f8f9fa;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .texto-section {
+            margin-bottom: 60px;
+            padding: 30px;
+            border: 2px dashed #8B4513;
+            border-radius: 8px;
+            background: #fafafa;
+        }
+
+        .texto-section h2 {
+            margin-bottom: 20px;
+            color: #8B4513;
+            font-size: 18px;
+        }
+
+        /* Estilo Rustico para o SVG */
+        .nome-svg {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+        }
+
+        /* Variações de estilo */
+        .estilo-croqui .nome-svg {
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
+        }
+
+        .estilo-arquitetura .nome-svg {
+            filter: drop-shadow(1px 1px 2px rgba(139, 69, 19, 0.3));
+        }
+
+        .estilo-desenho .nome-svg {
+            filter: drop-shadow(0 0 3px rgba(0,0,0,0.2));
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .texto-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏗️ Protótipo - Texto Desenhado "Leonardo Arakaki"</h1>
+        
+        <div class="texto-section estilo-croqui">
+            <h2>📐 Estilo 1: Croqui Arquitetural - Manuscrito</h2>
+            <svg class="nome-svg" viewBox="0 0 500 140" xmlns="http://www.w3.org/2000/svg">
+                <!-- Linhas de construção (fundo) -->
+                <defs>
+                    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#E0E0E0" stroke-width="0.5" opacity="0.3"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid)"/>
+                
+                <!-- LEONARDO - Estilo manuscrito mais fluido -->
+                <g stroke="#8B4513" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- L -->
+                    <path d="M 20 25 L 20 75 L 45 75" stroke-dasharray="1,2"/>
+                    
+                    <!-- E -->
+                    <path d="M 55 25 L 55 75 M 55 25 L 85 25 M 55 50 L 75 50 M 55 75 L 85 75"/>
+                    
+                    <!-- O -->
+                    <path d="M 95 25 L 95 75 M 95 25 L 125 25 L 125 75 L 95 75"/>
+                    
+                    <!-- N -->
+                    <path d="M 135 25 L 135 75 M 135 25 L 165 75 M 165 25 L 165 75"/>
+                    
+                    <!-- A -->
+                    <path d="M 175 75 L 195 25 L 215 75 M 185 55 L 205 55"/>
+                    
+                    <!-- R -->
+                    <path d="M 225 25 L 225 75 M 225 25 L 245 25 L 245 45 L 225 45 L 245 75"/>
+                    
+                    <!-- D -->
+                    <path d="M 255 25 L 255 75 M 255 25 L 275 25 L 275 75 L 255 75"/>
+                    
+                    <!-- O -->
+                    <path d="M 285 25 L 285 75 M 285 25 L 315 25 L 315 75 L 285 75"/>
+                </g>
+                
+                <!-- ARAKAKI - Estilo manuscrito mais fluido -->
+                <g stroke="#8B4513" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- A -->
+                    <path d="M 20 105 L 40 135 L 60 105 M 30 120 L 50 120"/>
+                    
+                    <!-- R -->
+                    <path d="M 70 105 L 70 135 M 70 105 L 90 105 L 90 120 L 70 120 L 90 135"/>
+                    
+                    <!-- A -->
+                    <path d="M 100 135 L 120 105 L 140 135 M 110 120 L 130 120"/>
+                    
+                    <!-- K -->
+                    <path d="M 150 105 L 150 135 M 150 120 L 170 105 M 150 120 L 170 135"/>
+                    
+                    <!-- A -->
+                    <path d="M 180 135 L 200 105 L 220 135 M 190 120 L 210 120"/>
+                    
+                    <!-- K -->
+                    <path d="M 230 105 L 230 135 M 230 120 L 250 105 M 230 120 L 250 135"/>
+                    
+                    <!-- I -->
+                    <path d="M 260 105 L 260 135"/>
+                </g>
+                
+                <!-- Cotas arquiteturais -->
+                <g stroke="#8B4513" stroke-width="1" stroke-dasharray="3,3" fill="none">
+                    <!-- Cota superior -->
+                    <path d="M 10 10 L 490 10"/>
+                    <path d="M 10 5 L 10 15"/>
+                    <path d="M 490 5 L 490 15"/>
+                    <text x="250" y="8" text-anchor="middle" font-size="10" fill="#8B4513">500px</text>
+                    
+                    <!-- Cota lateral -->
+                    <path d="M 5 20 L 5 140"/>
+                    <path d="M 0 20 L 10 20"/>
+                    <path d="M 0 140 L 10 140"/>
+                    <text x="2" y="80" text-anchor="middle" font-size="10" fill="#8B4513" transform="rotate(-90 2 80)">140px</text>
+                </g>
+            </svg>
+        </div>
+
+        <div class="texto-section estilo-arquitetura">
+            <h2>🏛️ Estilo 2: Arquitetura Clássica</h2>
+            <svg class="nome-svg" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+                <!-- LEONARDO - Estilo mais elegante -->
+                <g stroke="#8B4513" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- L -->
+                    <path d="M 20 25 L 20 75 L 50 75"/>
+                    
+                    <!-- E -->
+                    <path d="M 60 25 L 60 75 M 60 25 L 90 25 M 60 50 L 80 50 M 60 75 L 90 75"/>
+                    
+                    <!-- O -->
+                    <path d="M 100 25 L 100 75 M 100 25 L 130 25 L 130 75 L 100 75"/>
+                    
+                    <!-- N -->
+                    <path d="M 140 25 L 140 75 M 140 25 L 170 75 M 170 25 L 170 75"/>
+                    
+                    <!-- A -->
+                    <path d="M 180 75 L 200 25 L 220 75 M 190 55 L 210 55"/>
+                    
+                    <!-- R -->
+                    <path d="M 230 25 L 230 75 M 230 25 L 250 25 L 250 45 L 230 45 L 250 75"/>
+                    
+                    <!-- D -->
+                    <path d="M 260 25 L 260 75 M 260 25 L 280 25 L 280 75 L 260 75"/>
+                    
+                    <!-- O -->
+                    <path d="M 290 25 L 290 75 M 290 25 L 320 25 L 320 75 L 290 75"/>
+                </g>
+                
+                <!-- ARAKAKI - Estilo mais elegante -->
+                <g stroke="#8B4513" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- A -->
+                    <path d="M 20 105 L 40 135 L 60 105 M 30 120 L 50 120"/>
+                    
+                    <!-- R -->
+                    <path d="M 70 105 L 70 135 M 70 105 L 90 105 L 90 120 L 70 120 L 90 135"/>
+                    
+                    <!-- A -->
+                    <path d="M 100 135 L 120 105 L 140 135 M 110 120 L 130 120"/>
+                    
+                    <!-- K -->
+                    <path d="M 150 105 L 150 135 M 150 120 L 170 105 M 150 120 L 170 135"/>
+                    
+                    <!-- A -->
+                    <path d="M 180 135 L 200 105 L 220 135 M 190 120 L 210 120"/>
+                    
+                    <!-- K -->
+                    <path d="M 230 105 L 230 135 M 230 120 L 250 105 M 230 120 L 250 135"/>
+                    
+                    <!-- I -->
+                    <path d="M 260 105 L 260 135"/>
+                </g>
+                
+                <!-- Linhas de construção mais sutis -->
+                <g stroke="#D3D3D3" stroke-width="0.5" stroke-dasharray="2,2" fill="none" opacity="0.4">
+                    <path d="M 0 50 L 400 50"/>
+                    <path d="M 0 100 L 400 100"/>
+                </g>
+            </svg>
+        </div>
+
+        <div class="texto-section estilo-desenho">
+            <h2>✏️ Estilo 3: Manuscrito Orgânico</h2>
+            <svg class="nome-svg" viewBox="0 0 500 140" xmlns="http://www.w3.org/2000/svg">
+                <!-- LEONARDO - Estilo manuscrito com curvas naturais -->
+                <g stroke="#8B4513" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- L - com pequenas imperfeições e curvatura -->
+                    <path d="M 20 25 Q 22 23 20 25 L 20 75 Q 18 77 20 75 L 45 75 Q 47 73 45 75"/>
+                    
+                    <!-- E - com variações e curvas suaves -->
+                    <path d="M 60 25 Q 62 23 60 25 L 60 75 Q 58 77 60 75 M 60 25 Q 58 23 60 25 L 88 25 Q 90 23 88 25 M 60 50 Q 58 48 60 50 L 82 50 Q 84 48 82 50 M 60 75 Q 58 73 60 75 L 88 75 Q 90 73 88 75"/>
+                    
+                    <!-- O - com curvatura natural -->
+                    <path d="M 100 25 Q 98 23 100 25 L 100 75 Q 98 77 100 75 M 100 25 Q 102 23 100 25 L 128 25 Q 130 23 128 25 L 128 75 Q 130 77 128 75 L 100 75 Q 98 77 100 75"/>
+                    
+                    <!-- N - com inclinação e curvas -->
+                    <path d="M 140 25 Q 142 23 140 25 L 140 75 Q 138 77 140 75 M 140 25 Q 138 23 140 25 L 168 75 Q 170 73 168 75 M 168 25 Q 170 23 168 25 L 168 75 Q 166 77 168 75"/>
+                    
+                    <!-- A - com variação e curvas suaves -->
+                    <path d="M 180 75 Q 178 77 180 75 L 200 25 Q 202 23 200 25 L 220 75 Q 222 73 220 75 M 190 55 Q 188 53 190 55 L 210 55 Q 212 53 210 55"/>
+                    
+                    <!-- R - com detalhe e curvas -->
+                    <path d="M 230 25 Q 228 23 230 25 L 230 75 Q 228 77 230 75 M 230 25 Q 232 23 230 25 L 248 25 Q 250 23 248 25 L 248 42 Q 250 40 248 42 L 230 42 Q 228 40 230 42 L 248 75 Q 250 73 248 75"/>
+                    
+                    <!-- D - com curvatura natural -->
+                    <path d="M 260 25 Q 258 23 260 25 L 260 75 Q 258 77 260 75 M 260 25 Q 262 23 260 25 L 278 25 Q 280 23 278 25 L 278 75 Q 280 77 278 75 L 260 75 Q 258 77 260 75"/>
+                    
+                    <!-- O - com variação e curvas -->
+                    <path d="M 290 25 Q 288 23 290 25 L 290 75 Q 288 77 290 75 M 290 25 Q 292 23 290 25 L 318 25 Q 320 23 318 25 L 318 75 Q 320 77 318 75 L 290 75 Q 288 77 290 75"/>
+                </g>
+                
+                <!-- ARAKAKI - Estilo manuscrito com curvas naturais -->
+                <g stroke="#8B4513" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- A -->
+                    <path d="M 20 105 Q 18 103 20 105 L 40 135 Q 42 133 40 135 L 60 105 Q 62 103 60 105 M 30 120 Q 28 118 30 120 L 50 120 Q 52 118 50 120"/>
+                    
+                    <!-- R -->
+                    <path d="M 70 105 Q 68 103 70 105 L 70 135 Q 68 137 70 135 M 70 105 Q 72 103 70 105 L 88 105 Q 90 103 88 105 L 88 120 Q 90 118 88 120 L 70 120 Q 68 118 70 120 L 88 135 Q 90 133 88 135"/>
+                    
+                    <!-- A -->
+                    <path d="M 100 135 Q 98 137 100 135 L 120 105 Q 122 103 120 105 L 140 135 Q 142 133 140 135 M 110 120 Q 108 118 110 120 L 130 120 Q 132 118 130 120"/>
+                    
+                    <!-- K -->
+                    <path d="M 150 105 Q 148 103 150 105 L 150 135 Q 148 137 150 135 M 150 120 Q 148 118 150 120 L 170 105 Q 172 103 170 105 M 150 120 Q 148 118 150 120 L 170 135 Q 172 133 170 135"/>
+                    
+                    <!-- A -->
+                    <path d="M 180 135 Q 178 137 180 135 L 200 105 Q 202 103 200 105 L 220 135 Q 222 133 220 135 M 190 120 Q 188 118 190 120 L 210 120 Q 212 118 210 120"/>
+                    
+                    <!-- K -->
+                    <path d="M 230 105 Q 228 103 230 105 L 230 135 Q 228 137 230 135 M 230 120 Q 228 118 230 120 L 250 105 Q 252 103 250 105 M 230 120 Q 228 118 230 120 L 250 135 Q 252 133 250 135"/>
+                    
+                    <!-- I -->
+                    <path d="M 260 105 Q 258 103 260 105 L 260 135 Q 258 137 260 135"/>
+                </g>
+                
+                <!-- Marcas de rascunho e imperfeições -->
+                <g stroke="#8B4513" stroke-width="1" stroke-dasharray="1,3" fill="none" opacity="0.3">
+                    <path d="M 15 15 Q 17 13 15 15 L 25 25 Q 23 27 25 25"/>
+                    <path d="M 475 15 Q 473 13 475 15 L 485 25 Q 483 27 485 25"/>
+                    <path d="M 15 125 Q 17 123 15 125 L 25 135 Q 23 137 25 135"/>
+                    <path d="M 475 125 Q 473 123 475 125 L 485 135 Q 483 137 485 135"/>
+                    
+                    <!-- Pequenas marcas de lápis -->
+                    <path d="M 50 15 Q 52 13 50 15"/>
+                    <path d="M 150 15 Q 152 13 150 15"/>
+                    <path d="M 250 15 Q 252 13 250 15"/>
+                    <path d="M 350 15 Q 352 13 350 15"/>
+                    <path d="M 450 15 Q 452 13 450 15"/>
+                </g>
+            </svg>
+        </div>
+
+        <div class="texto-section">
+            <h2>🎌 Estilo 4: Caligrafia Oriental (Japonês)</h2>
+            <svg class="nome-svg" viewBox="0 0 500 180" xmlns="http://www.w3.org/2000/svg">
+                <!-- LEONARDO - Estilo caligrafia japonesa (COM ITÁLICO + NEGRITO) -->
+                <g stroke="#8B4513" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="skewX(-8)">
+                    <!-- L - traço vertical com pincel -->
+                    <path d="M 25 25 Q 23 23 25 25 L 25 70 Q 23 68 25 70 L 45 70 Q 47 68 45 70"/>
+                    
+                    <!-- E - traços horizontais com pincel -->
+                    <path d="M 60 25 Q 58 23 60 25 L 60 70 Q 58 68 60 70 M 60 25 Q 62 23 60 25 L 85 25 Q 87 23 85 25 M 60 47 Q 58 45 60 47 L 80 47 Q 82 45 80 47 M 60 70 Q 58 68 60 70 L 85 70 Q 87 68 85 70"/>
+                    
+                    <!-- O - círculo com pincel -->
+                    <path d="M 100 25 Q 98 23 100 25 L 100 70 Q 98 68 100 70 M 100 25 Q 102 23 100 25 L 125 25 Q 127 23 125 25 L 125 70 Q 127 68 125 70 L 100 70 Q 98 68 100 70"/>
+                    
+                    <!-- N - traços diagonais com pincel -->
+                    <path d="M 140 25 Q 138 23 140 25 L 140 70 Q 138 68 140 70 M 140 25 Q 142 23 140 25 L 165 70 Q 167 68 165 70 M 165 25 Q 167 23 165 25 L 165 70 Q 163 68 165 70"/>
+                    
+                    <!-- A - triângulo com pincel (corrigido) -->
+                    <path d="M 180 70 Q 178 68 180 70 L 200 25 Q 202 23 200 25 L 220 70 Q 222 68 220 70 M 185 50 Q 183 48 185 50 L 215 50 Q 217 48 215 50"/>
+                    
+                    <!-- R - traços com pincel -->
+                    <path d="M 230 25 Q 228 23 230 25 L 230 70 Q 228 68 230 70 M 230 25 Q 232 23 230 25 L 250 25 Q 252 23 250 25 L 250 45 Q 252 43 250 45 L 230 45 Q 228 43 230 45 L 250 70 Q 252 68 250 70"/>
+                    
+                    <!-- D - traços com pincel -->
+                    <path d="M 260 25 Q 258 23 260 25 L 260 70 Q 258 68 260 70 M 260 25 Q 262 23 260 25 L 285 25 Q 287 23 285 25 L 285 70 Q 287 68 285 70 L 260 70 Q 258 68 260 70"/>
+                    
+                    <!-- O - círculo com pincel -->
+                    <path d="M 295 25 Q 293 23 295 25 L 295 70 Q 293 68 295 70 M 295 25 Q 297 23 295 25 L 320 25 Q 322 23 320 25 L 320 70 Q 322 68 320 70 L 295 70 Q 293 68 295 70"/>
+                </g>
+                
+                <!-- ARAKAKI - Estilo caligrafia japonesa (DIMENSÕES EXATAS do LEONARDO, ESPAÇAMENTO DOBRADO + ITÁLICO + NEGRITO) -->
+                <g stroke="#8B4513" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="skewX(-8)">
+                    <!-- A - IGUAL ao A do LEONARDO (mesmo tamanho e triângulo correto, dimensões exatas) -->
+                    <path d="M 25 140 Q 23 138 25 140 L 45 95 Q 47 93 45 95 L 65 140 Q 67 138 65 140 M 35 120 Q 33 118 35 120 L 55 120 Q 57 118 55 120"/>
+                    
+                    <!-- R - traços com pincel (mesmo tamanho, dimensões exatas) -->
+                    <path d="M 75 95 Q 73 93 75 95 L 75 140 Q 73 138 75 140 M 75 95 Q 77 93 75 95 L 95 95 Q 97 93 95 95 L 95 115 Q 97 113 95 115 L 75 115 Q 73 113 75 115 L 95 140 Q 97 138 95 140"/>
+                    
+                    <!-- A - IGUAL ao A do LEONARDO (mesmo tamanho e triângulo correto, dimensões exatas) -->
+                    <path d="M 105 140 Q 103 138 105 140 L 125 95 Q 127 93 125 95 L 145 140 Q 147 138 145 140 M 115 120 Q 113 118 115 120 L 135 120 Q 137 118 135 120"/>
+                    
+                    <!-- K - traços diagonais com pincel (mesmo tamanho, dimensões exatas) -->
+                    <path d="M 155 95 Q 153 93 155 95 L 155 140 Q 153 138 155 140 M 155 117 Q 153 115 155 117 L 175 95 Q 177 93 175 95 M 155 117 Q 153 115 155 117 L 175 140 Q 177 138 175 140"/>
+                    
+                    <!-- A - IGUAL ao A do LEONARDO (mesmo tamanho e triângulo correto, dimensões exatas) -->
+                    <path d="M 185 140 Q 183 138 185 140 L 205 95 Q 207 93 205 95 L 225 140 Q 227 138 225 140 M 195 120 Q 193 118 195 120 L 215 120 Q 217 118 215 120"/>
+                    
+                    <!-- K - traços diagonais com pincel (mesmo tamanho, dimensões exatas) -->
+                    <path d="M 235 95 Q 233 93 235 95 L 235 140 Q 233 138 235 140 M 235 117 Q 233 115 235 117 L 255 95 Q 257 93 255 95 M 235 117 Q 233 115 235 117 L 255 140 Q 257 138 255 140"/>
+                    
+                    <!-- I - traço vertical com pincel (mesmo tamanho, dimensões exatas) -->
+                    <path d="M 265 95 Q 263 93 265 95 L 265 140 Q 263 138 265 140"/>
+                </g>
+                
+                <!-- Elementos decorativos orientais -->
+                <g stroke="#8B4513" stroke-width="1" stroke-dasharray="3,6" fill="none" opacity="0.3">
+                    <!-- Linhas de construção sutis -->
+                    <path d="M 10 20 Q 12 18 10 20 L 490 20 Q 488 18 490 20"/>
+                    <path d="M 10 100 Q 12 98 10 100 L 490 100 Q 488 98 490 100"/>
+                    
+                    <!-- Marcas de pincel nos cantos -->
+                    <path d="M 15 15 Q 17 13 15 15 L 20 20 Q 18 22 20 20"/>
+                    <path d="M 480 15 Q 478 13 480 15 L 485 20 Q 483 22 485 20"/>
+                    <path d="M 15 125 Q 17 123 15 125 L 20 130 Q 18 132 20 130"/>
+                    <path d="M 480 125 Q 478 123 480 125 L 485 130 Q 483 132 485 130"/>
+                    
+                    <!-- Pequenos traços decorativos -->
+                    <path d="M 50 15 Q 52 13 50 15"/>
+                    <path d="M 150 15 Q 152 13 150 15"/>
+                    <path d="M 250 15 Q 252 13 250 15"/>
+                    <path d="M 350 15 Q 352 13 350 15"/>
+                    <path d="M 450 15 Q 452 13 450 15"/>
+                </g>
+            </svg>
+        </div>
+
+        <div class="texto-section">
+            <h2>🎨 Variações de Cor e Estilo</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px;">
+                
+                <!-- Variação 1: Cor terrosa -->
+                <div>
+                    <h3 style="color: #8B4513; margin-bottom: 10px;">Cor Terrosa</h3>
+                    <svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                        <g stroke="#8B4513" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M 10 10 L 10 40 L 30 40"/>
+                            <path d="M 40 10 L 40 40 M 40 10 L 60 10 M 40 25 L 55 25 M 40 40 L 60 40"/>
+                            <path d="M 70 10 L 70 40 M 70 10 L 90 10 L 90 40 L 70 40"/>
+                            <path d="M 100 10 L 100 40 M 100 10 L 120 40 M 120 10 L 120 40"/>
+                            <path d="M 130 40 L 140 10 L 150 40 M 135 25 L 145 25"/>
+                            <path d="M 160 10 L 160 40 M 160 10 L 180 10 L 180 25 L 160 25 L 180 40"/>
+                        </g>
+                    </svg>
+                </div>
+
+                <!-- Variação 2: Cor azul -->
+                <div>
+                    <h3 style="color: #4682B4; margin-bottom: 10px;">Cor Azul</h3>
+                    <svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                        <g stroke="#4682B4" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M 10 10 L 10 40 L 30 40"/>
+                            <path d="M 40 10 L 40 40 M 40 10 L 60 10 M 40 25 L 55 25 M 40 40 L 60 40"/>
+                            <path d="M 70 10 L 70 40 M 70 10 L 90 10 L 90 40 L 70 40"/>
+                            <path d="M 100 10 L 100 40 M 100 10 L 120 40 M 120 10 L 120 40"/>
+                            <path d="M 130 40 L 140 10 L 150 40 M 135 25 L 145 25"/>
+                            <path d="M 160 10 L 160 40 M 160 10 L 180 10 L 180 25 L 160 25 L 180 40"/>
+                        </g>
+                    </svg>
+                </div>
+
+                <!-- Variação 3: Cor verde -->
+                <div>
+                    <h3 style="color: #228B22; margin-bottom: 10px;">Cor Verde</h3>
+                    <svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                        <g stroke="#228B22" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M 10 10 L 10 40 L 30 40"/>
+                            <path d="M 40 10 L 40 40 M 40 10 L 60 10 M 40 25 L 55 25 M 40 40 L 60 40"/>
+                            <path d="M 70 10 L 70 40 M 70 10 L 90 10 L 90 40 L 70 40"/>
+                            <path d="M 100 10 L 100 40 M 100 10 L 120 40 M 120 10 L 120 40"/>
+                            <path d="M 130 40 L 140 10 L 150 40 M 135 25 L 145 25"/>
+                            <path d="M 160 10 L 160 40 M 160 10 L 180 10 L 180 25 L 160 25 L 180 40"/>
+                        </g>
+                    </svg>
+                </div>
+
+                <!-- Variação 4: Cor vermelha -->
+                <div>
+                    <h3 style="color: #DC143C; margin-bottom: 10px;">Cor Vermelha</h3>
+                    <svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                        <g stroke="#DC143C" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M 10 10 L 10 40 L 30 40"/>
+                            <path d="M 40 10 L 40 40 M 40 10 L 60 10 M 40 25 L 55 25 M 40 40 L 60 40"/>
+                            <path d="M 70 10 L 70 40 M 70 10 L 90 10 L 90 40 L 70 40"/>
+                            <path d="M 100 10 L 100 40 M 100 10 L 120 40 M 120 10 L 120 40"/>
+                            <path d="M 130 40 L 140 10 L 150 40 M 135 25 L 145 25"/>
+                            <path d="M 160 10 L 160 40 M 160 10 L 180 10 L 180 25 L 160 25 L 180 40"/>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="texto-section">
+            <h2>📱 Responsividade</h2>
+            <p style="margin-bottom: 20px; color: #666;">
+                O texto SVG é totalmente responsivo e se adapta a qualquer tamanho de tela. 
+                As proporções são mantidas e a qualidade permanece nítida em qualquer resolução.
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px;">
+                <div style="text-align: center;">
+                    <h4 style="color: #8B4513; margin-bottom: 10px;">Desktop</h4>
+                    <svg width="150" height="45" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                        <g stroke="#8B4513" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M 10 10 L 10 40 L 30 40"/>
+                            <path d="M 40 10 L 40 40 M 40 10 L 60 10 M 40 25 L 55 25 M 40 40 L 60 40"/>
+                            <path d="M 70 10 L 70 40 M 70 10 L 90 10 L 90 40 L 70 40"/>
+                            <path d="M 100 10 L 100 40 M 100 10 L 120 40 M 120 10 L 120 40"/>
+                            <path d="M 130 40 L 140 10 L 150 40 M 135 25 L 145 25"/>
+                            <path d="M 160 10 L 160 40 M 160 10 L 180 10 L 180 25 L 160 25 L 180 40"/>
+                        </g>
+                    </svg>
+                </div>
+                
+                <div style="text-align: center;">
+                    <h4 style="color: #8B4513; margin-bottom: 10px;">Tablet</h4>
+                    <svg width="120" height="36" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                        <g stroke="#8B4513" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M 10 10 L 10 40 L 30 40"/>
+                            <path d="M 40 10 L 40 40 M 40 10 L 60 10 M 40 25 L 55 25 M 40 40 L 60 40"/>
+                            <path d="M 70 10 L 70 40 M 70 10 L 90 10 L 90 40 L 70 40"/>
+                            <path d="M 100 10 L 100 40 M 100 10 L 120 40 M 120 10 L 120 40"/>
+                            <path d="M 130 40 L 140 10 L 150 40 M 135 25 L 145 25"/>
+                            <path d="M 160 10 L 160 40 M 160 10 L 180 10 L 180 25 L 160 25 L 180 40"/>
+                        </g>
+                    </svg>
+                </div>
+                
+                <div style="text-align: center;">
+                    <h4 style="color: #8B4513; margin-bottom: 10px;">Mobile</h4>
+                    <svg width="90" height="27" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                        <g stroke="#8B4513" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M 10 10 L 10 40 L 30 40"/>
+                            <path d="M 40 10 L 40 40 M 40 10 L 60 10 M 40 25 L 55 25 M 40 40 L 60 40"/>
+                            <path d="M 70 10 L 70 40 M 70 10 L 90 10 L 90 40 L 70 40"/>
+                            <path d="M 100 10 L 100 40 M 100 10 L 120 40 M 120 10 L 120 40"/>
+                            <path d="M 130 40 L 140 10 L 150 40 M 135 25 L 145 25"/>
+                            <path d="M 160 10 L 160 40 M 160 10 L 180 10 L 180 25 L 160 25 L 180 40"/>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

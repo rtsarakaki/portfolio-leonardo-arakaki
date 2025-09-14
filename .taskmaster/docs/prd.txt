@@ -1,208 +1,281 @@
-# Product Requirement Document (PRD) – Site Portfólio Leonardo Franco Arakaki
+# Product Requirement Document (PRD) – Portfólio Arquitetônico Interativo Leonardo Arakaki
 
 ## 1. Visão Geral do Projeto
 
 ### Objetivo
-Criar um site portfólio profissional em Next.js com TailwindCSS para apresentar o perfil, experiências, projetos e formação de Leonardo Franco Arakaki, estudante de Arquitetura e Urbanismo na FAUUSP.
+Criar um portfólio arquitetônico interativo em Next.js com design inspirado em croquis arquitetônicos, utilizando sistema de navegação dinâmica com "cotas arquiteturais" e animações de expansão direcionais.
 
-### Propósito
-- Servir como portfólio profissional para atrair recrutadores
-- Apresentar projetos de arquitetura e design
-- Demonstrar competências em idiomas para oportunidades de ensino
-- Estabelecer presença digital profissional
+### Conceito Visual
+- **Estética**: Croqui arquitetônico com linhas rusticas e estilo desenhado à mão
+- **Navegação**: Sistema de cotas arquiteturais que indicam direção de expansão
+- **Tipografia**: Nome "Leonardo Arakaki" em estilo caligrafia oriental/japonesa customizada
+- **Interatividade**: Animações de expansão baseadas na posição das cotas
 
-## 2. User Personas
+## 2. User Stories - Epic 1: Sistema de Navegação Arquitetônica
 
-### Persona 1: Recrutadores de Empresas
-- **Perfil**: Recrutadores de empresas de arquitetura/design
-- **Objetivo**: Encontrar candidatos com boa formação acadêmica e experiência prática
-- **Necessidades**: Visualizar projetos, experiência e formação acadêmica
+### US-001: Navegação Principal com Cotas
+**Como** um visitante do portfólio  
+**Quero** navegar entre seções usando um sistema visual inspirado em desenhos arquitetônicos  
+**Para que** eu tenha uma experiência única e memorável
 
-### Persona 2: Escritórios Independentes
-- **Perfil**: Escritórios de arquitetura e design independentes
-- **Objetivo**: Identificar talentos para projetos específicos
-- **Necessidades**: Portfólio de projetos e habilidades técnicas
+**Critérios de Aceitação:**
+- [ ] Menu principal com 4 seções: Perfil, Experiências, Formação, Projetos
+- [ ] Cada seção possui uma "cota arquitetônica" indicando direção de expansão
+- [ ] Cotas são linhas tracejadas rusticas na cor #8B4513
+- [ ] Posicionamento das cotas: Perfil (lateral esquerda), Experiências (inferior), Formação (lateral direita), Projetos (superior)
 
-### Persona 3: Alunos de Inglês
-- **Perfil**: Escolas e alunos interessados em aulas de inglês
-- **Objetivo**: Encontrar professor qualificado
-- **Necessidades**: Informações sobre certificações e experiência em ensino
+### US-002: Animações de Expansão Direcionais
+**Como** um usuário interagindo com o portfólio  
+**Quero** que as seções se expandam na direção indicada pela cota  
+**Para que** eu entenda visualmente o fluxo de navegação
 
-## 3. Especificações Técnicas
+**Critérios de Aceitação:**
+- [ ] Perfil: expansão da esquerda para direita (cota lateral esquerda)
+- [ ] Experiências: expansão de baixo para cima (cota inferior)
+- [ ] Formação: expansão da direita para esquerda (cota lateral direita)
+- [ ] Projetos: expansão de cima para baixo (cota superior)
+- [ ] Duração da animação: 0.6s com easing cubic-bezier(0.4, 0, 0.2, 1)
+- [ ] Apenas uma seção pode estar expandida por vez
+
+## 3. User Stories - Epic 2: Tipografia Customizada
+
+### US-003: Nome em Caligrafia Oriental
+**Como** um visitante do portfólio  
+**Quero** ver o nome "Leonardo Arakaki" em estilo caligrafia japonesa customizada  
+**Para que** eu tenha uma primeira impressão impactante e única
+
+**Critérios de Aceitação:**
+- [ ] Nome renderizado em SVG com traços de pincel
+- [ ] Estilo caligrafia oriental/japonesa
+- [ ] Cor #8B4513 (marrom arquitetônico)
+- [ ] Stroke-width: 6px (negrito)
+- [ ] Transform: skewX(-8) (itálico sutil)
+- [ ] Espaçamento vertical: 25px entre "Leonardo" e "Arakaki"
+- [ ] Dimensões idênticas: 45px altura para ambos os nomes
+
+### US-004: Responsividade da Tipografia
+**Como** um usuário em diferentes dispositivos  
+**Quero** que o nome mantenha proporções adequadas  
+**Para que** eu tenha boa legibilidade em qualquer tela
+
+**Critérios de Aceitação:**
+- [ ] Escala proporcional em mobile (70% do tamanho desktop)
+- [ ] Escala proporcional em tablet (85% do tamanho desktop)
+- [ ] Mantém proporções de stroke e espaçamento
+- [ ] ViewBox SVG responsivo
+
+## 4. User Stories - Epic 3: Layout Arquitetônico
+
+### US-005: Estrutura Base do Layout
+**Como** um desenvolvedor  
+**Quero** implementar a estrutura base do layout arquitetônico  
+**Para que** eu tenha uma base sólida para as funcionalidades
+
+**Critérios de Aceitação:**
+- [ ] Container principal com textura de papel sutil
+- [ ] Sistema de grid responsivo
+- [ ] Área de navegação fixa no topo
+- [ ] Área de conteúdo principal expansível
+- [ ] Footer com informações de contato
+
+### US-006: Sistema de Cotas Visuais
+**Como** um usuário navegando pelo portfólio  
+**Quero** ver cotas arquitetônicas que guiem minha navegação  
+**Para que** eu entenda a estrutura do site
+
+**Critérios de Aceitação:**
+- [ ] Cotas são linhas tracejadas com stroke-dasharray="5,3"
+- [ ] Cor #8B4513 com opacity 0.7
+- [ ] Posicionamento correto para cada seção
+- [ ] Animações sutis ao hover
+- [ ] Indicadores de direção de expansão
+
+## 5. User Stories - Epic 4: Seções de Conteúdo
+
+### US-007: Seção Perfil
+**Como** um recrutador visitando o portfólio  
+**Quero** ver informações pessoais e profissionais do Leonardo  
+**Para que** eu possa avaliar seu perfil
+
+**Critérios de Aceitação:**
+- [ ] Foto profissional do Leonardo
+- [ ] Texto de apresentação
+- [ ] Habilidades principais
+- [ ] Links para redes sociais
+- [ ] Expansão da esquerda para direita
+- [ ] Cota lateral esquerda visível
+
+### US-008: Seção Experiências
+**Como** um recrutador interessado na experiência profissional  
+**Quero** ver o histórico de trabalhos e projetos do Leonardo  
+**Para que** eu possa avaliar sua experiência
+
+**Critérios de Aceitação:**
+- [ ] Timeline de experiências profissionais
+- [ ] Estágio na Prefeitura do Campus USP
+- [ ] Projetos de comunicação visual
+- [ ] Iniciação científica
+- [ ] Expansão de baixo para cima
+- [ ] Cota inferior horizontal
+
+### US-009: Seção Formação
+**Como** um recrutador avaliando a formação acadêmica  
+**Quero** ver a trajetória educacional do Leonardo  
+**Para que** eu possa entender sua base acadêmica
+
+**Critérios de Aceitação:**
+- [ ] Formação em Arquitetura e Urbanismo (FAUUSP)
+- [ ] Técnico em Design de Interiores (ETEC)
+- [ ] Certificações de idiomas
+- [ ] Cursos complementares
+- [ ] Expansão da direita para esquerda
+- [ ] Cota lateral direita
+
+### US-010: Seção Projetos
+**Como** um recrutador interessado no portfólio de projetos  
+**Quero** ver os trabalhos realizados pelo Leonardo  
+**Para que** eu possa avaliar suas competências práticas
+
+**Critérios de Aceitação:**
+- [ ] Grid de projetos com imagens
+- [ ] Modal de detalhamento ao clicar
+- [ ] Projetos: Escadaria EP-USP, Lixeiras, Identidade Visual
+- [ ] Expansão de cima para baixo
+- [ ] Cotas superiores em cada projeto
+
+## 6. User Stories - Epic 5: Interatividade e Animações
+
+### US-011: Sistema de Estados
+**Como** um usuário interagindo com o portfólio  
+**Quero** que o sistema gerencie corretamente os estados das seções  
+**Para que** eu tenha uma experiência fluida
+
+**Critérios de Aceitação:**
+- [ ] Estado inicial: apenas navegação visível
+- [ ] Estado expandido: seção ativa com conteúdo
+- [ ] Transição entre seções: fechar atual, abrir nova
+- [ ] Estado de loading durante transições
+- [ ] Persistência do estado durante navegação
+
+### US-012: Animações de Transição
+**Como** um usuário navegando entre seções  
+**Quero** ver animações suaves e elegantes  
+**Para que** eu tenha uma experiência premium
+
+**Critérios de Aceitação:**
+- [ ] Animações CSS com transform e opacity
+- [ ] Duração: 0.6s com easing suave
+- [ ] Direção baseada na posição da cota
+- [ ] Animações de entrada e saída
+- [ ] Performance otimizada (60fps)
+
+## 7. User Stories - Epic 6: Responsividade e Acessibilidade
+
+### US-013: Design Responsivo
+**Como** um usuário em diferentes dispositivos  
+**Quero** que o portfólio funcione perfeitamente em qualquer tela  
+**Para que** eu possa acessar o conteúdo adequadamente
+
+**Critérios de Aceitação:**
+- [ ] Mobile-first design
+- [ ] Breakpoints: sm (640px), md (768px), lg (1024px), xl (1280px)
+- [ ] Navegação adaptada para mobile
+- [ ] Tipografia responsiva
+- [ ] Imagens otimizadas
+
+### US-014: Acessibilidade
+**Como** um usuário com necessidades especiais  
+**Quero** que o portfólio seja acessível  
+**Para que** eu possa navegar e consumir o conteúdo
+
+**Critérios de Aceitação:**
+- [ ] Navegação por teclado
+- [ ] Contraste adequado (WCAG 2.1 AA)
+- [ ] Alt text em imagens
+- [ ] ARIA labels apropriados
+- [ ] Foco visível em elementos interativos
+
+## 8. Especificações Técnicas
 
 ### Stack Tecnológica
 - **Framework**: Next.js 14+ (App Router)
-- **Styling**: TailwindCSS
+- **Styling**: TailwindCSS + CSS customizado
 - **Linguagem**: TypeScript
+- **Animações**: CSS Transitions + Framer Motion (se necessário)
+- **SVG**: Custom para tipografia
 - **Deploy**: Vercel
-- **Versionamento**: Git/GitHub
 
-### Requisitos Técnicos
-- Design responsivo (mobile-first)
-- Performance otimizada (Core Web Vitals)
-- SEO básico implementado
-- Acessibilidade (WCAG 2.1 AA)
-- Loading states e animações suaves
+### Estrutura de Componentes
+```
+src/
+├── app/
+│   ├── layout.tsx
+│   ├── page.tsx
+│   └── globals.css
+├── components/
+│   ├── Navigation/
+│   │   ├── Navbar.tsx
+│   │   ├── CotaArquitetonica.tsx
+│   │   └── MenuItem.tsx
+│   ├── Typography/
+│   │   └── NomeCustomizado.tsx
+│   ├── Sections/
+│   │   ├── Perfil.tsx
+│   │   ├── Experiencias.tsx
+│   │   ├── Formacao.tsx
+│   │   └── Projetos.tsx
+│   ├── Layout/
+│   │   ├── Container.tsx
+│   │   └── Footer.tsx
+│   └── Animations/
+│       ├── ExpansionAnimation.tsx
+│       └── TransitionWrapper.tsx
+├── hooks/
+│   ├── useNavigation.ts
+│   └── useAnimation.ts
+├── types/
+│   └── index.ts
+└── styles/
+    ├── globals.css
+    └── animations.css
+```
 
-## 4. Estrutura de Conteúdo
-
-### Seção 1: Perfil (Sobre Mim)
-**Título**: Sobre mim
-
-**Conteúdo**:
-Sou Leonardo Franco Arakaki, estudante de Arquitetura e Urbanismo na FAUUSP, apaixonado por design, urbanismo e comunicação visual.
-
-Tenho experiência acadêmica e prática em projetos de identidade visual, mobiliário urbano e espaços arquitetônicos, além de formação sólida em design de interiores.
-
-Domino o inglês em nível avançado (Cambridge Proficiency) e possuo conhecimentos em espanhol, italiano e japonês. Estou aberto a oportunidades em arquitetura, design e também como professor de inglês.
-
-### Seção 2: Experiências Profissionais
-**Título**: Experiência Profissional
-
-**Conteúdo**:
-- **Estágio na Prefeitura do Campus da USP (2019)**
-  - Responsável por projetos de comunicação visual
-  - Impacto direto na vivência dos estudantes e visitantes
-
-- **Projetos Realizados**:
-  - Reforma da escadaria da Av. Prof. Almeida Prado (EP-USP)
-  - Readequação das lixeiras do complexo de lanchonetes
-
-- **Projetos Participados**:
-  - Comunicação visual da Poli Engenharia Civil
-  - Colméias e Jardim Japonês
-
-- **Iniciação Científica (2019–2020)**:
-  - FAUUSP sobre representação pictográfica em design
-  - Criação de manual de identidade para pesquisas acadêmicas
-
-### Seção 3: Portfólio de Projetos
-**Título**: Portfólio de Projetos
-
-**Projetos**:
-1. **Reforma da escadaria – EP-USP**
-   - Projeto de revitalização para melhorar circulação e estética
-
-2. **Lixeiras do complexo de lanchonetes**
-   - Readequação para melhor integração urbana
-
-3. **Identidade visual**
-   - Poli Engenharia Civil
-   - Colméias e Jardim Japonês
-
-4. **Manual de identidade pictográfica**
-   - Para pesquisa acadêmica
-
-### Seção 4: Formação e Certificações
-**Título**: Formação Acadêmica e Certificações
-
-**Formação**:
-- **ETEC Getúlio Vargas (2010–2012)**: Ensino Médio + Técnico em Design de Interiores
-- **FAUUSP (2016–presente)**: Graduação em Arquitetura e Urbanismo
-
-**Cursos Complementares**:
-- Edição de imagens e pintura digital (Escola SAGA)
-
-**Idiomas**:
-- Inglês avançado (Cambridge CPE 2019)
-- Espanhol básico
-- Italiano básico
-- Japonês básico (FFLCH-USP)
-
-## 5. Design e UX
-
-### Princípios de Design
-- **Minimalista**: Foco no conteúdo, sem elementos desnecessários
-- **Limpo**: Tipografia clara e espaçamento adequado
-- **Profissional**: Paleta de cores neutra e elegante
-
-### Paleta de Cores
-- **Primária**: Tons neutros (branco, cinza, preto)
-- **Destaque**: Azul ou verde (inspirado em arquitetura)
-- **Acessibilidade**: Contraste adequado para leitura
-
-### Layout
-- **Responsivo**: Desktop, tablet e mobile
-- **Cards**: Cada seção em card com título em destaque
-- **Navegação**: Navbar fixa com links para seções
-- **Footer**: Informações de contato
-
-## 6. Funcionalidades
-
-### Navegação
-- Menu de navegação responsivo
-- Links internos para seções
-- Scroll suave entre seções
-
-### Responsividade
-- Mobile-first design
-- Breakpoints: sm (640px), md (768px), lg (1024px), xl (1280px)
-- Imagens otimizadas para diferentes dispositivos
-
-### Performance
-- Lazy loading de imagens
-- Otimização de fontes
-- Bundle size otimizado
-
-## 7. Critérios de Sucesso
+## 9. Critérios de Sucesso
 
 ### Funcionais
-- [ ] Site online e acessível
-- [ ] Todas as seções implementadas com conteúdo completo
-- [ ] Navegação funcional entre seções
-- [ ] Design responsivo em todos os dispositivos
+- [ ] Sistema de navegação com cotas arquitetônicas funcionando
+- [ ] Animações de expansão direcionais implementadas
+- [ ] Tipografia customizada "Leonardo Arakaki" renderizada
+- [ ] Todas as 4 seções de conteúdo implementadas
+- [ ] Responsividade em todos os dispositivos
 
 ### Técnicos
-- [ ] Repositório no GitHub com histórico de commits
-- [ ] Deploy automático na Vercel
 - [ ] Performance otimizada (Lighthouse score > 90)
+- [ ] Código TypeScript sem erros
+- [ ] Componentes reutilizáveis e bem estruturados
+- [ ] Animações suaves (60fps)
 - [ ] SEO básico implementado
 
-### Qualidade
-- [ ] Layout minimalista e profissional
-- [ ] Tipografia clara e legível
-- [ ] Conteúdo fiel ao currículo de Leonardo
-- [ ] Acessibilidade básica implementada
+### Visuais
+- [ ] Estética de croqui arquitetônico consistente
+- [ ] Cotas arquitetônicas posicionadas corretamente
+- [ ] Tipografia oriental/japonesa implementada
+- [ ] Animações direcionais funcionando
+- [ ] Design responsivo e acessível
 
-## 8. Estrutura de Arquivos
+## 10. Definição de Pronto (DoD)
 
-```
-portfolio-leonardo/
-├── src/
-│   ├── app/
-│   │   ├── layout.tsx
-│   │   ├── page.tsx
-│   │   └── globals.css
-│   ├── components/
-│   │   ├── Navbar.tsx
-│   │   ├── Footer.tsx
-│   │   ├── Profile.tsx
-│   │   ├── Experience.tsx
-│   │   ├── Projects.tsx
-│   │   └── Education.tsx
-│   └── types/
-│       └── index.ts
-├── public/
-│   └── images/
-├── tailwind.config.js
-├── next.config.js
-├── package.json
-└── README.md
-```
+### Para cada User Story:
+- [ ] Código implementado e testado
+- [ ] Responsividade verificada
+- [ ] Acessibilidade validada
+- [ ] Performance otimizada
+- [ ] Code review aprovado
+- [ ] Documentação atualizada
 
-## 9. Considerações de Deploy
-
-### Vercel
-- Deploy automático na branch main
-- Domínio personalizado (opcional)
-- Analytics básico
-
-### SEO
-- Meta tags para redes sociais
-- Open Graph tags
-- Structured data básico
-
-### Monitoramento
-- Google Analytics (opcional)
-- Vercel Analytics
-- Performance monitoring
+### Para o Projeto:
+- [ ] Todas as User Stories implementadas
+- [ ] Testes de integração passando
+- [ ] Deploy em produção funcionando
+- [ ] Documentação completa
+- [ ] Treinamento do usuário final (se necessário)
