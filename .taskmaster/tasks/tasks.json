@@ -110,7 +110,7 @@
               "2.3"
             ],
             "details": "1.  Abrir `src/app/page.tsx`.\n2.  Identificar ou criar as áreas de conteúdo para 'Perfil', 'Experiências', 'Formação' e 'Projetos'.\n3.  Envolver o conteúdo de cada seção em um elemento `<section>` ou `<div>`.\n4.  Atribuir um `id` único e correspondente a cada seção (ex: `<section id='perfil'>`, `<section id='experiencias'>`, `<section id='formacao'>`, `<section id='projetos'>`).\n5.  Garantir que cada seção tenha altura suficiente (ex: `min-h-screen` ou uma altura fixa para teste) para que a rolagem seja possível e o `IntersectionObserver` possa detectá-las.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "1.  Verificar a modificação de `src/app/page.tsx`.\n2.  Inspecionar o DOM no navegador para confirmar que as seções possuem os IDs corretos.\n3.  Rolar a página para verificar se as seções têm altura suficiente e são visíveis individualmente."
           },
           {
@@ -419,7 +419,7 @@
       "lastUpdated": "2024-12-19T10:00:00Z",
       "created": "2025-08-23T17:51:42.052Z",
       "description": "Tasks for master context",
-      "updated": "2025-09-14T12:44:34.890Z"
+      "updated": "2025-09-14T12:48:49.939Z"
     }
   }
 }
