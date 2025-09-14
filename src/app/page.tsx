@@ -2,7 +2,7 @@ import MainFrame from '@/components/MainFrame'
 
 export default function Home() {
   return (
-    <div className="min-h-screen px-16 py-12 flex items-center justify-center">
+    <div className="min-h-screen px-2 py-2 sm:px-16 sm:py-12 flex items-center justify-center">
       <MainFrame>
         <div className="text-center">
           <h1 className="text-4xl font-bold text-white mb-4">
