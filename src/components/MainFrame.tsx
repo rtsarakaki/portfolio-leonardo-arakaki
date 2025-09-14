@@ -16,7 +16,7 @@ const MainFrame: React.FC<MainFrameProps> = ({ children, className = '' }) => {
         md:p-10 
         lg:p-12
         w-full
-        min-h-fit
+        min-h-[80vh]
         relative
         ${className}
       `}
