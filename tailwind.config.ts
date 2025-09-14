@@ -42,7 +42,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        handwriting: ['var(--font-handwriting)', 'Kalam', 'cursive'],
+        handwriting: ['var(--font-handwriting)', 'Noto Sans JP', 'sans-serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
-import { Inter, Kalam } from 'next/font/google'
+import { Inter, Noto_Sans_JP } from 'next/font/google'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
-const kalam = Kalam({ 
+const notoSansJP = Noto_Sans_JP({ 
   subsets: ['latin'],
   weight: ['300', '400', '700'],
   variable: '--font-handwriting'
@@ -23,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={`${inter.className} ${kalam.variable}`}>
+      <body className={`${inter.className} ${notoSansJP.variable}`}>
         {/* Fundo arquitetônico fixo */}
         <div className="fixed inset-0 -z-10 architectural-background"></div>
         {children}

@@ -12,7 +12,7 @@
   }
 
   .font-handwriting {
-    font-family: var(--font-handwriting), 'Kalam', cursive;
+    font-family: var(--font-handwriting), 'Noto Sans JP', sans-serif;
   }
 }
 
