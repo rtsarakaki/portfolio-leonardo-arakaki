@@ -2,6 +2,7 @@
 
 import MainFrame from '@/components/MainFrame'
 import RusticNavigation from '@/components/RusticNavigation'
+import LeonardoArakakiSVG from '@/components/LeonardoArakakiSVG'
 
 export default function Home() {
   const handleNavigate = (sectionId: string) => {
@@ -26,14 +27,7 @@ export default function Home() {
           {/* Conteúdo principal na parte esquerda do frame azul */}
           <div className="flex-1 flex items-center">
             <div className="w-1/2 flex justify-start pl-8">
-              <div className="text-left">
-                <h1 className="text-4xl font-bold text-white mb-4">
-                  Leonardo Franco Arakaki
-                </h1>
-                <p className="text-xl text-gray-300">
-                  Portfólio - Nova Página Principal
-                </p>
-              </div>
+              <LeonardoArakakiSVG />
             </div>
           </div>
         </div>
