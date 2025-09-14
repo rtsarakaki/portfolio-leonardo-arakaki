@@ -12,7 +12,7 @@ const MainFrame: React.FC<MainFrameProps> = ({ children, className = '' }) => {
         bg-frame-dark-blue 
         rounded-xl 
         shadow-2xl 
-        p-8 
+        p-8
         md:p-10 
         lg:p-12
         w-full
