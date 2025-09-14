@@ -55,7 +55,8 @@ export default function Home() {
       <Navbar />
       
       {/* Main Frame com fundo azul escuro */}
-      <MainFrame>
+      <div className="px-8 py-8">
+        <MainFrame>
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Gradient */}
@@ -225,7 +226,8 @@ export default function Home() {
           </div>
         </div>
       </Section>
-      </MainFrame>
+        </MainFrame>
+      </div>
     </>
   )
 }
