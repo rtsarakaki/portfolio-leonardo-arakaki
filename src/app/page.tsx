@@ -13,12 +13,14 @@ export default function Home() {
     <div className="min-h-screen px-2 py-0 sm:px-16 sm:py-12 flex justify-center sm:items-center">
       <MainFrame>
         <div className="flex flex-col h-full">
-          {/* Navegação Rústica no topo, entre centro e canto direito */}
-          <div className="flex justify-end pr-8 pt-8 pb-4">
-            <RusticNavigation
-              activeSectionId="perfil"
-              onNavigate={handleNavigate}
-            />
+          {/* Navegação Rústica no topo, do centro para a direita */}
+          <div className="flex justify-center pt-8 pb-4">
+            <div className="w-1/2 flex justify-end pr-8">
+              <RusticNavigation
+                activeSectionId="perfil"
+                onNavigate={handleNavigate}
+              />
+            </div>
           </div>
           
           {/* Conteúdo principal centralizado */}
