@@ -40,7 +40,7 @@ const RusticButton: React.FC<RusticButtonProps> = ({
       aria-label={`Botão ${children}`}
     >
       <span className="relative z-10">
-        <RusticTextSVG text={children as string} className="h-6" />
+        <RusticTextSVG text={children as string} className="h-4" />
       </span>
     </button>
   );

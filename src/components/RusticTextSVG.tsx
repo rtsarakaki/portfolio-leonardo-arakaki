@@ -9,9 +9,9 @@ const RusticTextSVG: React.FC<RusticTextSVGProps> = ({ text, className = "" }) =
   // Função para gerar paths SVG baseados no texto
   const generateTextPaths = (text: string) => {
     const paths: string[] = [];
-    let x = 10;
-    const y = 25;
-    const letterSpacing = 20;
+    let x = 5;
+    const y = 15;
+    const letterSpacing = 12;
     
     for (let i = 0; i < text.length; i++) {
       const char = text[i].toUpperCase();
@@ -26,50 +26,50 @@ const RusticTextSVG: React.FC<RusticTextSVGProps> = ({ text, className = "" }) =
   };
 
   const generateCharPath = (char: string, x: number, y: number): string => {
-    const strokeWidth = 2;
-    const height = 20;
+    const strokeWidth = 1.5;
+    const height = 12;
     
     switch (char) {
       case 'P':
-        return `M ${x} ${y} L ${x} ${y + height} M ${x} ${y} L ${x + 12} ${y} Q ${x + 15} ${y} ${x + 15} ${y + 6} L ${x + 15} ${y + 8} Q ${x + 15} ${y + 11} ${x + 12} ${y + 11} L ${x} ${y + 11}`;
+        return `M ${x} ${y} L ${x} ${y + height} M ${x} ${y} L ${x + 8} ${y} Q ${x + 10} ${y} ${x + 10} ${y + 3} L ${x + 10} ${y + 5} Q ${x + 10} ${y + 7} ${x + 8} ${y + 7} L ${x} ${y + 7}`;
       case 'E':
-        return `M ${x} ${y} L ${x} ${y + height} M ${x} ${y} L ${x + 12} ${y} M ${x} ${y + 6} L ${x + 10} ${y + 6} M ${x} ${y + height} L ${x + 12} ${y + height}`;
+        return `M ${x} ${y} L ${x} ${y + height} M ${x} ${y} L ${x + 8} ${y} M ${x} ${y + 4} L ${x + 6} ${y + 4} M ${x} ${y + height} L ${x + 8} ${y + height}`;
       case 'R':
-        return `M ${x} ${y} L ${x} ${y + height} M ${x} ${y} L ${x + 12} ${y} Q ${x + 15} ${y} ${x + 15} ${y + 6} L ${x + 15} ${y + 8} Q ${x + 15} ${y + 11} ${x + 12} ${y + 11} L ${x} ${y + 11} M ${x + 8} ${y + 11} L ${x + 15} ${y + height}`;
+        return `M ${x} ${y} L ${x} ${y + height} M ${x} ${y} L ${x + 8} ${y} Q ${x + 10} ${y} ${x + 10} ${y + 3} L ${x + 10} ${y + 5} Q ${x + 10} ${y + 7} ${x + 8} ${y + 7} L ${x} ${y + 7} M ${x + 5} ${y + 7} L ${x + 10} ${y + height}`;
       case 'F':
-        return `M ${x} ${y} L ${x} ${y + height} M ${x} ${y} L ${x + 12} ${y} M ${x} ${y + 6} L ${x + 10} ${y + 6}`;
+        return `M ${x} ${y} L ${x} ${y + height} M ${x} ${y} L ${x + 8} ${y} M ${x} ${y + 4} L ${x + 6} ${y + 4}`;
       case 'I':
-        return `M ${x + 6} ${y} L ${x + 6} ${y + height}`;
+        return `M ${x + 4} ${y} L ${x + 4} ${y + height}`;
       case 'L':
-        return `M ${x} ${y} L ${x} ${y + height} L ${x + 12} ${y + height}`;
+        return `M ${x} ${y} L ${x} ${y + height} L ${x + 8} ${y + height}`;
       case 'O':
-        return `M ${x + 6} ${y} Q ${x} ${y} ${x} ${y + 6} L ${x} ${y + 14} Q ${x} ${y + height} ${x + 6} ${y + height} L ${x + 9} ${y + height} Q ${x + 15} ${y + height} ${x + 15} ${y + 14} L ${x + 15} ${y + 6} Q ${x + 15} ${y} ${x + 9} ${y} L ${x + 6} ${y}`;
+        return `M ${x + 4} ${y} Q ${x} ${y} ${x} ${y + 4} L ${x} ${y + 8} Q ${x} ${y + height} ${x + 4} ${y + height} L ${x + 6} ${y + height} Q ${x + 10} ${y + height} ${x + 10} ${y + 8} L ${x + 10} ${y + 4} Q ${x + 10} ${y} ${x + 6} ${y} L ${x + 4} ${y}`;
       case 'M':
-        return `M ${x} ${y + height} L ${x} ${y} L ${x + 4} ${y + 8} L ${x + 8} ${y} L ${x + 12} ${y} L ${x + 12} ${y + height}`;
+        return `M ${x} ${y + height} L ${x} ${y} L ${x + 2.5} ${y + 5} L ${x + 5} ${y} L ${x + 7.5} ${y} L ${x + 10} ${y + height}`;
       case 'A':
-        return `M ${x} ${y + height} L ${x + 3} ${y} L ${x + 6} ${y} L ${x + 9} ${y + height} M ${x + 1.5} ${y + 8} L ${x + 7.5} ${y + 8}`;
+        return `M ${x} ${y + height} L ${x + 2} ${y} L ${x + 4} ${y} L ${x + 6} ${y + height} M ${x + 1} ${y + 5} L ${x + 5} ${y + 5}`;
       case 'Ç':
-        return `M ${x + 12} ${y} L ${x} ${y} L ${x} ${y + height} L ${x + 12} ${y + height} M ${x + 8} ${y + 16} L ${x + 10} ${y + 18}`;
+        return `M ${x + 8} ${y} L ${x} ${y} L ${x} ${y + height} L ${x + 8} ${y + height} M ${x + 5} ${y + 10} L ${x + 6} ${y + 11}`;
       case 'Õ':
-        return `M ${x + 6} ${y} Q ${x} ${y} ${x} ${y + 6} L ${x} ${y + 14} Q ${x} ${y + height} ${x + 6} ${y + height} L ${x + 9} ${y + height} Q ${x + 15} ${y + height} ${x + 15} ${y + 14} L ${x + 15} ${y + 6} Q ${x + 15} ${y} ${x + 9} ${y} L ${x + 6} ${y} M ${x + 4} ${y - 2} Q ${x + 6} ${y - 4} ${x + 8} ${y - 2}`;
+        return `M ${x + 4} ${y} Q ${x} ${y} ${x} ${y + 4} L ${x} ${y + 8} Q ${x} ${y + height} ${x + 4} ${y + height} L ${x + 6} ${y + height} Q ${x + 10} ${y + height} ${x + 10} ${y + 8} L ${x + 10} ${y + 4} Q ${x + 10} ${y} ${x + 6} ${y} L ${x + 4} ${y} M ${x + 2.5} ${y - 1} Q ${x + 4} ${y - 2} ${x + 5.5} ${y - 1}`;
       case 'S':
-        return `M ${x + 12} ${y} L ${x + 3} ${y} Q ${x} ${y} ${x} ${y + 3} L ${x} ${y + 6} Q ${x} ${y + 8} ${x + 3} ${y + 8} L ${x + 9} ${y + 8} Q ${x + 12} ${y + 8} ${x + 12} ${y + 11} L ${x + 12} ${y + 14} Q ${x + 12} ${y + height} ${x + 9} ${y + height} L ${x} ${y + height}`;
+        return `M ${x + 8} ${y} L ${x + 2} ${y} Q ${x} ${y} ${x} ${y + 2} L ${x} ${y + 4} Q ${x} ${y + 5} ${x + 2} ${y + 5} L ${x + 6} ${y + 5} Q ${x + 8} ${y + 5} ${x + 8} ${y + 7} L ${x + 8} ${y + 9} Q ${x + 8} ${y + height} ${x + 6} ${y + height} L ${x} ${y + height}`;
       default:
         return '';
     }
   };
 
   const paths = generateTextPaths(text);
-  const width = text.length * 20 + 20;
+  const width = text.length * 12 + 10;
 
   return (
     <div className={`inline-block ${className}`}>
       <svg 
-        viewBox={`0 0 ${width} 40`}
+        viewBox={`0 0 ${width} 25`}
         xmlns="http://www.w3.org/2000/svg"
         className="w-full h-auto"
       >
-        <g stroke="#FF8C42" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
+        <g stroke="#FF8C42" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round">
           {paths.map((path, index) => (
             <path key={index} d={path} />
           ))}
