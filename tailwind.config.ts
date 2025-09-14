@@ -38,6 +38,7 @@ const config: Config = {
         // Architectural colors
         'architectural-gray': '#D3D3D3',
         'portfolio-blue': '#1e3a8a',
+        'frame-dark-blue': '#0f1419',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
