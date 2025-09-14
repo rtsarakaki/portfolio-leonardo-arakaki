@@ -55,7 +55,7 @@ export default function Home() {
       <Navbar />
       
       {/* Main Frame com fundo azul escuro */}
-      <div className="px-8 py-8">
+      <div className="px-8 py-8 border-4 border-gray-300 m-4">
         <MainFrame>
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">

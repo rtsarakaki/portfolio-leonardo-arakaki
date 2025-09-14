@@ -46,30 +46,10 @@
   }
   
   .architectural-background {
-    background-color: white;
+    background-color: #1a1a2e; /* Fundo azul muito escuro (quase preto) */
     background-image:
-      /* Textura de papel sutil (camada superior) */
-      radial-gradient(circle at center, rgba(0,0,0,0.02) 0%, transparent 100%),
-      /* Linhas horizontais tracejadas */
-      repeating-linear-gradient(
-        to bottom,
-        transparent,
-        transparent 24px,
-        #D3D3D3 24px,
-        #D3D3D3 25px,
-        transparent 25px,
-        transparent 49px
-      ),
-      /* Linhas verticais tracejadas */
-      repeating-linear-gradient(
-        to right,
-        transparent,
-        transparent 24px,
-        #D3D3D3 24px,
-        #D3D3D3 25px,
-        transparent 25px,
-        transparent 49px
-      );
+      /* Textura sutil */
+      radial-gradient(circle at center, rgba(255,255,255,0.01) 0%, transparent 100%);
     background-size: 50px 50px;
     background-position: 0 0;
     width: 100%;

@@ -9,7 +9,9 @@ const MainFrame: React.FC<MainFrameProps> = ({ children, className = '' }) => {
   return (
     <div 
       className={`
-        bg-portfolio-blue 
+        bg-blue-900 
+        border-2 
+        border-gray-300
         rounded-xl 
         shadow-2xl 
         p-8 
