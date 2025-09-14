@@ -13,6 +13,14 @@ export default function Home() {
     <div className="min-h-screen px-2 py-0 sm:px-16 sm:py-12 flex justify-center sm:items-center">
       <MainFrame>
         <div className="flex flex-col h-full">
+          {/* Navegação Rústica no topo, entre centro e canto direito */}
+          <div className="flex justify-end pr-8 pt-8 pb-4">
+            <RusticNavigation
+              activeSectionId="perfil"
+              onNavigate={handleNavigate}
+            />
+          </div>
+          
           {/* Conteúdo principal centralizado */}
           <div className="flex-1 flex items-center justify-center">
             <div className="text-center">
@@ -23,14 +31,6 @@ export default function Home() {
                 Portfólio - Nova Página Principal
               </p>
             </div>
-          </div>
-          
-          {/* Navegação Rústica entre centro e canto direito */}
-          <div className="flex justify-end pr-8 pb-8">
-            <RusticNavigation
-              activeSectionId="perfil"
-              onNavigate={handleNavigate}
-            />
           </div>
         </div>
       </MainFrame>
