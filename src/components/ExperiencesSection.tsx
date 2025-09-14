@@ -1,15 +1,15 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Briefcase, Building, Calendar, MapPin } from 'lucide-react';
+import AnimatedBox from './AnimatedBox';
 
-interface ExperienciasSectionProps {
+interface ExperiencesSectionProps {
   isVisible: boolean;
   className?: string;
 }
 
-const ExperienciasSection: React.FC<ExperienciasSectionProps> = ({
+const ExperiencesSection: React.FC<ExperiencesSectionProps> = ({
   isVisible,
   className = ''
 }) => {
@@ -42,27 +42,7 @@ const ExperienciasSection: React.FC<ExperienciasSectionProps> = ({
 
   return (
     <div className={`profile-section ${className}`}>
-      <motion.div 
-        initial={{ y: 30, opacity: 0 }}
-        animate={{ 
-          y: 0, 
-          opacity: 1,
-          transition: {
-            delay: 0.8,
-            duration: 0.7,
-            ease: "easeOut"
-          }
-        }}
-        exit={{ 
-          y: -20, 
-          opacity: 0,
-          transition: {
-            duration: 0.3,
-            ease: "easeIn"
-          }
-        }}
-        className="p-6"
-      >
+      <AnimatedBox direction="bottom" className="p-6">
         <h2 className="text-xl font-bold text-[#0f1419] mb-6 font-handwriting text-center flex items-center justify-center gap-2">
           <Briefcase size={24} className="text-[#e67e22] drop-shadow-sm" />
           Experiências Profissionais
@@ -130,9 +110,9 @@ const ExperienciasSection: React.FC<ExperienciasSectionProps> = ({
             </div>
           </div>
         </div>
-      </motion.div>
+      </AnimatedBox>
     </div>
   );
 };
 
-export default ExperienciasSection;
+export default ExperiencesSection;

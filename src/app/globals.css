@@ -54,10 +54,10 @@
     background: 
       repeating-linear-gradient(
         45deg,
-        #FFB366 0px,
-        #FFB366 2px,
-        #FFA366 2px,
-        #FFA366 4px
+        #ffffff 0px,
+        #ffffff 2px,
+        #f8f9fa 2px,
+        #f8f9fa 4px
       );
     border: 3px solid #e67e22;
     box-shadow: 
@@ -80,7 +80,7 @@
         #d97706 4px
       );
     color: white;
-    border: 3px solid #c2410c;
+    border: 3px solid #e67e22;
     box-shadow: 
       0 0 0 1px rgba(194, 64, 12, 0.3),
       0 4px 8px rgba(0, 0, 0, 0.3),

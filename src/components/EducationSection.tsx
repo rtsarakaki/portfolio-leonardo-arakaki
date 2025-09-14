@@ -1,15 +1,15 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
 import { GraduationCap, Award, BookOpen, Calendar } from 'lucide-react';
+import AnimatedBox from './AnimatedBox';
 
-interface FormacaoSectionProps {
+interface EducationSectionProps {
   isVisible: boolean;
   className?: string;
 }
 
-const FormacaoSection: React.FC<FormacaoSectionProps> = ({
+const EducationSection: React.FC<EducationSectionProps> = ({
   isVisible,
   className = ''
 }) => {
@@ -51,27 +51,7 @@ const FormacaoSection: React.FC<FormacaoSectionProps> = ({
 
   return (
     <div className={`profile-section ${className}`}>
-      <motion.div 
-        initial={{ y: 30, opacity: 0 }}
-        animate={{ 
-          y: 0, 
-          opacity: 1,
-          transition: {
-            delay: 0.8,
-            duration: 0.7,
-            ease: "easeOut"
-          }
-        }}
-        exit={{ 
-          y: -20, 
-          opacity: 0,
-          transition: {
-            duration: 0.3,
-            ease: "easeIn"
-          }
-        }}
-        className="p-6"
-      >
+      <AnimatedBox direction="right" className="p-6">
         <h2 className="text-xl font-bold text-[#0f1419] mb-6 font-handwriting text-center flex items-center justify-center gap-2">
           <GraduationCap size={24} className="text-[#e67e22] drop-shadow-sm" />
           Formação Acadêmica
@@ -176,9 +156,9 @@ const FormacaoSection: React.FC<FormacaoSectionProps> = ({
             </div>
           </div>
         </div>
-      </motion.div>
+      </AnimatedBox>
     </div>
   );
 };
 
-export default FormacaoSection;
+export default EducationSection;
