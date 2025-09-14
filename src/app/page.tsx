@@ -1,3 +1,5 @@
+'use client';
+
 import MainFrame from '@/components/MainFrame'
 import RusticNavigation from '@/components/RusticNavigation'
 
