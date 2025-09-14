@@ -15,8 +15,6 @@ const MainFrame: React.FC<MainFrameProps> = ({ children, className = '' }) => {
         p-8 
         md:p-10 
         lg:p-12
-        mx-auto 
-        max-w-screen-lg 
         w-full
         min-h-[calc(100vh-8rem)]
         relative
