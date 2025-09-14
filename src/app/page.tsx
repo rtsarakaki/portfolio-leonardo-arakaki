@@ -12,20 +12,26 @@ export default function Home() {
   return (
     <div className="min-h-screen px-2 py-0 sm:px-16 sm:py-12 flex justify-center sm:items-center">
       <MainFrame>
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-white mb-4">
-            Leonardo Franco Arakaki
-          </h1>
-          <p className="text-xl text-gray-300 mb-8">
-            Portfólio - Nova Página Principal
-          </p>
+        <div className="flex flex-col h-full">
+          {/* Navegação Rústica no topo */}
+          <div className="mb-8">
+            <RusticNavigation
+              activeSectionId="perfil"
+              onNavigate={handleNavigate}
+            />
+          </div>
           
-          {/* Navegação Rústica */}
-          <RusticNavigation
-            activeSectionId="perfil"
-            onNavigate={handleNavigate}
-            className="mt-6"
-          />
+          {/* Conteúdo principal centralizado */}
+          <div className="flex-1 flex items-center justify-center">
+            <div className="text-center">
+              <h1 className="text-4xl font-bold text-white mb-4">
+                Leonardo Franco Arakaki
+              </h1>
+              <p className="text-xl text-gray-300">
+                Portfólio - Nova Página Principal
+              </p>
+            </div>
+          </div>
         </div>
       </MainFrame>
     </div>
