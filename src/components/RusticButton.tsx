@@ -21,7 +21,7 @@ const RusticButton: React.FC<RusticButtonProps> = ({
     rustic-button
     px-6 py-3
     font-handwriting
-    text-orange-400
+    text-white
     text-sm
     font-medium
     cursor-pointer

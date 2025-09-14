@@ -42,6 +42,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        handwriting: ['var(--font-handwriting)', 'Kalam', 'cursive'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
