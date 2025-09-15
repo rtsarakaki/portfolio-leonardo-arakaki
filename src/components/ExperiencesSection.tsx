@@ -3,6 +3,12 @@
 import React from 'react';
 import { Briefcase, Building, Calendar, MapPin } from 'lucide-react';
 import AnimatedBox from './AnimatedBox';
+import SectionTitle from './SectionTitle';
+import ContentBox from './ContentBox';
+import SummarySection from './SummarySection';
+import Badge from './Badge';
+import InfoItem from './InfoItem';
+import useTranslation from '@/hooks/useTranslation';
 
 interface ExperiencesSectionProps {
   isVisible: boolean;
@@ -13,45 +19,39 @@ const ExperiencesSection: React.FC<ExperiencesSectionProps> = ({
   isVisible,
   className = ''
 }) => {
+  const { t } = useTranslation();
+  
   const experiences = [
     {
-      title: 'Estagiário de Arquitetura',
-      company: 'Prefeitura do Campus USP',
+      title: t('experiences.experiencesList.0.title'),
+      company: t('experiences.experiencesList.0.company'),
       location: 'São Paulo, SP',
-      period: '2022 - 2023',
-      description: 'Desenvolvimento de projetos de mobiliário urbano e espaços públicos. Participação em estudos de viabilidade e projetos de comunicação visual para o campus.',
-      projects: ['Mobiliário Urbano', 'Sinalização Campus', 'Estudos de Viabilidade']
+      period: t('experiences.experiencesList.0.period'),
+      description: t('experiences.experiencesList.0.description'),
+      projects: t('experiences.experiencesList.0.skills')
     },
     {
-      title: 'Projetista de Comunicação Visual',
-      company: 'Projetos Acadêmicos',
+      title: t('experiences.experiencesList.1.title'),
+      company: t('experiences.experiencesList.1.company'),
       location: 'FAUUSP',
-      period: '2021 - 2022',
-      description: 'Criação de identidade visual para eventos acadêmicos e projetos de extensão. Desenvolvimento de materiais gráficos e sinalização.',
-      projects: ['Identidade Visual', 'Materiais Gráficos', 'Sinalização']
-    },
-    {
-      title: 'Iniciação Científica',
-      company: 'FAUUSP - Laboratório de Urbanismo',
-      location: 'São Paulo, SP',
-      period: '2020 - 2021',
-      description: 'Pesquisa sobre sustentabilidade urbana e design de espaços públicos. Desenvolvimento de metodologias de análise urbana.',
-      projects: ['Pesquisa Urbana', 'Sustentabilidade', 'Metodologias']
+      period: t('experiences.experiencesList.1.period'),
+      description: t('experiences.experiencesList.1.description'),
+      projects: t('experiences.experiencesList.1.skills')
     }
   ];
 
   return (
     <div className={`profile-section ${className}`}>
       <AnimatedBox direction="bottom" className="p-6">
-        <h2 className="text-xl font-bold text-[#0f1419] mb-6 font-handwriting text-center flex items-center justify-center gap-2">
-          <Briefcase size={24} className="text-[#e67e22] drop-shadow-sm" />
-          Experiências Profissionais
-        </h2>
+        <SectionTitle 
+          icon={Briefcase} 
+          title={t('experiences.title')} 
+        />
 
         <div>
           <div className="space-y-6">
             {experiences.map((exp, index) => (
-              <div key={index} className="bg-white rounded-lg p-4 shadow-sm border border-gray-100 border-l-4 border-l-[#e67e22]">
+              <ContentBox key={index} variant="highlighted">
                 <div className="flex items-start justify-between mb-3">
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold text-[#0f1419] mb-1 flex items-center gap-2">
@@ -59,18 +59,9 @@ const ExperiencesSection: React.FC<ExperiencesSectionProps> = ({
                       {exp.title}
                     </h3>
                     <div className="flex items-center gap-4 text-sm text-[#0f1419] mb-2">
-                      <div className="flex items-center gap-1.5">
-                        <Building size={16} className="text-[#e67e22] drop-shadow-sm" />
-                        <span className="font-medium">{exp.company}</span>
-                      </div>
-                      <div className="flex items-center gap-1.5">
-                        <MapPin size={16} className="text-[#e67e22] drop-shadow-sm" />
-                        <span>{exp.location}</span>
-                      </div>
-                      <div className="flex items-center gap-1.5">
-                        <Calendar size={16} className="text-[#e67e22] drop-shadow-sm" />
-                        <span>{exp.period}</span>
-                      </div>
+                      <InfoItem icon={Building} text={exp.company} className="font-medium" />
+                      <InfoItem icon={MapPin} text={exp.location} />
+                      <InfoItem icon={Calendar} text={exp.period} />
                     </div>
                   </div>
                 </div>
@@ -81,34 +72,21 @@ const ExperiencesSection: React.FC<ExperiencesSectionProps> = ({
                 
                 <div className="flex flex-wrap gap-2">
                   {exp.projects.map((project, projectIndex) => (
-                        <span
-                          key={projectIndex}
-                          className="px-3 py-1.5 bg-gradient-to-r from-[#e67e22] to-[#c2410c] text-white rounded-full text-xs font-semibold shadow-sm"
-                        >
-                          {project}
-                        </span>
+                    <Badge key={projectIndex} size="sm">
+                      {project}
+                    </Badge>
                   ))}
                 </div>
-              </div>
+              </ContentBox>
             ))}
           </div>
 
-          <div className="mt-6 p-4 bg-white rounded-lg shadow-sm border border-gray-100">
-            <h4 className="text-lg font-semibold text-[#0f1419] mb-3 flex items-center font-handwriting">
-              <Briefcase size={20} className="mr-2 text-[#e67e22] drop-shadow-sm" />
-              Resumo Profissional
-            </h4>
-            <div className="space-y-2 text-[#0f1419] text-sm leading-relaxed">
-              <p>
-                Com experiência em projetos de arquitetura e urbanismo, tenho desenvolvido 
-                competências em design de mobiliário urbano, comunicação visual e pesquisa acadêmica.
-              </p>
-              <p>
-                Minha trajetória combina prática profissional na Prefeitura do Campus USP 
-                com desenvolvimento acadêmico em projetos de extensão e iniciação científica.
-              </p>
-            </div>
-          </div>
+          <SummarySection
+            icon={Briefcase}
+            title={t('experiences.professionalSummary')}
+            content={t('experiences.professionalSummaryContent')}
+            className="mt-6"
+          />
         </div>
       </AnimatedBox>
     </div>

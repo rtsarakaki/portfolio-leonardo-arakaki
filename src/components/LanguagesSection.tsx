@@ -1,8 +1,14 @@
 'use client';
 
 import React from 'react';
-import { Globe, BookOpen, Award } from 'lucide-react';
+import { Globe, BookOpen } from 'lucide-react';
 import AnimatedBox from './AnimatedBox';
+import SectionTitle from './SectionTitle';
+import SubsectionTitle from './SubsectionTitle';
+import LanguageCard from './LanguageCard';
+import ContentBox from './ContentBox';
+import SummarySection from './SummarySection';
+import useTranslation from '@/hooks/useTranslation';
 
 interface LanguagesSectionProps {
   isVisible: boolean;
@@ -13,74 +19,50 @@ const LanguagesSection: React.FC<LanguagesSectionProps> = ({
   isVisible,
   className = ''
 }) => {
+  const { t } = useTranslation();
+  
   const languages = [
-    { name: 'Inglês', level: 'Avançado', certificate: 'Cambridge CPE 2019', flag: '🇺🇸' },
-    { name: 'Espanhol', level: 'Básico', certificate: null, flag: '🇪🇸' },
-    { name: 'Italiano', level: 'Básico', certificate: null, flag: '🇮🇹' },
-    { name: 'Japonês', level: 'Básico', certificate: 'FFLCH-USP', flag: '🇯🇵' },
+    { name: t('languages.languagesList.0.name'), level: t('languages.levels.avancado'), certificate: t('languages.languagesList.0.certificate'), flagKey: 'english' },
+    { name: t('languages.languagesList.1.name'), level: t('languages.levels.basico'), certificate: t('languages.languagesList.1.certificate'), flagKey: 'spanish' },
+    { name: t('languages.languagesList.2.name'), level: t('languages.levels.basico'), certificate: t('languages.languagesList.2.certificate'), flagKey: 'italian' },
+    { name: t('languages.languagesList.3.name'), level: t('languages.levels.basico'), certificate: t('languages.languagesList.3.certificate'), flagKey: 'japanese' },
   ];
+
 
   return (
     <div className={`profile-section ${className}`}>
       <AnimatedBox direction="top" className="p-6">
-        <h2 className="text-xl font-bold text-[#0f1419] mb-6 font-handwriting text-center flex items-center justify-center gap-2">
-          <Globe size={24} className="text-[#e67e22] drop-shadow-sm" />
-          Competências em Idiomas
-        </h2>
+        <SectionTitle 
+          icon={Globe} 
+          title={t('languages.title')} 
+        />
 
         <div>
           <div className="space-y-4">
             <div>
-              <h4 className="text-lg font-semibold text-[#0f1419] mb-3 flex items-center font-handwriting">
-                <Globe size={20} className="mr-2 text-[#e67e22] drop-shadow-sm" />
-                Idiomas
-              </h4>
+              <SubsectionTitle 
+                icon={Globe} 
+                title={t('languages.languages')} 
+              />
               <div className="space-y-3">
-                {languages.map((language) => (
-                  <div key={language.name} className="bg-white rounded-lg p-3 shadow-sm border border-gray-100">
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center space-x-3">
-                        <span className="text-2xl drop-shadow-sm">{language.flag}</span>
-                        <div>
-                          <h5 className="font-semibold text-[#0f1419] text-sm">{language.name}</h5>
-                          <p className="text-[#e67e22] text-xs">{language.level}</p>
-                        </div>
-                      </div>
-                      {language.certificate && (
-                        <span className="text-xs bg-gradient-to-r from-[#e67e22] to-[#c2410c] text-white px-3 py-1.5 rounded-full flex items-center gap-1.5 font-semibold shadow-md border border-[#c2410c]">
-                          <Award size={12} className="text-yellow-200" />
-                          Certificado
-                        </span>
-                      )}
-                    </div>
-                    {language.certificate && (
-                      <p className="text-xs text-[#0f1419] font-medium bg-[#e67e22] bg-opacity-10 px-2 py-1 rounded border-l-2 border-[#e67e22]">
-                        {language.certificate}
-                      </p>
-                    )}
-                  </div>
+                {languages.map((language, index) => (
+                  <LanguageCard
+                    key={language.name}
+                    name={language.name}
+                    level={language.level}
+                    certificate={language.certificate}
+                    flagKey={language.flagKey}
+                    index={index}
+                  />
                 ))}
               </div>
             </div>
 
-            <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-100">
-              <h4 className="text-lg font-semibold text-[#0f1419] mb-3 flex items-center font-handwriting">
-                <BookOpen size={20} className="mr-2 text-[#e67e22] drop-shadow-sm" />
-                Experiência Internacional
-              </h4>
-              <div className="space-y-2 text-[#0f1419] text-sm">
-                <p>
-                  Com domínio avançado do inglês (Cambridge Proficiency), 
-                  estou preparado para colaborações internacionais e 
-                  oportunidades acadêmicas no exterior.
-                </p>
-                <p>
-                  Minha experiência com múltiplos idiomas me permite 
-                  trabalhar em projetos diversos e comunicar efetivamente 
-                  com equipes internacionais.
-                </p>
-              </div>
-            </div>
+            <SummarySection
+              icon={BookOpen}
+              title={t('languages.internationalExperience')}
+              content={t('languages.internationalExperienceContent')}
+            />
           </div>
         </div>
       </AnimatedBox>

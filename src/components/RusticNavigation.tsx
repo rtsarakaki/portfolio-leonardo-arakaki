@@ -5,48 +5,51 @@ import { AnimatePresence, motion } from 'framer-motion';
 import RusticButton from './RusticButton';
 import ProfileSection from './ProfileSection';
 import SkillsSection from './SkillsSection';
-import LanguagesSection from './LanguagesSection';
 import ExperiencesSection from './ExperiencesSection';
-import EducationSection from './EducationSection';
 import ProjectsSection from './ProjectsSection';
 import SectionContainer from './SectionContainer';
+import useTranslation from '@/hooks/useTranslation';
 
 interface RusticNavigationProps {
   activeSectionId: string;
   onNavigate: (sectionId: string) => void;
   className?: string;
+  isMobile?: boolean;
 }
 
 const RusticNavigation: React.FC<RusticNavigationProps> = ({
   activeSectionId,
   onNavigate,
-  className = ''
+  className = '',
+  isMobile = false
 }) => {
+  const { t } = useTranslation();
+  
   const sections = [
-    { id: 'perfil', label: 'Perfil' },
-    { id: 'habilidades', label: 'Habilidades' },
-    { id: 'idiomas', label: 'Idiomas' },
-    { id: 'experiencias', label: 'Experiências' },
-    { id: 'formacao', label: 'Formação' },
-    { id: 'projetos', label: 'Projetos' },
+    { id: 'perfil', label: t('navigation.perfil') },
+    { id: 'experiencias', label: t('navigation.experiencias') },
+    { id: 'projetos', label: t('navigation.projetos') },
+    { id: 'habilidades', label: t('navigation.habilidades') },
   ];
 
 
   return (
     <div className={`flex flex-col h-full ${className}`}>
-      {/* Navegação */}
-      <div className="flex flex-wrap gap-2 mb-4">
-        {sections.map((section) => (
-          <RusticButton
-            key={section.id}
-            onClick={() => onNavigate(section.id)}
-            isActive={activeSectionId === section.id}
-            className="text-sm"
-          >
-            {section.label}
-          </RusticButton>
-        ))}
-      </div>
+      {/* Navegação - apenas no desktop */}
+      {!isMobile && (
+        <div className="flex flex-wrap gap-2 mb-4">
+          {sections.map((section) => (
+            <RusticButton
+              key={section.id}
+              onClick={() => onNavigate(section.id)}
+              isActive={activeSectionId === section.id}
+              className="text-sm"
+            >
+              {section.label}
+            </RusticButton>
+          ))}
+        </div>
+      )}
 
       {/* Conteúdo das seções */}
       <div className="flex-1 relative">
@@ -55,7 +58,8 @@ const RusticNavigation: React.FC<RusticNavigationProps> = ({
             <SectionContainer
               sectionId="perfil"
               cotaDirection="left"
-              contentPadding="pb-5 pt-1"
+              contentPadding={isMobile ? "p-4" : "pb-5 pt-1"}
+              isMobile={isMobile}
             >
               <ProfileSection 
                 isVisible={true}
@@ -68,7 +72,8 @@ const RusticNavigation: React.FC<RusticNavigationProps> = ({
             <SectionContainer
               sectionId="habilidades"
               cotaDirection="right"
-              contentPadding="pb-4"
+              contentPadding={isMobile ? "p-4" : "pb-4"}
+              isMobile={isMobile}
             >
               <SkillsSection 
                 isVisible={true}
@@ -77,24 +82,13 @@ const RusticNavigation: React.FC<RusticNavigationProps> = ({
             </SectionContainer>
           )}
           
-          {activeSectionId === 'idiomas' && (
-            <SectionContainer
-              sectionId="idiomas"
-              cotaDirection="top"
-              contentPadding="p-4"
-            >
-              <LanguagesSection 
-                isVisible={true}
-                className="w-full h-full"
-              />
-            </SectionContainer>
-          )}
           
           {activeSectionId === 'experiencias' && (
             <SectionContainer
               sectionId="experiencias"
               cotaDirection="bottom"
               contentPadding="p-4"
+              isMobile={isMobile}
             >
               <ExperiencesSection 
                 isVisible={true}
@@ -103,24 +97,13 @@ const RusticNavigation: React.FC<RusticNavigationProps> = ({
             </SectionContainer>
           )}
           
-          {activeSectionId === 'formacao' && (
-            <SectionContainer
-              sectionId="formacao"
-              cotaDirection="left"
-              contentPadding="pb-4"
-            >
-              <EducationSection 
-                isVisible={true}
-                className="w-full h-full"
-              />
-            </SectionContainer>
-          )}
           
           {activeSectionId === 'projetos' && (
             <SectionContainer
               sectionId="projetos"
               cotaDirection="top"
               contentPadding="p-4"
+              isMobile={isMobile}
             >
               <ProjectsSection 
                 isVisible={true}

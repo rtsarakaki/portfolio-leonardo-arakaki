@@ -1,0 +1,220 @@
+{
+  "navigation": {
+    "perfil": "Perfil",
+    "experiencias": "Experiências",
+    "formacao": "Formação",
+    "projetos": "Projetos",
+    "habilidades": "Habilidades",
+    "idiomas": "Idiomas"
+  },
+  "profile": {
+    "name": "Leonardo Franco Arakaki",
+    "title": "Estudante de Arquitetura e Urbanismo",
+    "location": "FAUUSP • São Paulo, SP",
+    "aboutMe": {
+      "title": "Sobre Mim",
+      "content": "Sou Leonardo Franco Arakaki, estudante de Arquitetura e Urbanismo na FAUUSP, apaixonado por design, urbanismo e comunicação visual. Tenho experiência acadêmica e prática em projetos de identidade visual, mobiliário urbano e espaços arquitetônicos, além de formação sólida em design de interiores. Estou sempre em busca de novos desafios e oportunidades para aplicar meus conhecimentos em projetos inovadores e sustentáveis."
+    }
+  },
+  "languages": {
+    "title": "Competências em Idiomas",
+    "languages": "Idiomas",
+    "internationalExperience": "Experiência Internacional",
+    "internationalExperienceContent": "Com domínio avançado do inglês (Cambridge Proficiency), estou preparado para colaborações internacionais e oportunidades acadêmicas no exterior. Minha experiência com múltiplos idiomas me permite trabalhar em projetos diversos e comunicar efetivamente com equipes internacionais.",
+    "levels": {
+      "avancado": "Avançado",
+      "basico": "Básico"
+    },
+    "certificate": "Certificado",
+    "languagesList": [
+      {
+        "name": "Inglês",
+        "level": "avancado",
+        "certificate": "Cambridge CPE 2019"
+      },
+      {
+        "name": "Espanhol",
+        "level": "basico",
+        "certificate": null
+      },
+      {
+        "name": "Italiano",
+        "level": "basico",
+        "certificate": null
+      },
+      {
+        "name": "Japonês",
+        "level": "basico",
+        "certificate": "FFLCH-USP"
+      }
+    ]
+  },
+  "experiences": {
+    "title": "Experiências Profissionais",
+    "professionalSummary": "Resumo Profissional",
+    "professionalSummaryContent": "Estudante de Arquitetura e Urbanismo com experiência em projetos acadêmicos e práticos. Desenvolvi habilidades em design, planejamento urbano e comunicação visual através de projetos interdisciplinares e colaborações com colegas de diferentes áreas.",
+    "experiencesList": [
+      {
+        "title": "Estagiário de Arquitetura",
+        "company": "Escritório de Arquitetura XYZ",
+        "period": "2023 - Presente",
+        "description": "Desenvolvimento de projetos residenciais e comerciais, criação de maquetes e apresentações visuais.",
+        "skills": ["AutoCAD", "SketchUp", "Photoshop", "Projeto Arquitetônico"]
+      },
+      {
+        "title": "Assistente de Design",
+        "company": "Agência de Comunicação Visual",
+        "period": "2022 - 2023",
+        "description": "Criação de identidade visual para empresas locais, desenvolvimento de materiais gráficos e branding.",
+        "skills": ["Adobe Creative Suite", "Branding", "Design Gráfico", "Identidade Visual"]
+      }
+    ]
+  },
+  "education": {
+    "title": "Formação Acadêmica",
+    "academicTrajectory": "Trajetória Acadêmica",
+    "academicTrajectoryContent": "Minha formação combina educação técnica em design de interiores com graduação em arquitetura e urbanismo, proporcionando uma base sólida tanto em aspectos práticos quanto teóricos do design. A experiência na FAUUSP tem me permitido desenvolver competências em pesquisa acadêmica, sustentabilidade urbana e comunicação visual, sempre com foco em projetos inovadores e socialmente responsáveis.",
+    "higherEducation": "Formação Superior",
+    "certifications": "Certificações e Idiomas",
+    "locations": {
+      "saoPauloSP": "São Paulo, SP"
+    },
+    "institutions": {
+      "colegioSaoPaulo": "Colégio São Paulo"
+    },
+    "highlights": {
+      "urbanDesign": "Design Urbano",
+      "sustainability": "Sustentabilidade",
+      "visualCommunication": "Comunicação Visual",
+      "academicResearch": "Pesquisa Acadêmica",
+      "exactSciences": "Ciências Exatas",
+      "humanSciences": "Ciências Humanas",
+      "basicTraining": "Formação Básica"
+    },
+    "educationList": [
+      {
+        "degree": "Bacharelado em Arquitetura e Urbanismo",
+        "institution": "FAUUSP - Faculdade de Arquitetura e Urbanismo da USP",
+        "period": "2021 - 2025",
+        "status": "Em andamento",
+        "description": "Formação completa em arquitetura, urbanismo, design e tecnologias de construção."
+      },
+      {
+        "degree": "Ensino Médio",
+        "institution": "Colégio São Paulo",
+        "period": "2018 - 2020",
+        "status": "Concluído",
+        "description": "Formação básica com foco em ciências exatas e humanas."
+      }
+    ],
+    "certificationsList": [
+      {
+        "name": "Cambridge Proficiency in English (CPE)",
+        "institution": "Cambridge Assessment English",
+        "year": "2019",
+        "level": "Avançado"
+      },
+      {
+        "name": "Japonês Básico",
+        "institution": "FFLCH-USP",
+        "year": "2020",
+        "level": "Básico"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Projetos e Portfólio",
+    "technologies": "Tecnologias:",
+    "highlights": "Destaques:",
+    "methodology": "Metodologia de Projeto",
+    "methodologyContent": "Meus projetos seguem uma metodologia centrada no usuário, sempre considerando aspectos de sustentabilidade, acessibilidade e integração com o contexto urbano. Cada projeto é desenvolvido através de pesquisa, análise do contexto, desenvolvimento conceitual e detalhamento técnico, garantindo soluções inovadoras e funcionalmente adequadas.",
+    "categories": {
+      "architecture": "Arquitetura",
+      "urbanPlanning": "Planejamento Urbano",
+      "graphicDesign": "Design Gráfico"
+    },
+    "status": {
+      "completed": "Concluído",
+      "inProgress": "Em andamento",
+      "conceptual": "Conceitual",
+      "implemented": "Implementado"
+    },
+    "team": {
+      "individual": "Individual",
+      "teamOf4": "Equipe de 4 pessoas"
+    },
+    "locations": {
+      "campusUSP": "Campus USP",
+      "saoPauloSP": "São Paulo, SP"
+    },
+    "highlightsList": {
+      "universalAccessibility": "Acessibilidade Universal",
+      "visualIdentity": "Identidade Visual",
+      "sustainability": "Sustentabilidade",
+      "technology": "Tecnologia",
+      "urbanDesign": "Design Urbano",
+      "branding": "Branding",
+      "graphicDesign": "Design Gráfico"
+    },
+    "projectsList": [
+      {
+        "title": "Projeto de Habitação Social",
+        "description": "Desenvolvimento de projeto arquitetônico para habitação social sustentável com foco em eficiência energética e qualidade de vida.",
+        "technologies": ["AutoCAD", "SketchUp", "Revit", "Análise Energética"],
+        "year": "2024"
+      },
+      {
+        "title": "Plano de Requalificação Urbana",
+        "description": "Proposta de requalificação para área central da cidade, integrando espaços verdes, mobilidade e habitação.",
+        "technologies": ["GIS", "AutoCAD", "Photoshop", "Planejamento Urbano"],
+        "year": "2023"
+      },
+      {
+        "title": "Identidade Visual - Restaurante",
+        "description": "Criação completa de identidade visual para restaurante temático, incluindo logo, menu e materiais promocionais.",
+        "technologies": ["Adobe Illustrator", "Photoshop", "InDesign", "Branding"],
+        "year": "2022"
+      }
+    ]
+  },
+  "skills": {
+    "title": "Habilidades e Competências",
+    "proficiencyLevel": "Nível de Proficiência",
+    "areasOfInterest": "Áreas de Interesse",
+    "categories": {
+      "design": "Design e Projeto",
+      "software": "Software e Tecnologia",
+      "communication": "Comunicação e Apresentação",
+      "languages": "Idiomas"
+    },
+    "skillsList": {
+      "design": [
+        { "name": "Projeto Arquitetônico", "level": "Avançado" },
+        { "name": "Design de Interiores", "level": "Intermediário" },
+        { "name": "Planejamento Urbano", "level": "Intermediário" },
+        { "name": "Design Gráfico", "level": "Avançado" }
+      ],
+      "software": [
+        { "name": "AutoCAD", "level": "Avançado" },
+        { "name": "SketchUp", "level": "Avançado" },
+        { "name": "Revit", "level": "Intermediário" },
+        { "name": "Adobe Creative Suite", "level": "Avançado" },
+        { "name": "Photoshop", "level": "Avançado" },
+        { "name": "Illustrator", "level": "Avançado" }
+      ],
+      "communication": [
+        { "name": "Apresentações Visuais", "level": "Avançado" },
+        { "name": "Comunicação Técnica", "level": "Intermediário" },
+        { "name": "Trabalho em Equipe", "level": "Avançado" },
+        { "name": "Gestão de Projetos", "level": "Intermediário" }
+      ]
+    },
+    "interestAreas": [
+      "Design Urbano",
+      "Identidade Visual", 
+      "Mobiliário",
+      "Sustentabilidade",
+      "Pesquisa Acadêmica"
+    ]
+  }
+}

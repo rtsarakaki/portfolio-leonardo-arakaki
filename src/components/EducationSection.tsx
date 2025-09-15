@@ -3,6 +3,7 @@
 import React from 'react';
 import { GraduationCap, Award, BookOpen, Calendar } from 'lucide-react';
 import AnimatedBox from './AnimatedBox';
+import useTranslation from '@/hooks/useTranslation';
 
 interface EducationSectionProps {
   isVisible: boolean;
@@ -13,48 +14,58 @@ const EducationSection: React.FC<EducationSectionProps> = ({
   isVisible,
   className = ''
 }) => {
+  const { t, isLoading } = useTranslation();
+  
+  
+  // Se ainda está carregando, mostrar loading
+  if (isLoading) {
+    return (
+      <div className={`profile-section ${className}`}>
+        <div className="p-6">
+          <div className="text-center text-[#0f1419]">Carregando...</div>
+        </div>
+      </div>
+    );
+  }
+  
   const education = [
     {
-      title: 'Arquitetura e Urbanismo',
-      institution: 'FAUUSP - Faculdade de Arquitetura e Urbanismo da USP',
-      location: 'São Paulo, SP',
-      period: '2016 - Presente',
-      status: 'Em andamento',
-      description: 'Formação em arquitetura e urbanismo com foco em design sustentável, urbanismo e comunicação visual.',
-      highlights: ['Design Urbano', 'Sustentabilidade', 'Comunicação Visual', 'Pesquisa Acadêmica']
+      title: t('education.educationList.0.degree'),
+      institution: t('education.educationList.0.institution'),
+      location: t('education.locations.saoPauloSP'),
+      period: t('education.educationList.0.period'),
+      status: t('education.educationList.0.status'),
+      description: t('education.educationList.0.description'),
+      highlights: [
+        t('education.highlights.urbanDesign'),
+        t('education.highlights.sustainability'),
+        t('education.highlights.visualCommunication'),
+        t('education.highlights.academicResearch')
+      ]
     },
     {
-      title: 'Técnico em Design de Interiores',
-      institution: 'ETEC Getúlio Vargas',
-      location: 'São Paulo, SP',
-      period: '2010 - 2012',
-      status: 'Concluído',
-      description: 'Formação técnica em design de interiores com ênfase em projetos residenciais e comerciais.',
-      highlights: ['Projetos Residenciais', 'Projetos Comerciais', 'Materiais e Acabamentos', 'Desenho Técnico']
+      title: t('education.educationList.1.degree'),
+      institution: t('education.institutions.colegioSaoPaulo'),
+      location: t('education.locations.saoPauloSP'),
+      period: t('education.educationList.1.period'),
+      status: t('education.educationList.1.status'),
+      description: t('education.educationList.1.description'),
+      highlights: [
+        t('education.highlights.exactSciences'),
+        t('education.highlights.humanSciences'),
+        t('education.highlights.basicTraining')
+      ]
     }
   ];
 
-  const certifications = [
-    {
-      name: 'Cambridge Proficiency in English (CPE)',
-      institution: 'Cambridge Assessment English',
-      year: '2019',
-      level: 'Avançado'
-    },
-    {
-      name: 'Japonês Básico',
-      institution: 'FFLCH-USP',
-      year: '2020',
-      level: 'Básico'
-    }
-  ];
+  const certifications = t('education.certificationsList');
 
   return (
     <div className={`profile-section ${className}`}>
       <AnimatedBox direction="right" className="p-6">
         <h2 className="text-xl font-bold text-[#0f1419] mb-6 font-handwriting text-center flex items-center justify-center gap-2">
           <GraduationCap size={24} className="text-[#e67e22] drop-shadow-sm" />
-          Formação Acadêmica
+          {t('education.title')}
         </h2>
 
         <div>
@@ -63,7 +74,7 @@ const EducationSection: React.FC<EducationSectionProps> = ({
             <div>
               <h4 className="text-lg font-semibold text-[#0f1419] mb-4 flex items-center font-handwriting">
                 <GraduationCap size={20} className="mr-2 text-[#e67e22] drop-shadow-sm" />
-                Formação Superior
+                {t('education.higherEducation')}
               </h4>
               <div className="space-y-4">
                 {education.map((edu, index) => (
@@ -82,7 +93,7 @@ const EducationSection: React.FC<EducationSectionProps> = ({
                             <span>{edu.period}</span>
                           </div>
                           <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                            edu.status === 'Concluído' 
+                            edu.status === t('education.educationList.1.status') 
                               ? 'bg-green-100 text-green-800' 
                               : 'bg-blue-100 text-blue-800'
                           }`}>
@@ -115,7 +126,7 @@ const EducationSection: React.FC<EducationSectionProps> = ({
             <div>
               <h4 className="text-lg font-semibold text-[#0f1419] mb-4 flex items-center font-handwriting">
                 <Award size={20} className="mr-2 text-[#e67e22] drop-shadow-sm" />
-                Certificações e Idiomas
+                {t('education.certifications')}
               </h4>
               <div className="space-y-3">
                 {certifications.map((cert, index) => (
@@ -139,18 +150,11 @@ const EducationSection: React.FC<EducationSectionProps> = ({
             <div className="p-4 bg-white rounded-lg shadow-sm border border-gray-100">
             <h4 className="text-lg font-semibold text-[#0f1419] mb-3 flex items-center font-handwriting">
               <BookOpen size={20} className="mr-2 text-[#e67e22] drop-shadow-sm" />
-              Trajetória Acadêmica
+              {t('education.academicTrajectory')}
             </h4>
               <div className="space-y-2 text-[#0f1419] text-sm leading-relaxed">
                 <p>
-                  Minha formação combina educação técnica em design de interiores com 
-                  graduação em arquitetura e urbanismo, proporcionando uma base sólida 
-                  tanto em aspectos práticos quanto teóricos do design.
-                </p>
-                <p>
-                  A experiência na FAUUSP tem me permitido desenvolver competências em 
-                  pesquisa acadêmica, sustentabilidade urbana e comunicação visual, 
-                  sempre com foco em projetos inovadores e socialmente responsáveis.
+                  {t('education.academicTrajectoryContent')}
                 </p>
               </div>
             </div>

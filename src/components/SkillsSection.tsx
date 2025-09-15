@@ -1,8 +1,16 @@
 'use client';
 
 import React from 'react';
-import { Wrench, Palette } from 'lucide-react';
+import { Wrench, Palette, Globe, BookOpen } from 'lucide-react';
 import AnimatedBox from './AnimatedBox';
+import SectionTitle from './SectionTitle';
+import SubsectionTitle from './SubsectionTitle';
+import SkillCard from './SkillCard';
+import LanguageCard from './LanguageCard';
+import Badge from './Badge';
+import SummarySection from './SummarySection';
+import LoadingState from './LoadingState';
+import useTranslation from '@/hooks/useTranslation';
 
 interface SkillsSectionProps {
   isVisible: boolean;
@@ -13,65 +21,103 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({
   isVisible,
   className = ''
 }) => {
+  const { t, isLoading } = useTranslation();
+  
+  
+  // Se ainda está carregando, mostrar loading
+  if (isLoading) {
+    return <LoadingState className={className} />;
+  }
+  
   const skills = [
-    { name: 'Design de Interiores', level: 90, category: 'Design' },
-    { name: 'Identidade Visual', level: 85, category: 'Design' },
-    { name: 'Mobiliário Urbano', level: 80, category: 'Arquitetura' },
-    { name: 'Urbanismo', level: 75, category: 'Arquitetura' },
-    { name: 'Comunicação Visual', level: 85, category: 'Design' },
-    { name: 'Pesquisa Acadêmica', level: 80, category: 'Acadêmico' },
+    { name: t('skills.skillsList.design.0.name'), level: 90, category: t('skills.categories.design') },
+    { name: t('skills.skillsList.design.1.name'), level: 85, category: t('skills.categories.design') },
+    { name: t('skills.skillsList.design.2.name'), level: 80, category: t('skills.categories.design') },
+    { name: t('skills.skillsList.design.3.name'), level: 75, category: t('skills.categories.design') },
+    { name: t('skills.skillsList.communication.0.name'), level: 85, category: t('skills.categories.communication') },
+    { name: t('skills.skillsList.communication.1.name'), level: 80, category: t('skills.categories.communication') },
   ];
+
+  const languages = [
+    { name: t('languages.languagesList.0.name'), level: t('languages.levels.avancado'), certificate: t('languages.languagesList.0.certificate'), flagKey: 'english' },
+    { name: t('languages.languagesList.1.name'), level: t('languages.levels.basico'), certificate: t('languages.languagesList.1.certificate'), flagKey: 'spanish' },
+    { name: t('languages.languagesList.2.name'), level: t('languages.levels.basico'), certificate: t('languages.languagesList.2.certificate'), flagKey: 'italian' },
+    { name: t('languages.languagesList.3.name'), level: t('languages.levels.basico'), certificate: t('languages.languagesList.3.certificate'), flagKey: 'japanese' },
+  ];
+
 
   return (
     <div className={`profile-section ${className}`}>
       <AnimatedBox direction="right" className="p-6">
-        <h2 className="text-xl font-bold text-[#0f1419] mb-6 font-handwriting text-center flex items-center justify-center gap-2">
-          <Wrench size={24} className="text-[#e67e22] drop-shadow-sm" />
-          Habilidades Técnicas
-        </h2>
+        <SectionTitle 
+          icon={Wrench} 
+          title="Habilidades e Idiomas" 
+        />
 
         <div>
           <div className="space-y-4">
             <div>
-              <h4 className="text-lg font-semibold text-[#0f1419] mb-3 flex items-center font-handwriting">
-                <Wrench size={20} className="mr-2 text-[#e67e22] drop-shadow-sm" />
-                Nível de Proficiência
-              </h4>
-              <div className="space-y-3">
-                {skills.map((skill) => (
-                  <div key={skill.name} className="bg-white rounded-lg p-4 shadow-sm border border-gray-100">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-[#0f1419] font-semibold text-sm">{skill.name}</span>
-                      <span className="text-[#e67e22] text-sm font-bold">{skill.level}%</span>
-                    </div>
-                    <div className="w-full bg-[#0f1419] bg-opacity-20 rounded-full h-3 mb-2">
-                      <div
-                        className="bg-gradient-to-r from-[#e67e22] to-[#c2410c] h-3 rounded-full transition-all duration-1000"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
-                    <span className="text-xs text-[#0f1419] font-medium bg-[#e67e22] bg-opacity-10 px-2 py-1 rounded-full">{skill.category}</span>
-                  </div>
+              <SubsectionTitle 
+                icon={Wrench} 
+                title={t('skills.proficiencyLevel')} 
+              />
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        {skills.map((skill, index) => (
+                          <SkillCard
+                            key={`skill-${index}`}
+                            name={skill.name}
+                            level={skill.level}
+                            category={skill.category}
+                            index={index}
+                          />
+                        ))}
+                      </div>
+            </div>
+
+            <div>
+              <SubsectionTitle 
+                icon={Palette} 
+                title={t('skills.areasOfInterest')} 
+              />
+              <div className="flex flex-wrap gap-2">
+                {t('skills.interestAreas').map((area: string) => (
+                  <Badge 
+                    key={area}
+                    size="lg"
+                    className="hover:shadow-md transition-all duration-300"
+                  >
+                    {area}
+                  </Badge>
                 ))}
               </div>
             </div>
 
+            {/* Seção de Idiomas */}
             <div>
-              <h4 className="text-lg font-semibold text-[#0f1419] mb-3 flex items-center font-handwriting">
-                <Palette size={20} className="mr-2 text-[#e67e22] drop-shadow-sm" />
-                Áreas de Interesse
-              </h4>
-              <div className="flex flex-wrap gap-2">
-                {['Design Urbano', 'Identidade Visual', 'Mobiliário', 'Sustentabilidade', 'Pesquisa Acadêmica'].map((area) => (
-                  <span
-                    key={area}
-                    className="px-4 py-2 bg-gradient-to-r from-[#e67e22] to-[#c2410c] text-white rounded-full text-sm font-semibold shadow-sm hover:shadow-md transition-all duration-300"
-                  >
-                    {area}
-                  </span>
+              <SubsectionTitle 
+                icon={Globe} 
+                title={t('languages.languages')} 
+              />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {languages.map((language, index) => (
+                  <LanguageCard
+                    key={`language-${index}`}
+                    name={language.name}
+                    level={language.level}
+                    certificate={language.certificate}
+                    flagKey={language.flagKey}
+                    index={index}
+                  />
                 ))}
               </div>
             </div>
+
+            {/* Experiência Internacional */}
+            <SummarySection
+              icon={BookOpen}
+              title={t('languages.internationalExperience')}
+              content={t('languages.internationalExperienceContent')}
+            />
           </div>
         </div>
       </AnimatedBox>

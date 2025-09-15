@@ -4,9 +4,14 @@ import { useState } from 'react';
 import MainFrame from '@/components/MainFrame'
 import RusticNavigation from '@/components/RusticNavigation'
 import LeonardoArakakiSVG from '@/components/LeonardoArakakiSVG'
+import MobileToolbar from '@/components/MobileToolbar'
+import LanguageSelector from '@/components/LanguageSelector'
+import useTranslation from '@/hooks/useTranslation'
+import { TranslationProvider } from '@/contexts/TranslationContext'
 
-export default function Home() {
+function HomeContent() {
   const [activeSectionId, setActiveSectionId] = useState('perfil');
+  const { locale, changeLanguage } = useTranslation();
 
   const handleNavigate = (sectionId: string) => {
     console.log(`Navegando para: ${sectionId}`);
@@ -16,23 +21,87 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen px-2 py-0 sm:px-16 sm:py-12 flex justify-center sm:items-center">
-      <MainFrame>
-        <div className="flex h-full">
-          {/* Conteúdo principal na parte esquerda do frame azul */}
-          <div className="w-2/5 flex items-center justify-start pl-8">
-            <LeonardoArakakiSVG />
+    <div className="min-h-screen">
+      {/* Desktop Layout */}
+      <div className="hidden sm:flex px-16 py-12 justify-center items-center min-h-screen">
+        <MainFrame
+          currentLocale={locale}
+          onLanguageChange={changeLanguage}
+        >
+          <div className="flex h-full">
+            {/* Conteúdo principal na parte esquerda do frame azul */}
+            <div className="w-2/5 flex items-center justify-start pl-8">
+              <LeonardoArakakiSVG />
+            </div>
+            
+            {/* Navegação Rústica na parte direita */}
+            <div className="w-3/5 flex flex-col justify-start pt-2 pr-8">
+              <RusticNavigation
+                activeSectionId={activeSectionId}
+                onNavigate={handleNavigate}
+              />
+            </div>
+          </div>
+        </MainFrame>
+      </div>
+
+      {/* Mobile Layout */}
+      <div className="sm:hidden flex flex-col h-screen">
+        {/* Header com nome */}
+        <div className="bg-frame-dark-blue px-4 py-3 flex justify-between items-center">
+          <div className="w-full max-w-[200px]">
+            <svg 
+              viewBox="0 0 200 30" 
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-full h-auto -skew-x-8"
+            >
+              <text 
+                x="100" 
+                y="20" 
+                textAnchor="middle" 
+                fontSize="16" 
+                fontFamily="serif" 
+                fontWeight="bold"
+                fill="#FF8C42"
+                stroke="#FF8C42"
+                strokeWidth="0.5"
+              >
+                LEONARDO ARAKAKI
+              </text>
+            </svg>
           </div>
           
-          {/* Navegação Rústica na parte direita */}
-          <div className="w-3/5 flex flex-col justify-start pt-8 pr-8">
-            <RusticNavigation
-              activeSectionId={activeSectionId}
-              onNavigate={handleNavigate}
-            />
-          </div>
+          {/* Seletor de idioma mobile */}
+          <LanguageSelector
+            currentLocale={locale}
+            onLanguageChange={changeLanguage}
+            className="flex-shrink-0"
+          />
         </div>
-      </MainFrame>
+        
+        {/* Conteúdo principal com scroll e padding para o toolbar fixo */}
+        <div className="flex-1 bg-white overflow-y-auto pb-20">
+          <RusticNavigation
+            activeSectionId={activeSectionId}
+            onNavigate={handleNavigate}
+            isMobile={true}
+          />
+        </div>
+        
+        {/* Toolbar fixo na parte inferior - apenas no mobile */}
+        <MobileToolbar
+          activeSectionId={activeSectionId}
+          onNavigate={handleNavigate}
+        />
+      </div>
     </div>
   )
+}
+
+export default function Home() {
+  return (
+    <TranslationProvider>
+      <HomeContent />
+    </TranslationProvider>
+  );
 }

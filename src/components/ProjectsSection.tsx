@@ -3,6 +3,13 @@
 import React from 'react';
 import { FolderOpen, ExternalLink, Calendar, MapPin, Users } from 'lucide-react';
 import AnimatedBox from './AnimatedBox';
+import SectionTitle from './SectionTitle';
+import ContentBox from './ContentBox';
+import SummarySection from './SummarySection';
+import Badge from './Badge';
+import InfoItem from './InfoItem';
+import LoadingState from './LoadingState';
+import useTranslation from '@/hooks/useTranslation';
 
 interface ProjectsSectionProps {
   isVisible: boolean;
@@ -13,61 +20,75 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
   isVisible,
   className = ''
 }) => {
+  const { t, isLoading } = useTranslation();
+
+
+  // Se ainda está carregando, mostrar loading
+  if (isLoading) {
+    return <LoadingState className={className} />;
+  }
+  
   const projects = [
     {
-      title: 'Escadaria EP-USP',
-      category: 'Arquitetura',
-      year: '2023',
-      location: 'Campus USP',
-      team: 'Individual',
-      description: 'Projeto de revitalização da escadaria principal do prédio da Engenharia de Produção da USP, focando em acessibilidade e identidade visual.',
-      technologies: ['AutoCAD', 'SketchUp', 'Photoshop'],
-      highlights: ['Acessibilidade Universal', 'Identidade Visual', 'Sustentabilidade'],
-      status: 'Concluído'
+      title: t('projects.projectsList.0.title'),
+      category: t('projects.categories.architecture'),
+      year: t('projects.projectsList.0.year'),
+      location: t('projects.locations.campusUSP'),
+      team: t('projects.team.individual'),
+      description: t('projects.projectsList.0.description'),
+      technologies: t('projects.projectsList.0.technologies'),
+      highlights: [
+        t('projects.highlightsList.universalAccessibility'),
+        t('projects.highlightsList.visualIdentity'),
+        t('projects.highlightsList.sustainability')
+      ],
+      status: t('projects.status.completed')
     },
     {
-      title: 'Sistema de Lixeiras Inteligentes',
-      category: 'Mobiliário Urbano',
-      year: '2022',
-      location: 'Campus USP',
-      team: 'Equipe de 3 pessoas',
-      description: 'Desenvolvimento de sistema de lixeiras urbanas com design sustentável e funcional, integrando-se harmoniosamente ao ambiente do campus.',
-      technologies: ['AutoCAD', 'Rhinoceros', 'Renderização'],
-      highlights: ['Design Sustentável', 'Funcionalidade', 'Integração Urbana'],
-      status: 'Implementado'
+      title: t('projects.projectsList.1.title'),
+      category: t('projects.categories.urbanPlanning'),
+      year: t('projects.projectsList.1.year'),
+      location: t('projects.locations.saoPauloSP'),
+      team: t('projects.team.teamOf4'),
+      description: t('projects.projectsList.1.description'),
+      technologies: t('projects.projectsList.1.technologies'),
+      highlights: [
+        t('projects.highlightsList.sustainability'),
+        t('projects.highlightsList.technology'),
+        t('projects.highlightsList.urbanDesign')
+      ],
+      status: t('projects.status.completed')
     },
     {
-      title: 'Identidade Visual - Evento Acadêmico',
-      category: 'Comunicação Visual',
-      year: '2021',
-      location: 'FAUUSP',
-      team: 'Individual',
-      description: 'Criação completa da identidade visual para evento acadêmico, incluindo logotipo, materiais gráficos e sinalização.',
-      technologies: ['Illustrator', 'Photoshop', 'InDesign'],
-      highlights: ['Branding', 'Materiais Gráficos', 'Sinalização'],
-      status: 'Concluído'
-    },
-    {
-      title: 'Projeto de Habitação Social',
-      category: 'Urbanismo',
-      year: '2020',
-      location: 'São Paulo, SP',
-      team: 'Equipe de 4 pessoas',
-      description: 'Estudo de viabilidade e projeto conceitual para complexo habitacional social, considerando sustentabilidade e qualidade de vida.',
-      technologies: ['AutoCAD', 'SketchUp', 'Análise Urbana'],
-      highlights: ['Habitabilidade', 'Sustentabilidade', 'Análise Social'],
-      status: 'Conceitual'
+      title: t('projects.projectsList.2.title'),
+      category: t('projects.categories.graphicDesign'),
+      year: t('projects.projectsList.2.year'),
+      location: t('projects.locations.saoPauloSP'),
+      team: t('projects.team.individual'),
+      description: t('projects.projectsList.2.description'),
+      technologies: t('projects.projectsList.2.technologies'),
+      highlights: [
+        t('projects.highlightsList.branding'),
+        t('projects.highlightsList.visualIdentity'),
+        t('projects.highlightsList.graphicDesign')
+      ],
+      status: t('projects.status.completed')
     }
   ];
 
   const getStatusColor = (status: string) => {
+    const completedStatus = t('projects.status.completed');
+    const implementedStatus = t('projects.status.implemented');
+    const inProgressStatus = t('projects.status.inProgress');
+    const conceptualStatus = t('projects.status.conceptual');
+    
     switch (status) {
-      case 'Concluído':
-      case 'Implementado':
+      case completedStatus:
+      case implementedStatus:
         return 'bg-green-100 text-green-800';
-      case 'Em andamento':
+      case inProgressStatus:
         return 'bg-blue-100 text-blue-800';
-      case 'Conceitual':
+      case conceptualStatus:
         return 'bg-purple-100 text-purple-800';
       default:
         return 'bg-gray-100 text-gray-800';
@@ -77,15 +98,15 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
   return (
     <div className={`profile-section ${className}`}>
       <AnimatedBox direction="top" className="p-6">
-        <h2 className="text-xl font-bold text-[#0f1419] mb-6 font-handwriting text-center flex items-center justify-center gap-2">
-          <FolderOpen size={24} className="text-[#e67e22] drop-shadow-sm" />
-          Portfólio de Projetos
-        </h2>
+        <SectionTitle 
+          icon={FolderOpen} 
+          title={t('projects.title')} 
+        />
 
         <div>
           <div className="space-y-6">
             {projects.map((project, index) => (
-              <div key={index} className="bg-white rounded-lg p-4 shadow-sm border border-gray-100 border-l-4 border-l-[#e67e22]">
+              <ContentBox key={index} variant="highlighted">
                 <div className="flex items-start justify-between mb-3">
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-2">
@@ -100,18 +121,9 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                       {project.category}
                     </p>
                       <div className="flex items-center gap-4 text-xs text-[#0f1419] mb-3">
-                        <div className="flex items-center gap-1.5">
-                          <Calendar size={14} className="text-[#e67e22] drop-shadow-sm" />
-                          <span>{project.year}</span>
-                        </div>
-                        <div className="flex items-center gap-1.5">
-                          <MapPin size={14} className="text-[#e67e22] drop-shadow-sm" />
-                          <span>{project.location}</span>
-                        </div>
-                        <div className="flex items-center gap-1.5">
-                          <Users size={14} className="text-[#e67e22] drop-shadow-sm" />
-                          <span>{project.team}</span>
-                        </div>
+                        <InfoItem icon={Calendar} text={project.year} />
+                        <InfoItem icon={MapPin} text={project.location} />
+                        <InfoItem icon={Users} text={project.team} />
                       </div>
                   </div>
                 </div>
@@ -121,53 +133,36 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                 </p>
                 
                 <div className="mb-3">
-                  <h6 className="text-xs font-semibold text-[#0f1419] mb-2">Tecnologias:</h6>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="px-3 py-1.5 bg-gradient-to-r from-[#e67e22] to-[#c2410c] text-white rounded-full text-xs font-semibold shadow-sm"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                  <h6 className="text-xs font-semibold text-[#0f1419] mb-2">{t('projects.technologies')}</h6>
+                        <div className="flex flex-wrap gap-2">
+                          {project.technologies.map((tech: string, techIndex: number) => (
+                            <Badge key={techIndex} size="sm">
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
                 </div>
                 
                 <div>
-                  <h6 className="text-xs font-semibold text-[#0f1419] mb-2">Destaques:</h6>
+                  <h6 className="text-xs font-semibold text-[#0f1419] mb-2">{t('projects.highlights')}</h6>
                   <div className="flex flex-wrap gap-2">
-                    {project.highlights.map((highlight, highlightIndex) => (
-                      <span
-                        key={highlightIndex}
-                        className="px-3 py-1.5 bg-gradient-to-r from-[#e67e22] to-[#c2410c] text-white rounded-full text-xs font-semibold shadow-sm"
-                      >
+                    {project.highlights.map((highlight: string, highlightIndex: number) => (
+                      <Badge key={highlightIndex} size="sm">
                         {highlight}
-                      </span>
+                      </Badge>
                     ))}
                   </div>
                 </div>
-              </div>
+              </ContentBox>
             ))}
           </div>
 
-          <div className="mt-6 p-4 bg-white rounded-lg shadow-sm border border-gray-100">
-            <h4 className="text-lg font-semibold text-[#0f1419] mb-3 flex items-center font-handwriting">
-              <FolderOpen size={20} className="mr-2 text-[#e67e22] drop-shadow-sm" />
-              Metodologia de Projeto
-            </h4>
-            <div className="space-y-2 text-[#0f1419] text-sm leading-relaxed">
-              <p>
-                Meus projetos seguem uma metodologia centrada no usuário, sempre considerando 
-                aspectos de sustentabilidade, acessibilidade e integração com o contexto urbano.
-              </p>
-              <p>
-                Cada projeto é desenvolvido através de pesquisa, análise do contexto, 
-                desenvolvimento conceitual e detalhamento técnico, garantindo soluções 
-                inovadoras e funcionalmente adequadas.
-              </p>
-            </div>
-          </div>
+          <SummarySection
+            icon={FolderOpen}
+            title={t('projects.methodology')}
+            content={t('projects.methodologyContent')}
+            className="mt-6"
+          />
         </div>
       </AnimatedBox>
     </div>

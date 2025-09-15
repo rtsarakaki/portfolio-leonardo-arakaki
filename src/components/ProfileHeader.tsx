@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { User, MapPin, Check } from 'lucide-react';
+import useTranslation from '@/hooks/useTranslation';
 
 interface ProfileHeaderProps {
   className?: string;
@@ -10,6 +11,8 @@ interface ProfileHeaderProps {
 const ProfileHeader: React.FC<ProfileHeaderProps> = ({
   className = ''
 }) => {
+  const { t } = useTranslation();
+  
   return (
     <div className={`profile-header ${className}`}>
       <div className="text-center mb-6">
@@ -22,14 +25,14 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({
           </div>
         </div>
         <h2 className="text-xl font-bold text-[#0f1419] mb-2 font-handwriting">
-          Leonardo Franco Arakaki
+          {t('profile.name')}
         </h2>
         <p className="text-sm text-[#0f1419] font-medium">
-          Estudante de Arquitetura e Urbanismo
+          {t('profile.title')}
         </p>
         <div className="flex items-center justify-center gap-1 text-xs text-[#0f1419] mt-1">
           <MapPin size={12} />
-          <span>FAUUSP • São Paulo, SP</span>
+          <span>{t('profile.location')}</span>
         </div>
       </div>
     </div>

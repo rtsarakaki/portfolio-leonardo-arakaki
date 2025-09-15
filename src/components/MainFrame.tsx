@@ -1,11 +1,19 @@
 import React from 'react';
+import LanguageSelector from './LanguageSelector';
 
 interface MainFrameProps {
   children: React.ReactNode;
   className?: string;
+  currentLocale?: 'pt' | 'en';
+  onLanguageChange?: (locale: 'pt' | 'en') => void;
 }
 
-const MainFrame: React.FC<MainFrameProps> = ({ children, className = '' }) => {
+const MainFrame: React.FC<MainFrameProps> = ({ 
+  children, 
+  className = '',
+  currentLocale,
+  onLanguageChange
+}) => {
   return (
     <div 
       className={`
@@ -21,6 +29,16 @@ const MainFrame: React.FC<MainFrameProps> = ({ children, className = '' }) => {
         ${className}
       `}
     >
+      {/* Seletor de idioma no frame branco com textura de papel */}
+      {currentLocale && onLanguageChange && (
+        <div className="absolute top-4 right-4 z-10">
+          <LanguageSelector
+            currentLocale={currentLocale}
+            onLanguageChange={onLanguageChange}
+          />
+        </div>
+      )}
+      
       {children}
     </div>
   );

@@ -9,13 +9,15 @@ interface SectionContainerProps {
   children: React.ReactNode;
   cotaDirection: 'left' | 'right' | 'top' | 'bottom';
   contentPadding?: string;
+  isMobile?: boolean;
 }
 
 const SectionContainer: React.FC<SectionContainerProps> = ({
   sectionId,
   children,
   cotaDirection,
-  contentPadding = 'p-4'
+  contentPadding = 'p-4',
+  isMobile = false
 }) => {
   // Função para gerar animação baseada no sectionId
   const getSectionAnimation = (sectionId: string) => {
@@ -122,15 +124,20 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
   const flexDirection = isVertical ? 'flex-col' : 'flex';
   
   const getCotaContainer = () => {
+    // Reduzir altura da cota para experiencias, projetos e idiomas
+    const isReducedHeight = ['experiencias', 'projetos', 'idiomas'].includes(sectionId);
+    const cotaSize = isReducedHeight ? 'h-6' : 'h-20';
+    const cotaWidth = isReducedHeight ? 'w-6' : 'w-20';
+    
     if (cotaDirection === 'left' || cotaDirection === 'right') {
       return (
-        <div className="w-20 flex-shrink-0 relative">
+        <div className={`${cotaWidth} flex-shrink-0 relative`}>
           <ArchitecturalCota direction={cotaDirection} />
         </div>
       );
     } else {
       return (
-        <div className="h-20 flex-shrink-0 relative">
+        <div className={`${cotaSize} flex-shrink-0 relative`}>
           <ArchitecturalCota direction={cotaDirection} />
         </div>
       );
@@ -142,6 +149,35 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
       {children}
     </div>
   );
+
+  // No mobile, apenas mostrar o conteúdo sem cotas
+  if (isMobile) {
+    return (
+      <motion.div
+        key={sectionId}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ 
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 0.5,
+            ease: [0.25, 0.46, 0.45, 0.94]
+          }
+        }}
+        exit={{
+          opacity: 0,
+          y: -20,
+          transition: {
+            duration: 0.3,
+            ease: [0.55, 0.06, 0.68, 0.19]
+          }
+        }}
+        className="w-full h-full"
+      >
+        {getContentContainer()}
+      </motion.div>
+    );
+  }
 
   return (
     <motion.div

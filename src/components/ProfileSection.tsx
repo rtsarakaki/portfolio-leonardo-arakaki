@@ -3,6 +3,7 @@
 import React from 'react';
 import ProfileHeader from './ProfileHeader';
 import AboutMeSection from './AboutMeSection';
+import EducationContent from './EducationContent';
 import AnimatedBox from './AnimatedBox';
 
 interface ProfileSectionProps {
@@ -21,8 +22,9 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({
 
         {/* Content */}
         <div className="flex-1 overflow-y-auto">
-          <div className="space-y-4">
-                    <AboutMeSection />
+          <div className="space-y-6">
+            <AboutMeSection />
+            <EducationContent />
           </div>
         </div>
       </AnimatedBox>
