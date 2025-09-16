@@ -1,3 +1,8 @@
+import React from 'react';
+import { Mail, Phone, MapPin, Github, Linkedin, Instagram } from 'lucide-react';
+import Heading3 from './Heading3';
+import Heading4 from './Heading4';
+
 const Footer = () => {
   const currentYear = new Date().getFullYear()
 
@@ -7,7 +12,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
           {/* Brand Section */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-white">Leonardo Arakaki</h3>
+            <Heading3 className="text-xl font-bold text-white">Leonardo Arakaki</Heading3>
             <p className="text-dark-400 text-sm leading-relaxed">
               Estudante de Arquitetura e Urbanismo na FAUUSP, 
               apaixonado por design, urbanismo e comunicação visual.
@@ -16,7 +21,7 @@ const Footer = () => {
 
           {/* Contact Section */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-white">Contato</h4>
+            <Heading4 className="text-lg font-semibold text-white">Contato</Heading4>
             <div className="space-y-2 text-sm text-dark-400">
               <div className="flex items-center space-x-2">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -42,7 +47,7 @@ const Footer = () => {
 
           {/* Social & Links Section */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-white">Redes Sociais</h4>
+            <Heading4 className="text-lg font-semibold text-white">Redes Sociais</Heading4>
             <div className="flex space-x-4">
               <a
                 href="#"

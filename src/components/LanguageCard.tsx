@@ -4,6 +4,7 @@ import React from 'react';
 import { Award } from 'lucide-react';
 import FlagIcon from './FlagIcon';
 import Badge from './Badge';
+import Heading5 from './Heading5';
 import useTranslation from '@/hooks/useTranslation';
 
 interface LanguageCardProps {
@@ -32,7 +33,7 @@ const LanguageCard: React.FC<LanguageCardProps> = ({
             <FlagIcon flagKey={flagKey} />
           </div>
           <div>
-            <h5 className="font-semibold text-[#0f1419] text-xs">{name}</h5>
+            <Heading5>{name}</Heading5>
             <p className="text-[#e67e22] text-xs">{level}</p>
           </div>
         </div>

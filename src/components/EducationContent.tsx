@@ -7,6 +7,8 @@ import ContentBox from './ContentBox';
 import SummarySection from './SummarySection';
 import Badge from './Badge';
 import InfoItem from './InfoItem';
+import Heading5 from './Heading5';
+import Heading6 from './Heading6';
 import LoadingState from './LoadingState';
 import useTranslation from '@/hooks/useTranslation';
 
@@ -71,9 +73,9 @@ const EducationContent: React.FC<EducationContentProps> = ({
                 <ContentBox key={index} variant="highlighted">
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex-1">
-                      <h5 className="text-lg font-semibold text-[#0f1419] mb-1">
+                      <Heading5 className="mb-1">
                         {edu.title}
-                      </h5>
+                      </Heading5>
                       <p className="text-[#e67e22] font-medium text-sm mb-2">
                         {edu.institution}
                       </p>
@@ -117,7 +119,7 @@ const EducationContent: React.FC<EducationContentProps> = ({
                 <ContentBox key={index} variant="simple">
                   <div className="flex items-center justify-between mb-2">
                     <div>
-                      <h6 className="font-semibold text-[#0f1419] text-sm">{cert.name}</h6>
+                      <Heading6>{cert.name}</Heading6>
                       <p className="text-[#e67e22] text-xs">{cert.institution}</p>
                     </div>
                     <div className="text-right">

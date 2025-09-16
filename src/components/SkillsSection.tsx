@@ -51,7 +51,7 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({
       <AnimatedBox direction="right" className="p-6">
         <SectionTitle 
           icon={Wrench} 
-          title="Habilidades e Idiomas" 
+          title={t('skills.title')} 
         />
 
         <div>

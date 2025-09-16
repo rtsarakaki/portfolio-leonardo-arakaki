@@ -36,14 +36,12 @@ export const TranslationProvider: React.FC<TranslationProviderProps> = ({ childr
   useEffect(() => {
     const loadTranslations = async () => {
       try {
-        console.log(`Loading translations for locale: ${locale}`);
         setIsLoading(true);
-                const response = await fetch(`/locales/${locale}/common.json?t=${Date.now()}&v=3`);
+                const response = await fetch(`/locales/${locale}/common.json?t=${Date.now()}&v=4`);
         if (!response.ok) {
           throw new Error(`Failed to load translations: ${response.status}`);
         }
         const data = await response.json();
-        console.log('Translations loaded:', data);
         setTranslations(data);
       } catch (error) {
         console.error('Error loading translations:', error);

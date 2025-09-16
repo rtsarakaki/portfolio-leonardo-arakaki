@@ -8,6 +8,7 @@ import ContentBox from './ContentBox';
 import SummarySection from './SummarySection';
 import Badge from './Badge';
 import InfoItem from './InfoItem';
+import SubsectionTitle from './SubsectionTitle';
 import useTranslation from '@/hooks/useTranslation';
 
 interface ExperiencesSectionProps {
@@ -54,10 +55,11 @@ const ExperiencesSection: React.FC<ExperiencesSectionProps> = ({
               <ContentBox key={index} variant="highlighted">
                 <div className="flex items-start justify-between mb-3">
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-[#0f1419] mb-1 flex items-center gap-2">
-                      <Briefcase size={18} className="text-[#e67e22] drop-shadow-sm" />
-                      {exp.title}
-                    </h3>
+                    <SubsectionTitle 
+                      icon={Briefcase} 
+                      title={exp.title}
+                      className="mb-1"
+                    />
                     <div className="flex items-center gap-4 text-sm text-[#0f1419] mb-2">
                       <InfoItem icon={Building} text={exp.company} className="font-medium" />
                       <InfoItem icon={MapPin} text={exp.location} />
@@ -71,7 +73,7 @@ const ExperiencesSection: React.FC<ExperiencesSectionProps> = ({
                 </p>
                 
                 <div className="flex flex-wrap gap-2">
-                  {exp.projects.map((project, projectIndex) => (
+                  {exp.projects.map((project: string, projectIndex: number) => (
                     <Badge key={projectIndex} size="sm">
                       {project}
                     </Badge>

@@ -8,6 +8,8 @@ import ContentBox from './ContentBox';
 import SummarySection from './SummarySection';
 import Badge from './Badge';
 import InfoItem from './InfoItem';
+import Heading3 from './Heading3';
+import Heading6 from './Heading6';
 import LoadingState from './LoadingState';
 import useTranslation from '@/hooks/useTranslation';
 
@@ -110,9 +112,9 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                 <div className="flex items-start justify-between mb-3">
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-2">
-                      <h3 className="text-lg font-semibold text-[#0f1419]">
+                      <Heading3>
                         {project.title}
-                      </h3>
+                      </Heading3>
                       <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(project.status)}`}>
                         {project.status}
                       </span>
@@ -133,7 +135,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                 </p>
                 
                 <div className="mb-3">
-                  <h6 className="text-xs font-semibold text-[#0f1419] mb-2">{t('projects.technologies')}</h6>
+                  <Heading6 className="mb-2">{t('projects.technologies')}</Heading6>
                         <div className="flex flex-wrap gap-2">
                           {project.technologies.map((tech: string, techIndex: number) => (
                             <Badge key={techIndex} size="sm">
@@ -144,7 +146,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                 </div>
                 
                 <div>
-                  <h6 className="text-xs font-semibold text-[#0f1419] mb-2">{t('projects.highlights')}</h6>
+                  <Heading6 className="mb-2">{t('projects.highlights')}</Heading6>
                   <div className="flex flex-wrap gap-2">
                     {project.highlights.map((highlight: string, highlightIndex: number) => (
                       <Badge key={highlightIndex} size="sm">
