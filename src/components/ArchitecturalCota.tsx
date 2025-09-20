@@ -17,13 +17,13 @@ const ArchitecturalCota: React.FC<ArchitecturalCotaProps> = ({
       return (
         <>
           {/* Linha principal vertical */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-1 transform -translate-x-1/2" style={{ backgroundColor: '#FF8C42' }}></div>
+          <div className="absolute left-1/2 top-0 bottom-0 w-0.5 transform -translate-x-1/2" style={{ backgroundColor: '#FF8C42' }}></div>
           
           {/* Linhas perpendiculares nas extremidades */}
           {/* Linha superior */}
-          <div className="absolute left-1/2 top-2 w-8 h-1 transform -translate-x-1/2" style={{ backgroundColor: '#FF8C42' }}></div>
+          <div className="absolute left-1/2 top-2 w-8 h-0.5 transform -translate-x-1/2" style={{ backgroundColor: '#FF8C42' }}></div>
           {/* Linha inferior */}
-          <div className="absolute left-1/2 bottom-2 w-8 h-1 transform -translate-x-1/2" style={{ backgroundColor: '#FF8C42' }}></div>
+          <div className="absolute left-1/2 bottom-2 w-8 h-0.5 transform -translate-x-1/2" style={{ backgroundColor: '#FF8C42' }}></div>
         </>
       );
     } else {
@@ -31,13 +31,13 @@ const ArchitecturalCota: React.FC<ArchitecturalCotaProps> = ({
       return (
         <>
           {/* Linha principal horizontal */}
-          <div className="absolute top-1/2 left-0 right-0 h-1 transform -translate-y-1/2" style={{ backgroundColor: '#FF8C42' }}></div>
+          <div className="absolute top-1/2 left-0 right-0 h-0.5 transform -translate-y-1/2" style={{ backgroundColor: '#FF8C42' }}></div>
           
           {/* Linhas perpendiculares nas extremidades */}
           {/* Linha esquerda */}
-          <div className="absolute top-1/2 left-2 w-1 h-8 transform -translate-y-1/2" style={{ backgroundColor: '#FF8C42' }}></div>
+          <div className="absolute top-1/2 left-2 w-0.5 h-8 transform -translate-y-1/2" style={{ backgroundColor: '#FF8C42' }}></div>
           {/* Linha direita */}
-          <div className="absolute top-1/2 right-2 w-1 h-8 transform -translate-y-1/2" style={{ backgroundColor: '#FF8C42' }}></div>
+          <div className="absolute top-1/2 right-2 w-0.5 h-8 transform -translate-y-1/2" style={{ backgroundColor: '#FF8C42' }}></div>
         </>
       );
     }
