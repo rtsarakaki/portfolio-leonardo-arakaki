@@ -144,11 +144,43 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
     }
   };
 
-  const getContentContainer = () => (
-    <div className={`flex-1 ${contentPadding}`}>
-      {children}
-    </div>
-  );
+  const getContentContainer = () => {
+    if (isExperiencesSection) {
+      return (
+        <motion.div 
+          className={`flex-1 ${contentPadding}`}
+          initial={{ 
+            opacity: 0,
+            clipPath: "inset(0 0 100% 0)"
+          }}
+          animate={{ 
+            opacity: 1,
+            clipPath: "inset(0 0 0% 0)",
+            transition: {
+              duration: 1.2,
+              ease: [0.25, 0.46, 0.45, 0.94]
+            }
+          }}
+          exit={{
+            opacity: 0,
+            clipPath: "inset(100% 0 0 0)",
+            transition: {
+              duration: 0.4,
+              ease: [0.55, 0.06, 0.68, 0.19]
+            }
+          }}
+        >
+          {children}
+        </motion.div>
+      );
+    }
+    
+    return (
+      <div className={`flex-1 ${contentPadding}`}>
+        {children}
+      </div>
+    );
+  };
 
   // No mobile, apenas mostrar o conteúdo sem cotas
   if (isMobile) {
@@ -179,22 +211,19 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
     );
   }
 
-  // Animação especial para a seção de experiências (linhas horizontais fixas + deslize da inferior)
+  // Animação especial para a seção de experiências (cota fixa + conteúdo com revelação)
   const isExperiencesSection = sectionId === 'experiencias';
   
   return (
     <motion.div
       key={sectionId}
       initial={isExperiencesSection ? { 
-        opacity: 0,
-        clipPath: "inset(0 0 100% 0)"
+        opacity: 1
       } : getSectionAnimation(sectionId).initial}
       animate={isExperiencesSection ? { 
         opacity: 1,
-        clipPath: "inset(0 0 0% 0)",
         transition: {
-          duration: 1.2,
-          ease: [0.25, 0.46, 0.45, 0.94]
+          duration: 0.1
         }
       } : { 
         height: "auto", 
@@ -209,7 +238,6 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
       }}
       exit={isExperiencesSection ? {
         opacity: 0,
-        clipPath: "inset(100% 0 0 0)",
         transition: {
           duration: 0.4,
           ease: [0.55, 0.06, 0.68, 0.19]
