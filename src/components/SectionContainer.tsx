@@ -50,7 +50,7 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
     
     if (cotaDirection === 'left' || cotaDirection === 'right') {
       return (
-        <div className={`${cotaWidth} flex-shrink-0 relative bg-red-500`}>
+        <div className={`${cotaWidth} flex-shrink-0 relative`}>
           <ArchitecturalCota direction={cotaDirection} />
         </div>
       );
@@ -67,7 +67,7 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
     return (
       <div 
         ref={contentRef}
-        className={`flex-1 ${contentPadding} h-full`}
+        className={`flex-1 ${contentPadding} h-full rounded-lg`}
         style={{ 
           maxHeight: '100%',
           minHeight: 0,
