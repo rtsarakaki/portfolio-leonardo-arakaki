@@ -33,8 +33,8 @@ const RusticButton: React.FC<RusticButtonProps> = ({
   `;
 
   return (
-    <div className="flex flex-col items-center">
-      {/* Texto acima do botão */}
+    <div className="flex flex-col items-start">
+      {/* Texto alinhado à esquerda */}
       <span className="text-xs font-medium text-white mb-2 font-handwriting">
         {children}
       </span>

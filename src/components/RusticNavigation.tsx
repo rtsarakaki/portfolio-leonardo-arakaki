@@ -37,7 +37,7 @@ const RusticNavigation: React.FC<RusticNavigationProps> = ({
     <div className={`flex flex-col h-full max-h-full ${className}`}>
       {/* Navegação - apenas no desktop */}
       {!isMobile && (
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div className="flex flex-wrap gap-6 mb-4">
           {sections.map((section) => (
             <RusticButton
               key={section.id}
@@ -58,7 +58,7 @@ const RusticNavigation: React.FC<RusticNavigationProps> = ({
             <SectionContainer
               sectionId="perfil"
               cotaDirection="left"
-              contentPadding={isMobile ? "p-4 pb-8" : "pb-4 px-1"}
+              contentPadding={isMobile ? "p-4 pb-8" : "pb-4 px-4"}
               isMobile={isMobile}
             >
               <ProfileSection 
