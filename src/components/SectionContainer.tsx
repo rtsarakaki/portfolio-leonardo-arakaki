@@ -148,7 +148,7 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
 
   const getContentContainer = () => {
     return (
-      <div className={`flex-1 ${contentPadding}`}>
+      <div className={`flex-1 ${contentPadding} overflow-y-auto`}>
         {children}
       </div>
     );
@@ -188,7 +188,7 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
       key={sectionId}
       initial={getSectionAnimation(sectionId).initial}
       animate={{ 
-        height: "auto", 
+        height: "100%", 
         opacity: 1,
         scaleX: 1,
         scaleY: 1,
@@ -205,7 +205,7 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
           ease: [0.55, 0.06, 0.68, 0.19]
         }
       }}
-      className={`w-full flex-1 ${flexDirection}`}
+      className={`w-full flex-1 ${flexDirection} overflow-hidden`}
     >
       {/* Renderizar cota e conteúdo baseado na direção */}
       {cotaDirection === 'left' && (
