@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import ArchitecturalCota from './ArchitecturalCota';
 
@@ -20,31 +20,6 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
   isMobile = false
 }) => {
   const contentRef = useRef<HTMLDivElement>(null);
-  const [needsScroll, setNeedsScroll] = useState(false);
-
-  useEffect(() => {
-    const checkContentFit = () => {
-      if (contentRef.current && !isMobile) {
-        const content = contentRef.current;
-        const scrollHeight = content.scrollHeight;
-        const clientHeight = content.clientHeight;
-        
-        // Se o conteúdo é maior que o container, precisa de scroll
-        setNeedsScroll(scrollHeight > clientHeight);
-      }
-    };
-
-    // Verificar após a animação inicial
-    const timer = setTimeout(checkContentFit, 2000);
-    
-    // Verificar quando a janela é redimensionada
-    window.addEventListener('resize', checkContentFit);
-    
-    return () => {
-      clearTimeout(timer);
-      window.removeEventListener('resize', checkContentFit);
-    };
-  }, [isMobile]);
   // Função para gerar animação baseada no sectionId
   const getSectionAnimation = (sectionId: string) => {
     // Usar o ID da seção como seed para consistência
@@ -173,12 +148,10 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
   };
 
   const getContentContainer = () => {
-    const overflowClass = needsScroll ? 'overflow-y-auto' : 'overflow-visible';
-    
     return (
       <div 
         ref={contentRef}
-        className={`flex-1 ${contentPadding} ${overflowClass} max-h-full`}
+        className={`flex-1 ${contentPadding} overflow-y-auto h-full`}
       >
         {children}
       </div>
@@ -236,7 +209,7 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
           ease: [0.55, 0.06, 0.68, 0.19]
         }
       }}
-      className={`w-full flex-1 ${flexDirection} overflow-hidden`}
+      className={`w-full flex-1 ${flexDirection} overflow-hidden h-full`}
     >
       {/* Renderizar cota e conteúdo baseado na direção */}
       {cotaDirection === 'left' && (
