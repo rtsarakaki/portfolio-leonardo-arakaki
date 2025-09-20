@@ -72,7 +72,7 @@ const RusticNavigation: React.FC<RusticNavigationProps> = ({
             <SectionContainer
               sectionId="habilidades"
               cotaDirection="right"
-              contentPadding={isMobile ? "p-4" : "pb-4"}
+              contentPadding={isMobile ? "p-4 pb-8" : "pb-4"}
               isMobile={isMobile}
             >
               <SkillsSection 
@@ -87,7 +87,7 @@ const RusticNavigation: React.FC<RusticNavigationProps> = ({
             <SectionContainer
               sectionId="experiencias"
               cotaDirection="bottom"
-              contentPadding="p-4"
+              contentPadding={isMobile ? "p-4 pb-8" : "p-4"}
               isMobile={isMobile}
             >
               <ExperiencesSection 
@@ -102,7 +102,7 @@ const RusticNavigation: React.FC<RusticNavigationProps> = ({
             <SectionContainer
               sectionId="projetos"
               cotaDirection="top"
-              contentPadding="p-4"
+              contentPadding={isMobile ? "p-4 pb-8" : "p-4"}
               isMobile={isMobile}
             >
               <ProjectsSection 

@@ -24,22 +24,22 @@ const MobileToolbar: React.FC<MobileToolbarProps> = ({
 
   return (
     <div className="fixed bottom-0 left-0 right-0 bg-frame-dark-blue py-3 z-50">
-      <div className="overflow-x-auto scrollbar-hide">
-        <div className="flex px-4 min-w-max">
+      <div className="flex justify-center items-center px-4">
+        <div className="flex justify-center gap-2 max-w-full">
           {sections.map((section) => {
             const IconComponent = section.icon;
             return (
               <button
                 key={section.id}
                 onClick={() => onNavigate(section.id)}
-                className={`flex flex-col items-center px-3 py-2 text-xs font-medium rounded transition-colors flex-shrink-0 ${
+                className={`flex flex-col items-center px-3 py-2 text-xs font-medium rounded transition-colors flex-1 min-w-0 ${
                   activeSectionId === section.id
                     ? 'text-white bg-orange-500'
                     : 'text-gray-300 hover:text-white'
                 }`}
               >
                 <IconComponent size={16} className="mb-1" />
-                <span className="text-[10px] leading-tight whitespace-nowrap">{section.label}</span>
+                <span className="text-[10px] leading-tight whitespace-nowrap truncate">{section.label}</span>
               </button>
             );
           })}

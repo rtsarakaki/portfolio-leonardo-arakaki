@@ -80,7 +80,7 @@ function HomeContent() {
         </div>
         
         {/* Conteúdo principal com scroll e padding para o toolbar fixo */}
-        <div className="flex-1 bg-white overflow-y-auto pb-20">
+        <div className="flex-1 bg-white overflow-y-auto pb-24">
           <RusticNavigation
             activeSectionId={activeSectionId}
             onNavigate={handleNavigate}
