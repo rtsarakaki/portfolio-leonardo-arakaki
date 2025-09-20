@@ -123,8 +123,7 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
   const isVertical = cotaDirection === 'top' || cotaDirection === 'bottom';
   const flexDirection = isVertical ? 'flex-col' : 'flex';
   
-  // Animação especial para a seção de experiências (cota fixa + conteúdo com revelação)
-  const isExperiencesSection = sectionId === 'experiencias';
+  // Remover animação especial para usar padrão como outras seções
   
   const getCotaContainer = () => {
     // Reduzir altura da cota para experiencias, projetos e idiomas
@@ -187,18 +186,8 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
   return (
     <motion.div
       key={sectionId}
-      initial={isExperiencesSection ? { 
-        opacity: 0,
-        clipPath: "inset(0 0 100% 0)"
-      } : getSectionAnimation(sectionId).initial}
-      animate={isExperiencesSection ? { 
-        opacity: 1,
-        clipPath: "inset(0 0 0% 0)",
-        transition: {
-          duration: 1.2,
-          ease: [0.25, 0.46, 0.45, 0.94]
-        }
-      } : { 
+      initial={getSectionAnimation(sectionId).initial}
+      animate={{ 
         height: "auto", 
         opacity: 1,
         scaleX: 1,
@@ -209,14 +198,7 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
           delay: 0.2
         }
       }}
-      exit={isExperiencesSection ? {
-        opacity: 0,
-        clipPath: "inset(100% 0 0 0)",
-        transition: {
-          duration: 0.4,
-          ease: [0.55, 0.06, 0.68, 0.19]
-        }
-      } : {
+      exit={{
         ...getSectionAnimation(sectionId).exit,
         transition: {
           duration: 1.0,
