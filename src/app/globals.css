@@ -186,14 +186,7 @@
   /* Seção Perfil */
   .profile-section {
     position: relative;
-    background: 
-      repeating-linear-gradient(
-        45deg,
-        #FFB366 0px,
-        #FFB366 2px,
-        #FFA366 2px,
-        #FFA366 4px
-      );
+    background: #FFB366;
     border: 1px solid #e67e22;
     border-radius: 12px;
     box-shadow: 
