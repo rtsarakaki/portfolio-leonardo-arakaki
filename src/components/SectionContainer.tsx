@@ -67,7 +67,8 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
     return (
       <div 
         ref={contentRef}
-        className={`flex-1 ${contentPadding} overflow-y-auto h-full`}
+        className={`flex-1 ${contentPadding} overflow-y-auto h-full max-h-full`}
+        style={{ maxHeight: '100%' }}
       >
         {children}
       </div>
