@@ -13,7 +13,7 @@ const ContentBox: React.FC<ContentBoxProps> = ({
   variant = 'default',
   className = '' 
 }) => {
-  const baseClasses = 'bg-white rounded-lg shadow-sm border border-gray-100';
+  const baseClasses = 'bg-white rounded-lg shadow-sm border border-gray-200';
   
   const variantClasses = {
     default: 'p-4',

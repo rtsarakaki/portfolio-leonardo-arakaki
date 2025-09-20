@@ -26,7 +26,7 @@ const LanguageCard: React.FC<LanguageCardProps> = ({
 
 
   return (
-    <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100 border-l-2 border-l-[#e67e22]">
+    <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-200">
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center space-x-3">
           <div className="drop-shadow-sm" role="img" aria-label={`Bandeira do ${name}`}>

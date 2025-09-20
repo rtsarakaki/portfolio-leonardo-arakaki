@@ -11,7 +11,7 @@ interface SkillCardProps {
 
 const SkillCard: React.FC<SkillCardProps> = ({ name, level, category, index }) => {
   return (
-    <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100 border-l-2 border-l-[#e67e22]">
+    <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-200">
       <div className="flex justify-between items-center mb-2">
         <span className="text-[#0f1419] font-semibold text-xs">{name}</span>
         <span className="text-[#e67e22] text-xs font-bold">{level}%</span>

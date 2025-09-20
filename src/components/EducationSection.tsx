@@ -78,7 +78,7 @@ const EducationSection: React.FC<EducationSectionProps> = ({
               </h4>
               <div className="space-y-4">
                 {education.map((edu, index) => (
-                  <div key={index} className="bg-white rounded-lg p-4 shadow-sm border border-gray-100 border-l-4 border-l-[#e67e22]">
+                  <div key={index} className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
                     <div className="flex items-start justify-between mb-3">
                       <div className="flex-1">
                         <h5 className="text-lg font-semibold text-[#0f1419] mb-1">
@@ -130,7 +130,7 @@ const EducationSection: React.FC<EducationSectionProps> = ({
               </h4>
               <div className="space-y-3">
                 {certifications.map((cert, index) => (
-                  <div key={index} className="bg-white rounded-lg p-3 shadow-sm border border-gray-100">
+                  <div key={index} className="bg-white rounded-lg p-3 shadow-sm border border-gray-200">
                     <div className="flex items-center justify-between mb-2">
                       <div>
                         <h6 className="font-semibold text-[#0f1419] text-sm">{cert.name}</h6>
@@ -147,7 +147,7 @@ const EducationSection: React.FC<EducationSectionProps> = ({
             </div>
 
             {/* Resumo Acadêmico */}
-            <div className="p-4 bg-white rounded-lg shadow-sm border border-gray-100">
+            <div className="p-4 bg-white rounded-lg shadow-sm border border-gray-200">
             <h4 className="text-lg font-semibold text-[#0f1419] mb-3 flex items-center font-handwriting">
               <BookOpen size={20} className="mr-2 text-[#e67e22] drop-shadow-sm" />
               {t('education.academicTrajectory')}
