@@ -179,18 +179,22 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
     );
   }
 
-  // Animação especial para a seção de experiências (apenas fade-in)
+  // Animação especial para a seção de experiências (revelação de cima para baixo)
   const isExperiencesSection = sectionId === 'experiencias';
   
   return (
     <motion.div
       key={sectionId}
-      initial={isExperiencesSection ? { opacity: 0 } : getSectionAnimation(sectionId).initial}
+      initial={isExperiencesSection ? { 
+        opacity: 0,
+        clipPath: "inset(100% 0 0 0)"
+      } : getSectionAnimation(sectionId).initial}
       animate={isExperiencesSection ? { 
         opacity: 1,
+        clipPath: "inset(0% 0 0 0)",
         transition: {
-          duration: 0.8,
-          ease: "easeOut"
+          duration: 1.2,
+          ease: [0.25, 0.46, 0.45, 0.94]
         }
       } : { 
         height: "auto", 
@@ -205,9 +209,10 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
       }}
       exit={isExperiencesSection ? {
         opacity: 0,
+        clipPath: "inset(0% 0 100% 0)",
         transition: {
-          duration: 0.3,
-          ease: "easeIn"
+          duration: 0.4,
+          ease: [0.55, 0.06, 0.68, 0.19]
         }
       } : {
         ...getSectionAnimation(sectionId).exit,
