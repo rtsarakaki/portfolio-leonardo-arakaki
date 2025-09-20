@@ -16,12 +16,12 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({
   className = ''
 }) => {
   return (
-    <div className={`profile-section ${className}`}>
-      <AnimatedBox direction="left" className="p-8">
+    <div className={`profile-section ${className} `}>
+      <AnimatedBox direction="left" className="p-8 bg-red-500 h-full overflow-y-auto">
         <ProfileHeader />
 
         {/* Content */}
-        <div className="flex-1 overflow-y-auto">
+        <div className="flex-1">
           <div className="space-y-6">
             <AboutMeSection />
             <EducationContent />
