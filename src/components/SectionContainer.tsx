@@ -179,11 +179,20 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
     );
   }
 
+  // Animação especial para a seção de experiências (apenas fade-in)
+  const isExperiencesSection = sectionId === 'experiencias';
+  
   return (
     <motion.div
       key={sectionId}
-      initial={getSectionAnimation(sectionId).initial}
-      animate={{ 
+      initial={isExperiencesSection ? { opacity: 0 } : getSectionAnimation(sectionId).initial}
+      animate={isExperiencesSection ? { 
+        opacity: 1,
+        transition: {
+          duration: 0.8,
+          ease: "easeOut"
+        }
+      } : { 
         height: "auto", 
         opacity: 1,
         scaleX: 1,
@@ -194,7 +203,13 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
           delay: 0.2
         }
       }}
-      exit={{
+      exit={isExperiencesSection ? {
+        opacity: 0,
+        transition: {
+          duration: 0.3,
+          ease: "easeIn"
+        }
+      } : {
         ...getSectionAnimation(sectionId).exit,
         transition: {
           duration: 1.0,

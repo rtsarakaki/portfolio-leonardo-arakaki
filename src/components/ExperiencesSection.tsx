@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Briefcase, Building, Calendar, MapPin } from 'lucide-react';
 import SectionTitle from './SectionTitle';
 import ContentBox from './ContentBox';
@@ -43,24 +42,7 @@ const ExperiencesSection: React.FC<ExperiencesSectionProps> = ({
 
   return (
     <div className={`profile-section ${className}`}>
-      <motion.div 
-        className="p-6"
-        initial={{ opacity: 0 }}
-        animate={{ 
-          opacity: 1,
-          transition: {
-            duration: 0.8,
-            ease: "easeOut"
-          }
-        }}
-        exit={{ 
-          opacity: 0,
-          transition: {
-            duration: 0.3,
-            ease: "easeIn"
-          }
-        }}
-      >
+      <div className="p-6">
         <SectionTitle 
           icon={Briefcase} 
           title={t('experiences.title')} 
@@ -107,7 +89,7 @@ const ExperiencesSection: React.FC<ExperiencesSectionProps> = ({
             className="mt-6"
           />
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };
