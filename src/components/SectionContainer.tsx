@@ -67,7 +67,7 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
     return (
       <div 
         ref={contentRef}
-        className={`flex-1 ${contentPadding} h-full rounded-lg`}
+        className={`flex-1 ${contentPadding} h-full rounded-lg border border-gray-200 bg-white`}
         style={{ 
           maxHeight: '100%',
           minHeight: 0,
