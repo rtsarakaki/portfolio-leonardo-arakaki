@@ -41,7 +41,7 @@ const ExperiencesSection: React.FC<ExperiencesSectionProps> = ({
   ];
 
   return (
-    <div className={`profile-section ${className}`}>
+    <div className={`profile-section ${className} `}>
       <div className="p-6">
         <SectionTitle 
           icon={Briefcase} 

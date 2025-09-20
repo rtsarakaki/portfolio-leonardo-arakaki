@@ -87,7 +87,7 @@ const RusticNavigation: React.FC<RusticNavigationProps> = ({
             <SectionContainer
               sectionId="experiencias"
               cotaDirection="left"
-              contentPadding={isMobile ? "p-4 pb-8" : "p-4"}
+              contentPadding={isMobile ? "p-4 pb-8" : "pb-4 px-4"}
               isMobile={isMobile}
             >
               <ExperiencesSection 

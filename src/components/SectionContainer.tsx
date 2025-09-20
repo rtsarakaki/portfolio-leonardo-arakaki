@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ArchitecturalCota from './ArchitecturalCota';
+import ExperiencesCota from './ExperiencesCota';
 
 interface SectionContainerProps {
   sectionId: string;
@@ -132,7 +133,11 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
     if (cotaDirection === 'left' || cotaDirection === 'right') {
       return (
         <div className={`${cotaWidth} flex-shrink-0 relative`}>
-          <ArchitecturalCota direction={cotaDirection} />
+          {isExperiencesSection ? (
+            <ExperiencesCota direction={cotaDirection} />
+          ) : (
+            <ArchitecturalCota direction={cotaDirection} />
+          )}
         </div>
       );
     } else {
@@ -179,7 +184,7 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
     );
   }
 
-  // Animação especial para a seção de experiências (revelação de cima para baixo)
+  // Animação especial para a seção de experiências (linhas horizontais fixas + deslize da inferior)
   const isExperiencesSection = sectionId === 'experiencias';
   
   return (
