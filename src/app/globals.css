@@ -202,40 +202,6 @@
     margin-top: 8px;
   }
 
-  .profile-section::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: #e67e22;
-    border-radius: inherit;
-    z-index: -1;
-    filter: blur(1px) contrast(1.2);
-    opacity: 0.5;
-  }
-
-  .profile-section::after {
-    content: '';
-    position: absolute;
-    top: 1px;
-    left: 1px;
-    right: 1px;
-    bottom: 1px;
-    background: 
-      repeating-linear-gradient(
-        45deg,
-        #FFB366 0px,
-        #FFB366 2px,
-        #FFA366 2px,
-        #FFA366 4px
-      );
-    border-radius: inherit;
-    z-index: -1;
-    filter: blur(0.3px) contrast(1.1);
-    clip-path: polygon(0% 0%, 98% 1%, 100% 8%, 99% 92%, 98% 99%, 2% 100%, 1% 92%, 0% 8%);
-  }
 
 }
 
