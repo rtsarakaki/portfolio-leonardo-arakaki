@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import ArchitecturalCota from './ArchitecturalCota';
 
@@ -19,6 +19,32 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
   contentPadding = 'p-4',
   isMobile = false
 }) => {
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [needsScroll, setNeedsScroll] = useState(false);
+
+  useEffect(() => {
+    const checkContentFit = () => {
+      if (contentRef.current && !isMobile) {
+        const content = contentRef.current;
+        const scrollHeight = content.scrollHeight;
+        const clientHeight = content.clientHeight;
+        
+        // Se o conteúdo é maior que o container, precisa de scroll
+        setNeedsScroll(scrollHeight > clientHeight);
+      }
+    };
+
+    // Verificar após a animação inicial
+    const timer = setTimeout(checkContentFit, 2000);
+    
+    // Verificar quando a janela é redimensionada
+    window.addEventListener('resize', checkContentFit);
+    
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('resize', checkContentFit);
+    };
+  }, [isMobile]);
   // Função para gerar animação baseada no sectionId
   const getSectionAnimation = (sectionId: string) => {
     // Usar o ID da seção como seed para consistência
@@ -147,8 +173,13 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
   };
 
   const getContentContainer = () => {
+    const overflowClass = needsScroll ? 'overflow-y-auto' : 'overflow-visible';
+    
     return (
-      <div className={`flex-1 ${contentPadding} overflow-y-auto`}>
+      <div 
+        ref={contentRef}
+        className={`flex-1 ${contentPadding} ${overflowClass} max-h-full`}
+      >
         {children}
       </div>
     );
