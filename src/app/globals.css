@@ -14,6 +14,10 @@
   .font-handwriting {
     font-family: var(--font-handwriting), 'Kosugi Maru', sans-serif;
   }
+
+  .font-calibre {
+    font-family: 'Calibre', 'Calibri', sans-serif;
+  }
 }
 
 @layer components {
@@ -226,6 +230,7 @@
       0 2px 4px rgba(0, 0, 0, 0.1);
     filter: blur(0.3px) contrast(1.0) saturate(0.7);
     margin-top: 8px;
+    font-family: Calibri, sans-serif
   }
 
 

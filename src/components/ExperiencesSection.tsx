@@ -42,7 +42,7 @@ const ExperiencesSection: React.FC<ExperiencesSectionProps> = ({
 
   return (
     <div className={`profile-section ${className} `}>
-      <div className="p-6">
+      <div className="p-6 h-full overflow-y-auto scrollbar-hide">
         <SectionTitle 
           icon={Briefcase} 
           title={t('experiences.title')} 

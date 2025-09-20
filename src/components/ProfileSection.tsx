@@ -17,7 +17,7 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({
 }) => {
   return (
     <div className={`profile-section ${className} `}>
-      <AnimatedBox direction="left" className="p-6 h-full overflow-y-auto">
+      <AnimatedBox direction="left" className="p-6 h-full overflow-y-auto scrollbar-hide">
         <ProfileHeader />
 
         {/* Content */}

@@ -99,7 +99,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
 
   return (
     <div className={`profile-section ${className}`}>
-      <AnimatedBox direction="top" className="p-6 h-full overflow-y-auto">
+      <AnimatedBox direction="top" className="p-6 h-full overflow-y-auto scrollbar-hide">
         <SectionTitle 
           icon={FolderOpen} 
           title={t('projects.title')} 

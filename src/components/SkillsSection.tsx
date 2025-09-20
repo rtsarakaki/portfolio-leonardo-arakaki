@@ -48,7 +48,7 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({
 
   return (
     <div className={`profile-section ${className}`}>
-      <AnimatedBox direction="right" className="p-6 h-full overflow-y-auto">
+      <AnimatedBox direction="right" className="p-6 h-full overflow-y-auto scrollbar-hide">
         <SectionTitle 
           icon={Wrench} 
           title={t('skills.title')} 
