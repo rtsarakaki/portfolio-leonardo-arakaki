@@ -30,12 +30,12 @@ function HomeContent() {
         >
           <div className="flex h-full">
             {/* Conteúdo principal na parte esquerda do frame azul */}
-            <div className="w-2/5 flex items-center justify-start pl-8">
+            <div className="w-[30%] flex items-center justify-start pl-8">
               <LeonardoArakakiSVG />
             </div>
             
             {/* Navegação Rústica na parte direita */}
-            <div className="w-3/5 flex flex-col justify-start pt-2 pr-8">
+            <div className="w-[70%] flex flex-col justify-start pt-2 pr-8">
               <RusticNavigation
                 activeSectionId={activeSectionId}
                 onNavigate={handleNavigate}
