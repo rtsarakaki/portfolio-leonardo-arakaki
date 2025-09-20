@@ -20,106 +20,22 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
   isMobile = false
 }) => {
   const contentRef = useRef<HTMLDivElement>(null);
-  // Função para gerar animação baseada no sectionId
+  // Função para gerar animação de cima para baixo para todas as seções
   const getSectionAnimation = (sectionId: string) => {
-    // Usar o ID da seção como seed para consistência
-    const seed = sectionId.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-    const randomIndex = seed % 6;
-    
-    const animations = [
-      // Esquerda para direita
-      {
-        initial: { 
-          height: 0, 
-          opacity: 0,
-          scaleX: 0.3,
-          transformOrigin: "left center"
-        },
-        exit: { 
-          height: 0, 
-          opacity: 0,
-          scaleX: 0.3,
-          transformOrigin: "left center"
-        }
+    return {
+      initial: { 
+        height: 0, 
+        opacity: 0,
+        scaleY: 0.3,
+        transformOrigin: "center top"
       },
-      // Direita para esquerda
-      {
-        initial: { 
-          height: 0, 
-          opacity: 0,
-          scaleX: 0.3,
-          transformOrigin: "right center"
-        },
-        exit: { 
-          height: 0, 
-          opacity: 0,
-          scaleX: 0.3,
-          transformOrigin: "right center"
-        }
-      },
-      // Cima para baixo
-      {
-        initial: { 
-          height: 0, 
-          opacity: 0,
-          scaleY: 0.3,
-          transformOrigin: "center top"
-        },
-        exit: { 
-          height: 0, 
-          opacity: 0,
-          scaleY: 0.3,
-          transformOrigin: "center top"
-        }
-      },
-      // Baixo para cima
-      {
-        initial: { 
-          height: 0, 
-          opacity: 0,
-          scaleY: 0.3,
-          transformOrigin: "center bottom"
-        },
-        exit: { 
-          height: 0, 
-          opacity: 0,
-          scaleY: 0.3,
-          transformOrigin: "center bottom"
-        }
-      },
-      // Direita para esquerda (segunda versão)
-      {
-        initial: { 
-          height: 0, 
-          opacity: 0,
-          scaleX: 0.3,
-          transformOrigin: "right center"
-        },
-        exit: { 
-          height: 0, 
-          opacity: 0,
-          scaleX: 0.3,
-          transformOrigin: "right center"
-        }
-      },
-      // Esquerda para direita (segunda versão)
-      {
-        initial: { 
-          height: 0, 
-          opacity: 0,
-          scaleX: 0.3,
-          transformOrigin: "left center"
-        },
-        exit: { 
-          height: 0, 
-          opacity: 0,
-          scaleX: 0.3,
-          transformOrigin: "left center"
-        }
+      exit: { 
+        height: 0, 
+        opacity: 0,
+        scaleY: 0.3,
+        transformOrigin: "center top"
       }
-    ];
-    
-    return animations[randomIndex];
+    };
   };
   const isVertical = cotaDirection === 'top' || cotaDirection === 'bottom';
   const flexDirection = isVertical ? 'flex-col' : 'flex';
