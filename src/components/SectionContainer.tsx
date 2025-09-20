@@ -187,11 +187,11 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
       key={sectionId}
       initial={isExperiencesSection ? { 
         opacity: 0,
-        clipPath: "inset(100% 0 0 0)"
+        clipPath: "inset(0 0 100% 0)"
       } : getSectionAnimation(sectionId).initial}
       animate={isExperiencesSection ? { 
         opacity: 1,
-        clipPath: "inset(0% 0 0 0)",
+        clipPath: "inset(0 0 0% 0)",
         transition: {
           duration: 1.2,
           ease: [0.25, 0.46, 0.45, 0.94]
@@ -209,7 +209,7 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
       }}
       exit={isExperiencesSection ? {
         opacity: 0,
-        clipPath: "inset(0% 0 100% 0)",
+        clipPath: "inset(100% 0 0 0)",
         transition: {
           duration: 0.4,
           ease: [0.55, 0.06, 0.68, 0.19]
