@@ -20,11 +20,12 @@ const MainFrame: React.FC<MainFrameProps> = ({
         bg-frame-dark-blue 
         rounded-xl 
         shadow-2xl 
-        p-8
-        md:p-10 
-        lg:p-12
+        p-6
+        md:p-8 
+        lg:p-10
         w-full
-        h-screen sm:h-[80vh]
+        h-[calc(100vh-2rem)]
+        max-h-[1080px]
         relative
         ${className}
       `}

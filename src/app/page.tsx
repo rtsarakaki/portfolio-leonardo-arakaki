@@ -23,7 +23,7 @@ function HomeContent() {
   return (
     <div className="min-h-screen">
       {/* Desktop Layout */}
-      <div className="hidden sm:flex px-16 py-12 justify-center items-center min-h-screen">
+      <div className="hidden sm:flex px-8 py-8 justify-center items-center h-screen max-h-[1080px]">
         <MainFrame
           currentLocale={locale}
           onLanguageChange={changeLanguage}

@@ -34,7 +34,7 @@ const RusticNavigation: React.FC<RusticNavigationProps> = ({
 
 
   return (
-    <div className={`flex flex-col h-full ${className}`}>
+    <div className={`flex flex-col h-full max-h-full ${className}`}>
       {/* Navegação - apenas no desktop */}
       {!isMobile && (
         <div className="flex flex-wrap gap-2 mb-4">
@@ -52,7 +52,7 @@ const RusticNavigation: React.FC<RusticNavigationProps> = ({
       )}
 
       {/* Conteúdo das seções */}
-      <div className="flex-1 relative">
+      <div className="flex-1 relative min-h-0">
         <AnimatePresence mode="wait">
           {activeSectionId === 'perfil' && (
             <SectionContainer
