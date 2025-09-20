@@ -43,14 +43,14 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
   // Remover animação especial para usar padrão como outras seções
   
   const getCotaContainer = () => {
-    // Reduzir altura da cota para experiencias, projetos e idiomas
-    const isReducedHeight = ['experiencias', 'projetos', 'idiomas'].includes(sectionId);
+    // Reduzir altura da cota para todas as seções
+    const isReducedHeight = ['perfil', 'experiencias', 'projetos', 'habilidades', 'idiomas'].includes(sectionId);
     const cotaSize = isReducedHeight ? 'h-6' : 'h-20';
     const cotaWidth = isReducedHeight ? 'w-6' : 'w-20';
     
     if (cotaDirection === 'left' || cotaDirection === 'right') {
       return (
-        <div className={`${cotaWidth} flex-shrink-0 relative`}>
+        <div className={`${cotaWidth} flex-shrink-0 relative bg-red-500`}>
           <ArchitecturalCota direction={cotaDirection} />
         </div>
       );
