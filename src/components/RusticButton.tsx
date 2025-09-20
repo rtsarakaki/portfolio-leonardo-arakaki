@@ -35,7 +35,7 @@ const RusticButton: React.FC<RusticButtonProps> = ({
   return (
     <div className="flex flex-col items-center">
       {/* Texto acima do botão */}
-      <span className="text-xs font-medium text-[#0f1419] mb-2 font-handwriting">
+      <span className="text-xs font-medium text-white mb-2 font-handwriting">
         {children}
       </span>
       
