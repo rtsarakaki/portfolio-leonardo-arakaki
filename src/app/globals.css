@@ -195,6 +195,7 @@
         #FFA366 4px
       );
     border: 3px solid #e67e22;
+    border-radius: 12px;
     box-shadow: 
       0 0 0 1px rgba(230, 126, 34, 0.2),
       0 2px 4px rgba(0, 0, 0, 0.2),
@@ -202,7 +203,6 @@
       inset 0 1px 0 rgba(255, 255, 255, 0.1),
       inset 0 -1px 0 rgba(0, 0, 0, 0.1);
     filter: blur(0.3px) contrast(1.0) saturate(0.7);
-    clip-path: polygon(0% 0%, 98% 1%, 100% 8%, 99% 92%, 98% 99%, 2% 100%, 1% 92%, 0% 8%);
     margin-top: 8px;
   }
 
