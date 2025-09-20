@@ -18,7 +18,7 @@
 
 @layer components {
   .architectural-background {
-    background-color: #f8f9fa; /* Cor sólida cinza claro */
+    background-color: #0f1419; /* Cor sólida igual ao frame */
     width: 100%;
     height: 100%;
   }
