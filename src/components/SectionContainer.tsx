@@ -123,6 +123,9 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
   const isVertical = cotaDirection === 'top' || cotaDirection === 'bottom';
   const flexDirection = isVertical ? 'flex-col' : 'flex';
   
+  // Animação especial para a seção de experiências (cota fixa + conteúdo com revelação)
+  const isExperiencesSection = sectionId === 'experiencias';
+  
   const getCotaContainer = () => {
     // Reduzir altura da cota para experiencias, projetos e idiomas
     const isReducedHeight = ['experiencias', 'projetos', 'idiomas'].includes(sectionId);
@@ -211,9 +214,6 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
     );
   }
 
-  // Animação especial para a seção de experiências (cota fixa + conteúdo com revelação)
-  const isExperiencesSection = sectionId === 'experiencias';
-  
   return (
     <motion.div
       key={sectionId}
