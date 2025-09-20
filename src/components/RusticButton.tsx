@@ -18,13 +18,12 @@ const RusticButton: React.FC<RusticButtonProps> = ({
   disabled = false
 }) => {
   const baseStyles = `
-    rustic-button
-    px-6 py-3
+    rustic-button-new
+    relative
     font-handwriting
     text-[#0f1419]
     text-sm
     font-bold
-    drop-shadow-sm
     cursor-pointer
     transition-all duration-200 ease-in-out
     focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-75
@@ -34,17 +33,22 @@ const RusticButton: React.FC<RusticButtonProps> = ({
   `;
 
   return (
-    <button
-      className={baseStyles}
-      onClick={onClick}
-      disabled={disabled}
-      type="button"
-      aria-label={`Botão ${children}`}
-    >
-      <span className="relative z-10">
+    <div className="flex flex-col items-center">
+      {/* Texto acima do botão */}
+      <span className="text-xs font-medium text-[#0f1419] mb-2 font-handwriting">
         {children}
       </span>
-    </button>
+      
+      {/* Botão elipse alongada */}
+      <button
+        className={baseStyles}
+        onClick={onClick}
+        disabled={disabled}
+        type="button"
+        aria-label={`Botão ${children}`}
+      >
+      </button>
+    </div>
   );
 };
 
